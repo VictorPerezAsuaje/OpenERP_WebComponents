@@ -24,18 +24,56 @@
     color: var(--black);
 }
 
-.text-dark-grey {
-    color: var(--dark-grey);
+.text-gray-700 {
+    color: var(--gray-700);
 }
 
-.text-regular-grey {
-    color: var(--regular-grey);
+.text-gray-600 {
+    color: var(--gray-600);
 }
 
-.text-light-grey {
-    color: var(--light-grey);
+.text-gray-500 {
+    color: var(--gray-500);
+}
+
+.text-gray-400 {
+    color: var(--gray-400);
+}
+
+.text-gray-300 {
+    color: var(--gray-300);
 }
 
 .text-white {
     color: var(--white);
+}
+
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+text-md {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+text-lg {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+text-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.font-bold{
+    font-weight: var(--bold-weight);
 }

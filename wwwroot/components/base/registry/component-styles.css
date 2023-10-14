@@ -1,0 +1,22 @@
+﻿[fuoc="ease"]:not(:empty){
+    color:transparent;
+}
+
+[fuoc="ease"] *:not(oe-skeleton) {
+    transition: opacity 200ms ease-out;
+    opacity: 0;
+}
+
+[fuoc="ease"] oe-skeleton {
+    transition: opacity 200ms ease-out;
+    opacity: 100;
+}
+
+[fuoc="loaded"] {
+    transition: opacity 200ms ease-out;
+    opacity: 100;
+}
+
+    [fuoc="loaded"] oe-skeleton {
+        display: none;
+    }

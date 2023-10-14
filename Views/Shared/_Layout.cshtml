@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="~/css/output.css" />
     <link rel="stylesheet" href="~/HtmxComponents.styles.css" asp-append-version="true" />
 
-    <link rel="stylesheet" href="~/components/component-styles.css" />
-    <script type="module" src="~/components/component-registry.js"></script>
+    <link rel="stylesheet" href="~/components/base/registry/component-styles.css" />
+    <script type="module" src="~/components/base/registry/component-registry.js"></script>
 </head>
 <body>
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 bg-gray-50 text-gray-800">
         <partial name="_MenuPartial" />
 
-        <main role="main" class="ml-64 col py-3">
+        <main id="mainContent" role="main" class="ml-64 col p-5">
             @RenderBody()
         </main>
-    </div>
-    
+    </div>    
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

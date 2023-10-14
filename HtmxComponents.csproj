@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Components\Tables\" />
+    <Folder Include="Views\Components\Forms\" />
+    <Folder Include="Views\Components\Interactive\" />
+    <Folder Include="Views\Components\Layout\" />
+  </ItemGroup>
+
+	<Target Name="Tailwind" AfterTargets="Build">
+		<Exec Command="npm run style:build" />
+	</Target>
 </Project>

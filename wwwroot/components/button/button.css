@@ -1,20 +1,74 @@
-﻿@import "../component-styles.css";
+﻿@import "../base/styles/style-imports.css";
 
 .btn{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding: var(--spacing-xs) var(--spacing-md);    
-    transition: all ease-in-out;
+    padding: var(--spacing-1-5) var(--spacing-2);    
+    transition: all 200ms ease-in-out;
     border-radius: var(--radius-soft);
     border: 0px solid transparent;
+    cursor:pointer;
 }
 
-.btn.btn-primary{
+.solid.primary {
     background-color: var(--primary-500);
     color: var(--white);
 }
 
-    .btn.btn-primary:hover {
+    .solid.primary:hover {
         background-color: var(--primary-400);
+    }
+
+.solid.secondary {
+    background-color: var(--secondary-500);
+    color: var(--white);
+}
+
+    .solid.secondary:hover {
+        background-color: var(--secondary-400);
+    }
+
+.solid.accent {
+    background-color: var(--accent-500);
+    color: var(--white);
+}
+
+    .solid.accent:hover {
+        background-color: var(--accent-400);
+    }
+
+/* OUTLINES */
+
+.outline.primary {
+    border: 1px solid var(--primary-500);
+    background-color: transparent;
+    color: var(--primary-500);
+}
+
+    .outline.primary:hover {
+        background-color: var(--primary-500);
+        color: var(--white);
+    }
+
+.outline.secondary {
+    border: 1px solid var(--secondary-500);
+    background-color: transparent;
+    color: var(--secondary-500);
+}
+
+    .outline.secondary:hover {
+        background-color: var(--secondary-500);
+        color: var(--white);
+    }
+
+.outline.accent {
+    border: 1px solid var(--accent-500);
+    background-color: transparent;
+    color: var(--accent-500);
+}
+
+    .outline.accent:hover {
+        background-color: var(--accent-500);
+        color: var(--white);
     }

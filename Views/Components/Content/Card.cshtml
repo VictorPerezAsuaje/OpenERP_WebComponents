@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    oe-card::part(image) {
+        max-height: 100px;
+        object-fit: cover;
+    }
+</style>
+
+<oe-title fuoc="ease" variant="xl">OpenERP Cards</oe-title>
+
+<div class="grid grid-cols-3 gap-5 my-8 h-full">
+    <oe-card fuoc="ease">
+        <oe-skeleton></oe-skeleton>
+
+        <oe-title variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+
+        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+
+        <oe-button color="primary">
+            Read more →
+        </oe-button>
+    </oe-card>
+
+    <oe-card fuoc="ease">
+        <oe-skeleton></oe-skeleton>
+
+        <oe-title variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+
+        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+
+        <oe-button color="secondary">
+            Read more →
+        </oe-button>
+    </oe-card>
+
+    <oe-card fuoc="ease">
+        <oe-skeleton></oe-skeleton>
+
+        <oe-title variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+
+        <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+
+        <oe-button color="accent">
+            Read more →
+        </oe-button>
+    </oe-card>
+
+    <oe-card fuoc="ease">
+        <oe-skeleton></oe-skeleton>
+
+        <oe-title slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+
+        <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+
+        <oe-button slot="cta" color="primary" variant="outline">
+            Read more →
+        </oe-button>
+    </oe-card>
+
+    <oe-card fuoc="ease">
+        <oe-skeleton></oe-skeleton>
+
+        <oe-title slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+
+        <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+
+        <oe-button slot="cta" color="secondary" variant="outline">
+            Read more →
+        </oe-button>
+    </oe-card>
+
+    <oe-card fuoc="ease">
+        <oe-skeleton></oe-skeleton>
+
+        <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())">
+
+        <oe-title slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+
+        <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+
+        <oe-button slot="cta" color="accent" variant="outline">
+            Read more →
+        </oe-button>
+    </oe-card>
+</div>
+

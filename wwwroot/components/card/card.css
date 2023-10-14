@@ -1,5 +1,11 @@
-﻿@import "../component-styles.css";
+﻿@import "../base/styles/style-imports.css";
 
 .card {
-    max-width: 24rem;
+    max-width: 100%;
+}
+
+oe-card::part(image){
+    max-height: 100px;
+    object-fit:cover;
+
 }

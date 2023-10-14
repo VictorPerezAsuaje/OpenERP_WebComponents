@@ -15,11 +15,6 @@ module.exports = {
             }
         }
     },
-    plugins: [],
-    safelist: [
-        {
-            pattern: /([a-zA-Z]+)-./,
-        }
-    ]
+    plugins: []
 }
 

@@ -1,7 +1,9 @@
-﻿<aside class="fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto">
-    <h4 class="flex items-center justify-center h-14 border-b">
-        OpenERP Components
-    </h4>
+﻿<aside class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto">
+    <a href="/">
+        <h4 class="flex items-center justify-center h-14 py-8 border-b">
+            OpenERP Components
+        </h4>
+    </a>
 
     <div class="flex flex-col py-4 space-y-1 px-5 overflow-y-auto overflow-x-hidden flex-grow">
         <div id="gettingStarted">
@@ -9,15 +11,15 @@
                 Getting Started
             </div>
 
-            <a href="#Overview" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a href="#Overview" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span class="ml-6 text-sm truncate">Overview</span>
             </a>
 
-            <a href="#Quickstart" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a href="#Quickstart" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span class="ml-6 text-sm truncate">Quickstart</span>
             </a>
 
-            <a href="#Changelog" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a href="#Changelog" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span class="ml-6 text-sm truncate">Changelog</span>
             </a>
         </div>
@@ -25,12 +27,188 @@
         <div>
             <div class="h-8 text-sm font-light text-gray-500">Styles</div>
 
-            <a href="#Colors" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a href="#Colors" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span class="ml-6 text-sm truncate">Colors</span>
             </a>
 
-            <a href="#Icons" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a href="#Icons" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span class="ml-6 text-sm truncate">Icons</span>
+            </a>
+        </div>
+
+        <div>
+            <div class="h-8 text-sm font-light text-gray-500">Content Components</div>
+
+            <a href="#Avatar" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Avatar</span>
+            </a>
+
+            <a href="#Badge" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Badge</span>
+            </a>
+
+            <a href="#Banner" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Banner</span>
+            </a>
+
+            <a asp-controller="Components" asp-action="Card" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Card</span>
+            </a>            
+
+            <a href="#List" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">List</span>
+            </a>
+
+            <a href="#Title" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Title</span>
+            </a>
+
+            <a href="#Subtitle" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Subtitle</span>
+            </a>
+
+            <a href="#Wizard" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Wizard</span>
+            </a>
+        </div>
+
+        <div>
+            <div class="h-8 text-sm font-light text-gray-500">Layout Components</div>
+
+            <a href="#Divider" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Divider</span>
+            </a>
+
+            <a href="#Header" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Header</span>
+            </a>
+
+            <a href="#Footer" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Footer</span>
+            </a>
+
+            <a href="#Sidebar" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Sidebar</span>
+            </a>
+
+            <a href="#Breadcrumb" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Breadcrumb</span>
+            </a>
+
+            <a href="#Skeleton" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Skeleton</span>
+            </a>
+
+            <a href="#Menu" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Menu</span>
+            </a>
+
+            <a href="#Spinner" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Spinner</span>
+            </a>
+        </div>
+
+        <div>
+            <div class="h-8 text-sm font-light text-gray-500">Interactive Components</div>
+
+            <a href="#Accordion" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Accordion</span>
+            </a>
+
+            <a href="#Alert" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Alert</span>
+            </a>            
+
+            <a href="#Breadcrumb" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Breadcrumb</span>
+            </a>
+
+            <a href="#Button" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Button</span>
+            </a>
+
+            <a href="#ButtonGroup" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Button Group</span>
+            </a> 
+
+            <a href="#Carousel" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Carousel</span>
+            </a>
+
+            <a href="#DatePicker" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Date Picker</span>
+            </a>
+
+            <a href="#Dialog" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Dialog</span>
+            </a>           
+
+            <a href="#Drawer" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Drawer</span>
+            </a>
+
+            <a href="#Dropdown" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Dropdown</span>
+            </a>
+
+            <a href="#Popovers" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Popovers</span>
+            </a>
+
+            <a href="#Rating" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Rating</span>
+            </a>
+
+            <a href="#SpeedDial" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">SpeedDial</span>
+            </a>
+
+            <a href="#Tabs" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Tabs</span>
+            </a>
+
+            <a href="#Toast" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Toast</span>
+            </a>
+
+            <a href="#Tooltips" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Tooltips</span>
+            </a>
+        </div>
+
+        <div>
+            <div class="h-8 text-sm font-light text-gray-500">Form Components</div>
+
+            <a href="#Form" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Form</span>
+            </a>
+
+            <a href="#Radio" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Radio</span>
+            </a>
+
+            <a href="#Checkbox" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Checkbox</span>
+            </a>
+
+            <a href="#TextFields" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Text Field</span>
+            </a>            
+        </div>
+
+        <div>
+            <div class="h-8 text-sm font-light text-gray-500">Table Components</div>
+
+            <a href="#Table" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Table</span>
+            </a>
+
+            <a href="#Search" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Search</span>
+            </a>
+
+            <a href="#Pagination" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+                <span class="ml-6 text-sm truncate">Pagination</span>
             </a>
         </div>
     </div>

@@ -1,11 +1,16 @@
-﻿import OpenERPComponent from "../base/openerp-component.js";
+﻿import OpenERPComponent from "../base/component/openerp-component.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
-    <div class="card p-smx bg-white border border-light-grey regular-rounded soft-shadow">
+    <div class="card p-3 bg-white border border-gray-300 regular-rounded soft-shadow">
         <slot></slot>
+        <slot name="image"></slot>
+        <slot name="title"></slot>
+        <slot name="excerpt"></slot>
+        <slot name="cta"></slot>
     </div>
 `;
+
 
 export default class Card extends OpenERPComponent {
     static observedAttributes = [];
@@ -13,8 +18,8 @@ export default class Card extends OpenERPComponent {
     constructor() {
         super();
         this.componentName = "oe-card";
-        console.log("card appending child")
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.template = template;
+        this.shadowRoot.appendChild(this.template.content.cloneNode(true));
     }    
 }
 

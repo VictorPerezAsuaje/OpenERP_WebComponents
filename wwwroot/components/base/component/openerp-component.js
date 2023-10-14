@@ -5,6 +5,10 @@
         this.componentName = "";     
     }    
 
+    isNullOrWhiteSpace(string) {
+        return string === undefined || string === null || string.trim() === "";
+    }
+
     connectedCallback() {
         this.loadStylesheet();
     }
@@ -18,7 +22,7 @@
     loadStylesheet() {
         const name = this.componentName.replace("oe-", "");
         const folderName = this.snakeCaseIntoCamelCase(name);
-        const href = `components/${folderName}/${name}.css`;
+        const href = `/components/${folderName}/${name}.css`;
         const existingLink = document.querySelector(`link[href="${href}"]`);
 
         if (existingLink) return;
@@ -29,8 +33,7 @@
         this.shadowRoot.appendChild(link);     
 
         link.addEventListener("load", () => {
-            this.style.opacity = 100;
-            /*this.setAttribute("style", null)*/
+            this.setAttribute("fuoc", "loaded");
         })
     }
 }
