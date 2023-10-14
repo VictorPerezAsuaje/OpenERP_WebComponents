@@ -1,0 +1,22 @@
+﻿@import 'base/styles/variables.css';
+
+@import 'base/styles/typography-mixin.css';
+@import 'base/styles/display-mixin.css';
+
+@import 'base/styles/sizing-mixin.css';
+@import 'base/styles/spacing-mixin.css';
+
+@import 'base/styles/background-mixin.css';
+@import 'base/styles/border-mixin.css';
+
+@import 'base/styles/misc-mixin.css';
+
+.oe-component:not(:defined) {
+    transition: opacity 200ms ease-out;
+    opacity: 0;
+}
+
+.oe-component {
+    transition: opacity 200ms ease-out;
+    opacity: 100;
+}

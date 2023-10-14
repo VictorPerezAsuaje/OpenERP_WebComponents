@@ -1,0 +1,46 @@
+﻿@import "variables.css";
+
+.border {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.border-primary-700 {
+    border-color: var(--primary-700);
+}
+
+.border-primary-600 {
+    border-color: var(--primary-600);
+}
+
+.border-primary-500 {
+    border-color: var(--primary-500);
+}
+
+.border-primary-400 {
+    border-color: var(--primary-400);
+}
+
+.border-primary-300 {
+    border-color: var(--primary-300);
+}
+
+.border-black {
+    border-color: var(--black);
+}
+
+.border-dark-grey {
+    border-color: var(--dark-grey);
+}
+
+.border-regular-grey {
+    border-color: var(--regular-grey);
+}
+
+.border-light-grey {
+    border-color: var(--light-grey);
+}
+
+.border-white {
+    border-color: var(--white);
+}

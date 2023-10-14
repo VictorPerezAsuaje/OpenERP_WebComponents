@@ -1,0 +1,5 @@
+﻿@import "../component-styles.css";
+
+.card {
+    max-width: 24rem;
+}

@@ -1,0 +1,42 @@
+﻿@import "variables.css";
+
+.bg-primary-700 {
+    background-color: var(--primary-700);
+}
+
+.bg-primary-600 {
+    background-color: var(--primary-600);
+}
+
+.bg-primary-500 {
+    background-color: var(--primary-500);
+}
+
+.bg-primary-400 {
+    background-color: var(--primary-400);
+}
+
+.bg-primary-300 {
+    background-color: var(--primary-300);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-dark-grey {
+    background-color: var(--dark-grey);
+}
+
+.bg-regular-grey {
+    background-color: var(--regular-grey);
+}
+
+.bg-light-grey {
+    background-color: var(--light-grey);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+

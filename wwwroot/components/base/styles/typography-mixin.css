@@ -1,0 +1,41 @@
+﻿@import "variables.css";
+
+.text-primary-700 {
+    color: var(--primary-700);
+}
+
+.text-primary-600 {
+    color: var(--primary-600);
+}
+
+.text-primary-500 {
+    color: var(--primary-500);
+}
+
+.text-primary-400 {
+    color: var(--primary-400);
+}
+
+.text-primary-300 {
+    color: var(--primary-300);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.text-dark-grey {
+    color: var(--dark-grey);
+}
+
+.text-regular-grey {
+    color: var(--regular-grey);
+}
+
+.text-light-grey {
+    color: var(--light-grey);
+}
+
+.text-white {
+    color: var(--white);
+}

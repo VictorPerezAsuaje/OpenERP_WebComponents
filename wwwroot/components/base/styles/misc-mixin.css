@@ -1,0 +1,21 @@
+﻿@import "variables.css";
+
+.soft-shadow {
+    box-shadow: var(--shadow-soft);
+}
+
+.hard-shadow {
+    box-shadow: var(--shadow-hard);
+}
+
+.soft-rounded {
+    border-radius: var(--radius-soft);
+}
+
+.regular-rounded {
+    border-radius: var(--radius-rounded);
+}
+
+.circle {
+    border-radius: var(--radius-circle);
+}
