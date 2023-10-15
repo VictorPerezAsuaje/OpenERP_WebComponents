@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace HtmxComponents.Controllers;
 
+[Route("")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -13,11 +14,13 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+    [HttpGet("")]
+    public IActionResult Index() => View();
 
+    [HttpGet("Overview")]
+    public IActionResult Overview() => PartialView("_Overview");
+
+    [HttpGet("Error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

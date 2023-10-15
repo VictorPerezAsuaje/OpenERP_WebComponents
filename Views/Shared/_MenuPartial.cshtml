@@ -1,5 +1,5 @@
-﻿<aside class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto">
-    <a href="/">
+﻿<aside class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto" hx-boost="true">
+    <a class="cursor-pointer" asp-controller="Home" asp-action="Index">
         <h4 class="flex items-center justify-center h-14 py-8 border-b">
             OpenERP Components
         </h4>
@@ -11,7 +11,7 @@
                 Getting Started
             </div>
 
-            <a href="#Overview" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a asp-controller="Home" asp-action="Index" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                 <span class="ml-6 text-sm truncate">Overview</span>
             </a>
 
@@ -51,7 +51,7 @@
                 <span class="ml-6 text-sm truncate">Banner</span>
             </a>
 
-            <a asp-controller="Components" asp-action="Card" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
+            <a class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" asp-controller="Components" asp-action="Card">
                 <span class="ml-6 text-sm truncate">Card</span>
             </a>            
 

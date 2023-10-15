@@ -3,9 +3,3 @@
 .card {
     max-width: 100%;
 }
-
-oe-card::part(image){
-    max-height: 100px;
-    object-fit:cover;
-
-}

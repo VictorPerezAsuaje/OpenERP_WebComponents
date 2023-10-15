@@ -2,7 +2,7 @@
 
 const template = document.createElement("template");
 template.innerHTML = `
-    <div class="card p-3 bg-white border border-gray-300 regular-rounded soft-shadow">
+    <div class="card p-3 bg-white border border-gray-300 soft-rounded soft-shadow">
         <slot></slot>
         <slot name="image"></slot>
         <slot name="title"></slot>

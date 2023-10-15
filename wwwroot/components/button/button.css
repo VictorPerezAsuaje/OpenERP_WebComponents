@@ -1,14 +1,15 @@
 ﻿@import "../base/styles/style-imports.css";
 
-.btn{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding: var(--spacing-1-5) var(--spacing-2);    
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-1-5) var(--spacing-2);
     transition: all 200ms ease-in-out;
     border-radius: var(--radius-soft);
     border: 0px solid transparent;
-    cursor:pointer;
+    cursor: pointer;
+    font-weight: var(--bold-weight);
 }
 
 .solid.primary {
@@ -41,7 +42,7 @@
 /* OUTLINES */
 
 .outline.primary {
-    border: 1px solid var(--primary-500);
+    border: 1.5px solid var(--primary-500);
     background-color: transparent;
     color: var(--primary-500);
 }
@@ -52,7 +53,7 @@
     }
 
 .outline.secondary {
-    border: 1px solid var(--secondary-500);
+    border: 1.5px solid var(--secondary-500);
     background-color: transparent;
     color: var(--secondary-500);
 }
@@ -63,7 +64,7 @@
     }
 
 .outline.accent {
-    border: 1px solid var(--accent-500);
+    border: 1.5px solid var(--accent-500);
     background-color: transparent;
     color: var(--accent-500);
 }

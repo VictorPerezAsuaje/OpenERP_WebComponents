@@ -16,7 +16,7 @@ template.innerHTML = `
     <div 
         role="status" 
         style="
-            height: 100%;
+            height: fit-content;
             width: 100%;
             background-color: #e2e8f0;
             border-radius: 0.5rem;

@@ -33,7 +33,7 @@
         this.shadowRoot.appendChild(link);     
 
         link.addEventListener("load", () => {
-            this.setAttribute("fuoc", "loaded");
+            this.setAttribute("fouc", "loaded");
         })
     }
 }
