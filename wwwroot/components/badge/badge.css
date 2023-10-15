@@ -1,0 +1,79 @@
+﻿@import "../base/styles/style-imports.css";
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35em 0.65em;
+    font-weight: var(--bold-weight);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+/* 
+    VARIANTS 
+*/
+/* SOLID */
+.solid.primary {
+    background-color: var(--primary-500);
+    color: var(--white);
+}
+
+    .solid.primary:hover {
+        background-color: var(--primary-400);
+    }
+
+.solid.secondary {
+    background-color: var(--secondary-500);
+    color: var(--white);
+}
+
+    .solid.secondary:hover {
+        background-color: var(--secondary-400);
+    }
+
+.solid.accent {
+    background-color: var(--accent-500);
+    color: var(--white);
+}
+
+    .solid.accent:hover {
+        background-color: var(--accent-400);
+    }
+
+/* OUTLINES */
+
+.outline.primary {
+    border: 1.5px solid var(--primary-500);
+    background-color: transparent;
+    color: var(--primary-500);
+}
+
+    .outline.primary:hover {
+        background-color: var(--primary-500);
+        color: var(--white);
+    }
+
+.outline.secondary {
+    border: 1.5px solid var(--secondary-500);
+    background-color: transparent;
+    color: var(--secondary-500);
+}
+
+    .outline.secondary:hover {
+        background-color: var(--secondary-500);
+        color: var(--white);
+    }
+
+.outline.accent {
+    border: 1.5px solid var(--accent-500);
+    background-color: transparent;
+    color: var(--accent-500);
+}
+
+    .outline.accent:hover {
+        background-color: var(--accent-500);
+        color: var(--white);
+    }

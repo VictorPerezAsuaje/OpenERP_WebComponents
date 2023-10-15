@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Changelog";
+}
+
+<header class="mb-10 not-format">
+    <oe-title variant="xl">📚 Changelog 📚</oe-title>
+</header>
+
+
+<oe-title variant="md" id="version01">v0.1 [ongoing]</oe-title>
+
+<div class="my-10 flex md:flex-row flex-col">
+
+    <div class="flex-1 p-3 border-r-0 md:mr-5 md:border-r-[2px] ">
+        <oe-badge color="secondary">to-do</oe-badge>
+
+        <ol class="text-gray-500 list-inside pl-6 my-6">
+            <li class="mb-5">
+                1- Create components:
+
+                <ul class="space-y-1 text-gray-500 list-inside pl-10 mb-10 pt-2" style="list-style:circle">
+                    <li>Accordion</li>
+                    <li>Alert</li>
+                    <li>Checkbox</li>
+                    <li>Dialog</li>
+                    <li>Dropdown</li>
+                    <li>Drawer</li>
+                    <li>Footer</li>
+                    <li>Header</li>
+                    <li>List</li>
+                    <li>Menu</li>
+                    <li>Popover</li>
+                    <li>Radio button</li>
+                    <li>Sidebar</li>
+                    <li>Table</li>
+                    <li>Tabs</li>
+                    <li>Text fields</li>
+                    <li>Toast</li>
+                </ul>
+            </li>
+
+            <li class="mb-5">
+                2- Complete or create doc pages for completed components:
+
+                <ul class="space-y-1 text-gray-500 list-inside pl-10 mb-10 pt-2" style="list-style:circle">
+                    <li>Badge</li>
+                    <li>Button</li>
+                    <li>Card</li>
+                    <li>Skeleton</li>
+                    <li>Title</li>
+                </ul>
+            </li>
+
+            <li class="mb-5">
+                3- Add theming to allow for style changes from the client-side.
+            </li>
+
+            <li class="mb-5">
+                4- Define better design tokens to ease theming configuration.
+            </li>
+
+            <li class="mb-5">
+                5- Add support for intellisense helpers in Visual Studio (maybe moving to Typescript or adding JSDoc? 🤔).
+            </li>       
+            
+            <li class="mb-5">
+                6- Analyze what else can be done about FOUC (Flash-Of-Unstyled-Components). For now, it has the skeleton concept if you add the "fuoc='ease'" property.
+            </li>
+        </ol>
+    </div>
+
+    <div class="flex-1 p-3">
+        <oe-badge color="accent">completed</oe-badge>
+
+        <ol class="text-gray-500 list-inside pl-6 my-6">
+            <li class="mb-5">
+                1- Added OpenERP class for WebComponents.
+            </li>
+
+            <li class="mb-5">
+                2- Added components:
+
+                <ul class="space-y-1 text-gray-500 list-inside pl-10 mb-10 pt-2" style="list-style:circle">
+                    <li>Badge</li>
+                    <li>Button</li>
+                    <li>Card</li>
+                    <li>Skeleton</li>
+                    <li>Title</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</div>

@@ -1,214 +1,206 @@
-﻿<aside class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto" hx-boost="true">
+﻿@{
+    string component = ViewContext.RouteData.Values["Action"] as string;
+}
+
+<aside class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto" hx-boost="true">
     <a class="cursor-pointer" asp-controller="Home" asp-action="Index">
         <h4 class="flex items-center justify-center h-14 py-8 border-b">
-            OpenERP Components
+            OpenERP Components v0.1
         </h4>
     </a>
 
     <div class="flex flex-col py-4 space-y-1 px-5 overflow-y-auto overflow-x-hidden flex-grow">
         <div id="gettingStarted">
-            <div class="h-8 text-sm font-light text-gray-500">
+            <div class="cursor-none	h-8 text-sm font-light text-gray-500">
                 Getting Started
             </div>
 
-            <a asp-controller="Home" asp-action="Index" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Overview</span>
+            <a asp-controller="Home" asp-action="Index" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Index")" >
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Overview</span>
             </a>
 
-            <a href="#Quickstart" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Quickstart</span>
+            <a href="#Quickstart" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Quickstart")" >
+                <span class="ml-6 text-sm truncate flex justify-between w-full flex justify-between w-full">Quickstart</span>
             </a>
 
-            <a href="#Changelog" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Changelog</span>
-            </a>
-        </div>
-
-        <div>
-            <div class="h-8 text-sm font-light text-gray-500">Styles</div>
-
-            <a href="#Colors" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Colors</span>
-            </a>
-
-            <a href="#Icons" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Icons</span>
+            <a asp-controller="Home" asp-action="Changelog" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Changelog")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Changelog</span>
             </a>
         </div>
 
         <div>
-            <div class="h-8 text-sm font-light text-gray-500">Content Components</div>
+            <div class="cursor-none	h-8 text-sm font-light text-gray-500">Styles</div>
 
-            <a href="#Avatar" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Avatar</span>
+            <a href="#Theming" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Theming")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Theming</span>
             </a>
 
-            <a href="#Badge" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Badge</span>
+            <a href="#Icons" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Icons")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Icons</span>
+            </a>
+        </div>
+
+        <div>
+            <div class="cursor-none	h-8 text-sm font-light text-gray-500">Content Components</div>
+
+            <a href="#Avatar" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Avatar")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Avatar</span>
             </a>
 
-            <a href="#Banner" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Banner</span>
+            <a href="#Badge" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Badge")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Badge</span>
             </a>
 
-            <a class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" asp-controller="Components" asp-action="Card">
-                <span class="ml-6 text-sm truncate">Card</span>
+            <a href="#Banner" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Banner")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Banner</span>
+            </a>
+
+            <a asp-controller="Components" asp-action="Card" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Card")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Card</span>
             </a>            
 
-            <a href="#List" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">List</span>
+            <a href="#List" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "List")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">List</span>
             </a>
 
-            <a href="#Title" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Title</span>
+            <a href="#Title" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Title")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Title</span>
+            </a>            
+        </div>
+
+        <div>
+            <div class="cursor-none	h-8 text-sm font-light text-gray-500">Layout Components</div>
+
+            <a href="#Divider" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Divider")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Divider</span>
             </a>
 
-            <a href="#Subtitle" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Subtitle</span>
+            <a href="#Header" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Header")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Header</span>
             </a>
 
-            <a href="#Wizard" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Wizard</span>
+            <a href="#Footer" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Footer")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Footer</span>
+            </a>
+
+            <a href="#Sidebar" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Sidebar")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Sidebar</span>
+            </a>
+
+            <a href="#Breadcrumb" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Breadcrumb")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Breadcrumb</span>
+            </a>
+
+            <a href="#Skeleton" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Skeleton")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Skeleton</span>
+            </a>
+
+            <a href="#Menu" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Menu")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Menu</span>
+            </a>
+
+            <a href="#Spinner" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Spinner")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Spinner</span>
             </a>
         </div>
 
         <div>
-            <div class="h-8 text-sm font-light text-gray-500">Layout Components</div>
+            <div class="cursor-none	h-8 text-sm font-light text-gray-500">Interactive Components</div>
 
-            <a href="#Divider" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Divider</span>
+            <a href="#Accordion" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Accordion")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Accordion</span>
             </a>
 
-            <a href="#Header" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Header</span>
-            </a>
-
-            <a href="#Footer" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Footer</span>
-            </a>
-
-            <a href="#Sidebar" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Sidebar</span>
-            </a>
-
-            <a href="#Breadcrumb" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Breadcrumb</span>
-            </a>
-
-            <a href="#Skeleton" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Skeleton</span>
-            </a>
-
-            <a href="#Menu" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Menu</span>
-            </a>
-
-            <a href="#Spinner" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Spinner</span>
-            </a>
-        </div>
-
-        <div>
-            <div class="h-8 text-sm font-light text-gray-500">Interactive Components</div>
-
-            <a href="#Accordion" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Accordion</span>
-            </a>
-
-            <a href="#Alert" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Alert</span>
+            <a href="#Alert" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Alert")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Alert</span>
             </a>            
 
-            <a href="#Breadcrumb" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Breadcrumb</span>
+            <a href="#Breadcrumb" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Breadcrumb")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Breadcrumb</span>
             </a>
 
-            <a href="#Button" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Button</span>
+            <a href="#Button" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "")" >
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Button</span>
             </a>
 
-            <a href="#ButtonGroup" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Button Group</span>
+            <a href="#ButtonGroup" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "ButtonGroup")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Button Group</span>
             </a> 
 
-            <a href="#Carousel" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Carousel</span>
+            <a href="#Carousel" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Carousel")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Carousel</span>
             </a>
 
-            <a href="#DatePicker" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Date Picker</span>
+            <a href="#DatePicker" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "DatePicker")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Date Picker</span>
             </a>
 
-            <a href="#Dialog" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Dialog</span>
+            <a href="#Dialog" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Dialog")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Dialog</span>
             </a>           
 
-            <a href="#Drawer" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Drawer</span>
+            <a href="#Drawer" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Drawer")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Drawer</span>
             </a>
 
-            <a href="#Dropdown" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Dropdown</span>
+            <a href="#Dropdown" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Dropdown")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Dropdown</span>
             </a>
 
-            <a href="#Popovers" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Popovers</span>
+            <a href="#Popovers" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Popovers")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Popovers</span>
             </a>
 
-            <a href="#Rating" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Rating</span>
+            <a href="#SpeedDial" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "SpeedDial")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">SpeedDial</span>
             </a>
 
-            <a href="#SpeedDial" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">SpeedDial</span>
+            <a href="#Tabs" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Tabs")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Tabs</span>
             </a>
 
-            <a href="#Tabs" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Tabs</span>
+            <a href="#Toast" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Toast")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Toast</span>
             </a>
 
-            <a href="#Toast" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Toast</span>
+            <a href="#Tooltips" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Tooltips")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Tooltips</span>
             </a>
 
-            <a href="#Tooltips" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Tooltips</span>
+            <a href="#Wizard" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Wizard")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Wizard</span>
             </a>
         </div>
 
         <div>
             <div class="h-8 text-sm font-light text-gray-500">Form Components</div>
 
-            <a href="#Form" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Form</span>
+            <a href="#Radio" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Radio")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Radio</span>
             </a>
 
-            <a href="#Radio" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Radio</span>
+            <a href="#Checkbox" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Checkbox")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Checkbox</span>
             </a>
 
-            <a href="#Checkbox" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Checkbox</span>
-            </a>
-
-            <a href="#TextFields" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Text Field</span>
+            <a href="#TextFields" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "TextFields")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Text Field</span>
             </a>            
         </div>
 
         <div>
             <div class="h-8 text-sm font-light text-gray-500">Table Components</div>
 
-            <a href="#Table" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Table</span>
+            <a href="#Table" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Table")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Table</span>
             </a>
 
-            <a href="#Search" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Search</span>
+            <a href="#Search" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Search")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Search</span>
             </a>
 
-            <a href="#Pagination" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
-                <span class="ml-6 text-sm truncate">Pagination</span>
+            <a href="#Pagination" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Pagination")">
+                <span class="ml-6 text-sm truncate flex justify-between w-full">Pagination</span>
             </a>
         </div>
     </div>

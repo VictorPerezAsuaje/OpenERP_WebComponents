@@ -1,6 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
-:host, :root {
+:host {
     /* BASE COLORS*/
     --primary-700: #6D28D9;
     --primary-600: #7C3AED;
@@ -26,7 +26,7 @@
     --gray-500: #64748b;
     --gray-400: #cbd5e1;
     --gray-300: #e2e8f0;
-    --white: #f8fafc;
+    --white: #fefefe;
     /* SHADOWS */
     --shadow-hard: 0px 25px 35px 0px rgba(0, 0, 0, 0.03), 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
     --shadow-soft: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
@@ -36,7 +36,7 @@
     --regular-weight: 400;
     --light-weight: 300;
     /* BORDER RADIUS */
-    --radius-circle: 100%;
+    --radius-circle: 50%;
     --radius-rounded: 2rem;
     --radius-soft: 0.5rem;
     /* SPACING */

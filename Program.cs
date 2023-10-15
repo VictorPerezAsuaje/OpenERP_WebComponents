@@ -1,17 +1,48 @@
+using Microsoft.AspNetCore.RateLimiting;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Compress for the First Content Painful
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = false;
+    options.Providers.Add<BrotliCompressionProvider>();
+    options.Providers.Add<GzipCompressionProvider>();
+});
+
+builder.Services.Configure<BrotliCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Fastest;
+});
+
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.SmallestSize;
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+
+app.UseStatusCodePages(context =>
+{
+    int status = context.HttpContext.Response.StatusCode;
+    if (status == 400 || status == 404)
+        context.HttpContext.Response.Redirect("/NotFound");
+
+    if (status == 500)
+        context.HttpContext.Response.Redirect("/Error");
+
+    return Task.CompletedTask;
+});
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

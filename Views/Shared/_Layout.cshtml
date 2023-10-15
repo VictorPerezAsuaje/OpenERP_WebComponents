@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - HtmxComponents</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
     <link rel="stylesheet" href="~/css/output.css" />
     <link rel="stylesheet" href="~/HtmxComponents.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
@@ -14,7 +16,7 @@
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 bg-gray-50 text-gray-800">
         <partial name="_MenuPartial" />
 
-        <main role="main" class="ml-64 col pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased">
+        <main role="main" class="ml-64 col pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased min-h-screen">
             <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
                 <article class="mx-auto w-full format format-sm sm:format-base lg:format-lg format-blue" id="mainContent">
                     @RenderBody()

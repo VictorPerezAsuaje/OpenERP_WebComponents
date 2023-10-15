@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Card Component";
 }
 
 <oe-title fouc="ease" variant="xl">OpenERP Cards</oe-title>
@@ -41,7 +41,7 @@
                         <oe-title fouc="ease" variant="md">Playground</oe-title>
 
                         <div class="flex items-center">
-                            <input id="has-image" type="checkbox" value="" name="has-image" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4">
+                            <input id="has-image" type="checkbox" value="" name="has-image" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" checked>
                             <label for="has-image" class="flex items-center">
                                 With image
                             </label>
@@ -80,7 +80,7 @@
                         </li>
                     </ul>
                     <div class="flex justify-end">
-                        <button data-tooltip-target="default-card-example-copy-clipboard-tooltip" data-tooltip-placement="bottom" type="button" data-copy-state="copy" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 dark:bg-gray-800 hover:text-blue-700 dark:hover:text-white copy-to-clipboard-button">
+                        <button type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700">
                             <i class="fa-solid fa-clipboard text-md mr-2"></i>
                             <span>Copy</span>
                         </button>

@@ -13,6 +13,13 @@
     <Folder Include="Views\Components\Layout\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Shared\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 	<Target Name="Tailwind" AfterTargets="Build">
 		<Exec Command="npm run style:build" />
 	</Target>
