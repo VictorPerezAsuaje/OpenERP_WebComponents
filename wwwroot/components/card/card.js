@@ -24,8 +24,6 @@ export default class Card extends OpenERPComponent {
     }
 
     toggleSlotVisibility(slotName) {
-        if (this.getWithExternalStyle()) return;
-
         this.shadowRoot.querySelector(`slot[name=${slotName}]`).toggleAttribute("hidden");
     }
 }
