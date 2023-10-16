@@ -8,14 +8,6 @@ export default class Card extends OpenERPComponent {
         this.componentName = "oe-card";
     }    
 
-    /* METHODS */
-    createCustomElement() {
-        const div = document.createElement("div");
-        div.className = this.className;
-        div.innerHTML = this.innerHTML;
-        this.outerHTML = div.outerHTML;
-    }
-
     createWebComponent() {
         const template = document.createElement("template");
         template.innerHTML = `

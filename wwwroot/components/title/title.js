@@ -21,14 +21,6 @@ export default class Title extends OpenERPComponent {
     }
 
     /* METHODS */
-    createCustomElement() {
-        const variant = this.getVariant();
-
-        const heading = document.createElement(variant.tag);
-        heading.className = this.className;
-        heading.innerHTML = this.innerText;
-        this.outerHTML = heading.outerHTML;
-    }
 
     createWebComponent() {
         const variant = this.getVariant();

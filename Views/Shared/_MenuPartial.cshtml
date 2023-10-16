@@ -2,7 +2,14 @@
     string component = ViewContext.RouteData.Values["Action"] as string;
 }
 
-<aside class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto" hx-boost="true">
+<button class="bg-white rounded-full h-10 aspect-square absolute top-5 left-5 z-20 shadow transition-all ease-in-out"
+        onclick="toggleMenuState(this)">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
+<div id="sidebarMenuOverlay" class="fixed w-screen h-screen bg-black opacity-50 invisible lg:hidden z-10 transition-all ease-in-out"></div>
+
+<aside id="sidebarMenu" class="sidebar-menu fixed flex flex-col top-0 left-0 w-64 bg-white h-full border-r overflow-auto z-20 transition-all ease-in-out -translate-x-64 lg:translate-x-0" hx-boost="true">
     <a class="cursor-pointer" asp-controller="Home" asp-action="Index">
         <h4 class="flex items-center justify-center h-14 py-8 border-b">
             OpenERP Components v0.1

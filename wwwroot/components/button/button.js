@@ -19,12 +19,6 @@ export default class Button extends OpenERPComponent {
     }
 
     /* METHODS */
-    createCustomElement() {
-        const button = document.createElement("button");
-        button.className = this.className;
-        button.innerHTML = this.innerHTML;
-        this.outerHTML = button.outerHTML;
-    }
 
     createWebComponent() {
         const variant = this.getVariant();

@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="~/css/output.css" />
     <link rel="stylesheet" href="~/HtmxComponents.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link rel="stylesheet" href="~/components/base/registry/component-styles.css" />
-    <script type="module" src="~/components/base/registry/component-registry.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <link rel="stylesheet" href="~/components/base/registry/component-styles.css" asp-append-version="true" />
+    <script type="module" src="~/components/base/registry/component-registry.js" asp-append-version="true"></script>
 </head>
 <body>
-    <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 bg-gray-50 text-gray-800">
+    <div class="relative min-h-screen flex flex-col flex-auto flex-shrink-0 bg-gray-50 text-gray-800">
         <partial name="_MenuPartial" />
 
-        <main role="main" class="ml-64 col pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased min-h-screen">
+        <main role="main" class="lg:ml-64 col pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white antialiased min-h-screen">
             <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
                 <article class="mx-auto w-full format format-sm sm:format-base lg:format-lg format-blue" id="mainContent">
                     @RenderBody()
