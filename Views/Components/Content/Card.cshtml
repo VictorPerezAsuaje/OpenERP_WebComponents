@@ -23,7 +23,7 @@
         <div>
             <div id="default-card-example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x">
                 <div class="w-full flex flex-row">
-                    <oe-card fouc="ease" class="flex-[2] min-h-24 w-1/2 block mx-auto py-12 px-16" id="defaultCardSample" >
+                    <oe-card fouc="ease" class="flex-[2] min-h-24 w-1/2 block mx-auto py-12 px-16" id="defaultCardSample">
                         <oe-skeleton class="min-h-24"></oe-skeleton>
 
                         <img slot="image" src="https://source.unsplash.com/random/?nature" class="w-full h-[250px] object-cover rounded" loading="lazy">
@@ -41,28 +41,28 @@
                         <oe-title fouc="ease" variant="md">Playground</oe-title>
 
                         <div class="flex items-center">
-                            <input id="has-image" type="checkbox" value="" name="has-image" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" checked>
+                            <input id="has-image" type="checkbox" value="" name="has-image" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('image')" checked>
                             <label for="has-image" class="flex items-center">
                                 With image
                             </label>
                         </div>
 
                         <div class="flex items-center">
-                            <input id="has-title" type="checkbox" value="" name="has-title" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" checked>
+                            <input id="has-title" type="checkbox" value="" name="has-title" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('title')" checked>
                             <label for="has-title" class="flex items-center">
                                 With title
                             </label>
                         </div>
 
                         <div class="flex items-center">
-                            <input id="has-excerpt" type="checkbox" value="" name="has-excerpt" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" checked>
+                            <input id="has-excerpt" type="checkbox" value="" name="has-excerpt" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('excerpt')" checked>
                             <label for="has-excerpt" class="flex items-center">
                                 With excerpt
                             </label>
                         </div>
 
                         <div class="flex items-center">
-                            <input id="has-cta" type="checkbox" value="" name="has-cta" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" checked>
+                            <input id="has-cta" type="checkbox" value="" name="has-cta" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary-500 mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('cta')" checked>
                             <label for="has-cta" class="flex items-center">
                                 With CTA
                             </label>

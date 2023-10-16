@@ -30,6 +30,12 @@ export default class Card extends OpenERPComponent {
 
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
+
+    toggleSlotVisibility(slotName) {
+        if (this.getWithExternalStyle()) return;
+
+        this.shadowRoot.querySelector(`slot[name=${slotName}]`).toggleAttribute("hidden");
+    }
 }
 
 customElements.define('oe-card', Card);
