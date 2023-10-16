@@ -3,6 +3,12 @@
 export default class Title extends OpenERPComponent {
     static observedAttributes = [];
 
+    constructor() {
+        super();
+        this.componentName = "oe-title";
+    }  
+
+    /* PROPS */
     getVariant() {
         switch (this.getAttribute("variant")) {
             case "xl": return { tag: "h1", classes: "text-xl" };
@@ -14,9 +20,17 @@ export default class Title extends OpenERPComponent {
         }
     }
 
-    constructor() {
-        super();
-        this.componentName = "oe-title";
+    /* METHODS */
+    createCustomElement() {
+        const variant = this.getVariant();
+
+        const heading = document.createElement(variant.tag);
+        heading.className = this.className;
+        heading.innerHTML = this.innerText;
+        this.outerHTML = heading.outerHTML;
+    }
+
+    createWebComponent() {
         const variant = this.getVariant();
 
         const template = document.createElement("template");
@@ -27,7 +41,7 @@ export default class Title extends OpenERPComponent {
         `;
 
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }    
+    }
 }
 
 customElements.define('oe-title', Title);
