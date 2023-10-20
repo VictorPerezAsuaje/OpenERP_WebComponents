@@ -9,8 +9,8 @@ module.exports = {
                 current: 'currentColor',
                 black: '#000',
                 white: '#fff',
-                primary: 'var(--primary)',
-                secondary: 'var(--secondary)'
+                primary: 'var(--oe-global-color-primary)',
+                secondary: 'var(--oe-global-color-secondary)'
                 
             }
         }

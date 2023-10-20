@@ -1,42 +1,108 @@
-﻿@import "variables.css";
+﻿@import "../shared/shared-variables.css";
 
-.bg-primary-700 {
-    background-color: var(--primary-700);
+.bg-primary {
+    background-color: var(--oe-global-color-primary);
 }
 
-.bg-primary-600 {
-    background-color: var(--primary-600);
+    .bg-primary:hover, .bg-primary:focus {
+        background-color: var(--oe-global-color-primary-focus);
+        color: var(--oe-global-color-primary-content);
+    }
+
+.bg-secondary {
+    background-color: var(--oe-global-color-secondary);
 }
 
-.bg-primary-500 {
-    background-color: var(--primary-500);
+    .bg-secondary:hover, .bg-secondary:focus {
+        background-color: var(--oe-global-color-secondary-focus);
+        color: var(--oe-global-color-secondary-content);
+    }
+
+.bg-accent {
+    background-color: var(--oe-global-color-accent);
 }
 
-.bg-primary-400 {
-    background-color: var(--primary-400);
+    .bg-accent:hover, .bg-accent:focus {
+        background-color: var(--oe-global-color-accent-focus);
+        color: var(--oe-global-color-accent-content);
+    }
+
+.bg-neutral {
+    background-color: var(--oe-global-color-neutral);
 }
 
-.bg-primary-300 {
-    background-color: var(--primary-300);
+    .bg-neutral:hover, .bg-neutral:focus {
+        background-color: var(--oe-global-color-neutral-focus);
+        color: var(--oe-global-color-primaryneutral-content);
+    }
+
+.bg-info {
+    background-color: var(--oe-global-color-info);
 }
+
+    .bg-info:hover, .bg-info:focus {
+        background-color: var(--oe-global-color-info-focus);
+        color: var(--oe-global-color-info-content);
+    }
+
+.bg-success {
+    background-color: var(--oe-global-color-success);
+}
+
+    .bg-success:hover, .bg-success:focus {
+        background-color: var(--oe-global-color-success-focus);
+        color: var(--oe-global-color-success-content);
+    }
+
+.bg-warning {
+    background-color: var(--oe-global-color-warning);
+}
+
+    .bg-warning:hover, .bg-warning:focus {
+        background-color: var(--oe-global-color-warning-focus);
+        color: var(--oe-global-color-warning-content);
+    }
+
+.bg-error {
+    background-color: var(--oe-global-color-error);
+}
+
+    .bg-error:hover, .bg-error:focus {
+        background-color: var(--oe-global-color-error-focus);
+        color: var(--oe-global-color-error-content);
+    }
 
 .bg-black {
-    background-color: var(--black);
+    background-color: var(--oe-global-color-black);
+    color: var(--oe-global-color-white);
 }
 
-.bg-dark-grey {
-    background-color: var(--dark-grey);
+.bg-gray-700 {
+    background-color: var(--oe-global-color-gray-700);
+    color: var(--oe-global-color-white);
 }
 
-.bg-regular-grey {
-    background-color: var(--regular-grey);
+.bg-gray-600 {
+    background-color: var(--oe-global-color-gray-600);
+    color: var(--oe-global-color-white);
 }
 
-.bg-light-grey {
-    background-color: var(--light-grey);
+.bg-gray-500 {
+    background-color: var(--oe-global-color-gray-500);
+    color: var(--oe-global-color-white);
+}
+
+.bg-gray-400 {
+    background-color: var(--oe-global-color-gray-400);
+    color: var(--oe-global-color-white);
+}
+
+.bg-gray-300 {
+    background-color: var(--oe-global-color-gray-300);
+    color: var(--oe-global-color-gray-700);
 }
 
 .bg-white {
-    background-color: var(--white);
+    background-color: var(--oe-global-color-white);
+    color: var(--oe-global-color-gray-600);
 }
-

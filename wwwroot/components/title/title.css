@@ -1,4 +1,4 @@
-﻿@import "../base/styles/style-imports.css";
+﻿@import '../base/styles/__style-imports.min.css';
 
 .title{
     display: flex;

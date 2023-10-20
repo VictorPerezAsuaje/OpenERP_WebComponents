@@ -1,24 +1,11 @@
-﻿.none{
+﻿@import "flex-mixin.css";
+@import "grid-mixin.css";
+
+.none{
     display:none;
 }
 
-.flex{
-    display:flex;
+.block {
+    display: block;
 }
 
-.justify-center {
-    justify-content: center;
-}
-
-.items-center {
-    align-items: center;
-}
-
-
-.block{
-    display:block;
-}
-
-.grid {
-    display: grid;
-}

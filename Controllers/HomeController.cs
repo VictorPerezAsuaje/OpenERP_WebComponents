@@ -16,6 +16,9 @@ public class HomeController : Controller
     [HttpGet("Changelog")]
     public IActionResult Changelog() => View("Changelog");
 
+    [HttpGet("Theming")]
+    public IActionResult Theming() => View("Theming");
+
     [HttpGet("NotFound")]
     public IActionResult Error404() => View("NotFound");
 

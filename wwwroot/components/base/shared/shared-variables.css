@@ -1,0 +1,110 @@
+﻿:root, [data-theme=default] {
+    /* SCREEN SIZES */
+    --oe-global-breakpoint-sm: 480px;
+    --oe-global-breakpoint-md: 768px;
+    --oe-global-breakpoint-lg: 976px;
+    --oe-global-breakpoint-xl: 1440px;
+    /* BASE COLORS*/
+    --oe-global-color-primary: #8B5CF6;
+    --oe-global-color-primary-focus: #6D28D9;
+    --oe-global-color-primary-content: #fefefe;
+    /* SECONDARY COLORS*/
+    --oe-global-color-secondary: #6366f1;
+    --oe-global-color-secondary-focus: #4338ca;
+    --oe-global-color-secondary-content: #fefefe;
+    /* ACCENT COLORS*/
+    --oe-global-color-accent: #14B8A6;
+    --oe-global-color-accent-focus: #0F766E;
+    --oe-global-color-accent-content: #fefefe;
+    /* NEUTRAL COLORS */
+    --oe-global-color-neutral: #64748b;
+    --oe-global-color-neutral-focus: #334155;
+    --oe-global-color-neutral-content: #cbd5e1;
+    /* GRAY SCALE COLORS */
+    --oe-global-color-black: #0f172a;
+    --oe-global-color-gray-700: #1e293b;
+    --oe-global-color-gray-600: #334155;
+    --oe-global-color-gray-500: #64748b;
+    --oe-global-color-gray-400: #cbd5e1;
+    --oe-global-color-gray-300: #e2e8f0;
+    --oe-global-color-white: #fefefe;
+    /* ACTION COLORS */
+    --oe-global-color-info: #3abff8;
+    --oe-global-color-info-focus: #002b3d;
+    --oe-global-color-info-content: #fefefe;
+    --oe-global-color-success: #36d399;
+    --oe-global-color-success-focus: #003320;
+    --oe-global-color-success-content: #fefefe;
+    --oe-global-color-warning: #fbbd23;
+    --oe-global-color-warning-focus: #382800;
+    --oe-global-color-warning-content: #fefefe;
+    --oe-global-color-error: #f87272;
+    --oe-global-color-error-focus: #470000;
+    --oe-global-color-error-content: #fefefe;
+    /* SHADOWS */
+    --oe-global-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --oe-global-shadow-st: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --oe-global-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --oe-global-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --oe-global-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --oe-global-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --oe-global-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    /* FONT FAMILY */
+    --oe-global-fontFamily-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --oe-global-fontFamily-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --oe-global-fontFamily-mono: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    /* FONT WEIGHT*/
+    --oe-global-fontWeight-thin: 100;
+    --oe-global-fontWeight-extralight: 200;
+    --oe-global-fontWeight-light: 300;
+    --oe-global-fontWeight-normal: 400;
+    --oe-global-fontWeight-medium: 500;
+    --oe-global-fontWeight-semibold: 600;
+    --oe-global-fontWeight-bold: 700;
+    --oe-global-fontWeight-extrabold: 800;
+    --oe-global-fontWeight-black: 900;
+    /* BORDER RADIUS */
+    --oe-global-borderRadius-circle: 100%;
+    --oe-global-borderRadius-rounded: 0.5rem;
+    --oe-global-borderRadius-soft: 0.25rem;
+    /* BORDERS */
+    --oe-global-borderWidth-1: 1px;
+    --oe-global-borderWidth-2: 2px;
+    --oe-global-borderWidth-4: 4px;
+    --oe-global-borderWidth-8: 8px;
+    /* SIZING */
+    --oe-global-sizing-0: 0;
+    --oe-global-sizing-px: 1px;
+    --oe-global-sizing-1: 0.25rem;
+    --oe-global-sizing-2: 0.5rem;
+    --oe-global-sizing-3: 0.75rem;
+    --oe-global-sizing-4: 1rem;
+    --oe-global-sizing-5: 1.25rem;
+    --oe-global-sizing-6: 1.5rem;
+    --oe-global-sizing-7: 1.75rem;
+    --oe-global-sizing-8: 2rem;
+    --oe-global-sizing-9: 2.5rem;
+    --oe-global-sizing-10: 3rem;
+    --oe-global-sizing-11: 3.5rem;
+    --oe-global-sizing-12: 4rem;
+    --oe-global-sizing-24: 8rem;
+    --oe-global-sizing-36: 12rem;
+    --oe-global-sizing-48: 16rem;
+    --oe-global-sizing-60: 20rem;
+    --oe-global-sizing-72: 24rem;
+    --oe-global-sizing-84: 28rem;
+    --oe-global-sizing-96: 32rem;
+    --oe-global-sizing-full: 100%;
+    --oe-global-sizing-fourFifths: 80%;
+    --oe-global-sizing-threeQuarters: 75%;
+    --oe-global-sizing-twoThirds: 66,66667%;
+    --oe-global-sizing-threeFifths: 60%;
+    --oe-global-sizing-half: 50%;
+    --oe-global-sizing-twoFifths: 40%;
+    --oe-global-sizing-oneThird: 33,333333%;
+    --oe-global-sizing-quarter: 25%;
+    --oe-global-sizing-fifth: 20%;
+    --oe-global-sizing-tenth: 10%;
+    --oe-global-sizing-screenWidth: 100vw;
+    --oe-global-sizing-screenHeight: 100vh;
+}

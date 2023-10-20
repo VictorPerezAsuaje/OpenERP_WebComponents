@@ -1,21 +1,61 @@
-﻿@import "variables.css";
+﻿@import "../shared/shared-variables.css";
 
-.soft-shadow {
-    box-shadow: var(--shadow-soft);
+/* SHADOW */
+.shadow-sm { box-shadow: var(--oe-global-shadow-sm); }
+.shadow { box-shadow: var(--oe-global-shadow-st) }
+.shadow-md { box-shadow: var(--oe-global-shadow-md); }
+.shadow-lg { box-shadow: var(--oe-global-shadow-lg); }
+.shadow-xl { box-shadow: var(--oe-global-shadow-xl); }
+.shadow-2xl { box-shadow: var(--oe-global-shadow-2xl); }
+.shadow-inner { box-shadow: var(--oe-global-shadow-inner); }
+.shadow-none { box-shadow: 0 0 #0000; }
+
+/* OPACITY */
+.opacity-0 { opacity: 0; }
+.opacity-5 { opacity: 0.05; }
+.opacity-10 { opacity: 0.1; }
+.opacity-20 { opacity: 0.2; }
+.opacity-25 { opacity: 0.25; }
+.opacity-30 { opacity: 0.3; }
+.opacity-40 { opacity: 0.4; }
+.opacity-50 { opacity: 0.5; }
+.opacity-60 { opacity: 0.6; }
+.opacity-70 { opacity: 0.7; }
+.opacity-75 { opacity: 0.75; }
+.opacity-80 { opacity: 0.8; }
+.opacity-90 { opacity: 0.9; }
+.opacity-95 { opacity: 0.95; }
+.opacity-100 { opacity: 1; }
+
+/* POINTER EVENTS */
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+.select-none { user-select: none; }
+.select-text { user-select: text; }
+.select-all { user-select: all; }
+.select-auto { user-select: auto; }
+
+/* RESIZE */
+.resize-none {
+    resize: none;
 }
+.resize-y { resize: vertical; }
+.resize-x { resize: horizontal; }
+.resize { resize: both; }
 
-.hard-shadow {
-    box-shadow: var(--shadow-hard);
-}
+/* SCROLL */
+.scroll-auto { scroll-behavior: auto; }
+.scroll-smooth { scroll-behavior: smooth; }
 
-.soft-rounded {
-    border-radius: var(--radius-soft);
-}
-
-.regular-rounded {
-    border-radius: var(--radius-rounded);
-}
-
-.circle {
-    border-radius: var(--radius-circle);
+/* ACCESIBILITY */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }

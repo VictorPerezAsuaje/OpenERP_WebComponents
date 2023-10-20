@@ -11,7 +11,7 @@ export default class Card extends OpenERPComponent {
     createWebComponent() {
         const template = document.createElement("template");
         template.innerHTML = `
-            <div class="card p-2 bg-white border border-gray-300 soft-rounded soft-shadow">
+            <div class="card p-5 bg-white border-1 border-solid border-gray-300 soft-rounded shadow-sm">
                 <slot></slot>
                 <slot name="image"></slot>
                 <slot name="title"></slot>

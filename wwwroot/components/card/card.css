@@ -1,4 +1,5 @@
-﻿@import "../base/styles/style-imports.css";
+﻿@import "../base/shared/shared-variables.css";
+@import '../base/styles/__style-imports.min.css';
 
 .card {
     position: relative;

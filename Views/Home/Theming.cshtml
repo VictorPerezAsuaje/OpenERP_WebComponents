@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<header class="mb-10 lg:mb-6 not-format">
+    <oe-title variant="xl">🖌 Let's get stylish! 🖌</oe-title>
+</header>
+
+<p class="mb-3 text-gray-500 mb-6">
+    Sure, having defaults and standards is great, but you know what is greater? Customization! 🎉
+</p>
+
+<p class="mb-3 text-gray-500 mb-6">
+    That's why you will have quite a few variables you can customize to change the feel of the components to better match your taste. The design system tokens used follows this structure:
+</p>
+
+<blockquote class="p-4 my-4 border-l-4 border-emerald-500 bg-gray-50">
+    <p class="text-xl italic font-medium leading-relaxed text-gray-900">
+        --oe
+        -<span class="text-emerald-500">[scope]</span>
+        -<span class="text-teal-500">[property]</span>
+        -<span class="text-cyan-500">[variation]</span>
+        -<span class="text-sky-500">[state]</span>
+    </p>
+</blockquote>
+
+<ul class="space-y-1 text-gray-500 list-disc list-inside pl-6 mb-10">
+    <li><strong class="text-emerald-500">Scope</strong>: Refers to how specific is that token. Usually you will either have a <u>global scope</u> or a <u>component-level scope</u>.</li>
+
+    <li><strong class="text-teal-500">Property</strong>: Refers to the CSS property that is being altered.</li>
+
+    <li><strong class="text-cyan-500">Variation</strong> (optional): If applies, then it means that there's a certain gradient of values for such property.</li>
+
+    <li><strong class="text-sky-500">State</strong>(optional): If applies, it refers to the state of the specified component.</li>
+</ul>
+
+<p class="mb-3 text-gray-500 mb-6">
+    They all begins with the <strong>"--oe"</strong> prefix, so if you use another CSS library, it will be more difficult for them to be in conflict or be overriding them without you knowing. Therefore, you can have something like:
+</p>
+
+<blockquote class="p-4 my-4 border-l-4 border-emerald-500 bg-gray-50">
+    <p class="text-xl italic font-medium leading-relaxed text-gray-900">
+        --oe
+        -<span class="text-emerald-500">button</span>
+        -<span class="text-teal-500">bgColor</span>
+        -<span class="text-cyan-500">primary</span>
+        -<span class="text-sky-500">hover</span>
+    </p>
+</blockquote>
+
+<p class="mb-3 text-gray-500 mb-6">
+    To specify the primary background color that will have a button once it's hovered. But don't worry! It may feel like way to much to customize, so that's why you will have the default theme and I will do my best to create new ones 😁
+</p>
+
+<p class="mb-3 text-gray-500 mb-6">
+    Also, remember that you won't need to change or define each and every color, you can begin with the theme that fits your liking the most and just change the variables you need specifically.
+</p>
+
+<oe-title variant="md">Breakpoints</oe-title>
+
+<div class="relative overflow-x-auto mb-6 mt-3">
+    <table id="screensTable" class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+<oe-title variant="md">Colors</oe-title>
+
+<div class="relative overflow-x-auto mb-6 mt-3">
+    <table id="colorsTable" class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+
+<oe-title variant="md">Typography</oe-title>
+
+<div class="relative overflow-x-auto mb-6 mt-3">
+    <table id="typographyTable" class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+<oe-title variant="md">Sizing</oe-title>
+
+<div class="relative overflow-x-auto mb-6 mt-3">
+    <table id="sizingTable" class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<oe-title variant="md">Misc</oe-title>
+
+<div class="relative overflow-x-auto mt-3">
+    <table id="miscTable" class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+    loadTokenTable("screensTable", "screenTokens");
+    loadTokenTable("colorsTable", "colorTokens");
+    loadTokenTable("typographyTable", "typographyTokens");
+    loadTokenTable("sizingTable", "sizingTokens");
+    loadTokenTable("miscTable", "miscTokens");
+</script>

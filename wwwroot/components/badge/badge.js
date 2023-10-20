@@ -3,8 +3,19 @@
 export default class Badge extends OpenERPComponent {
     static observedAttributes = [];
     #variants = { "solid": "solid", "outline": "outline" };
-    #colors = { "primary": "primary", "secondary": "secondary", "accent": "accent" };
+
+    #colors = {
+        "primary": "primary",
+        "secondary": "secondary",
+        "accent": "accent",
+        "info": "info",
+        "success": "success",
+        "warning": "warning",
+        "error": "error",
+    };
+
     #size = { "xl": "text-xl", "lg": "text-lg", "md": "text-md", "sm": "text-sm", "xs": "text-xs" };
+
     #type = { "square": "soft-rounded", "pill": "regular-rounded" };
 
     constructor() {

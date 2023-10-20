@@ -1,75 +1,167 @@
-﻿@import "../base/styles/style-imports.css";
+﻿@import "../base/shared/shared-variables.css";
+@import '../base/styles/__style-imports.min.css';
 
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-1-5) var(--spacing-2);
+    padding: var(--oe-global-sizing-1) var(--oe-global-sizing-2);
     transition: all 200ms ease-in-out;
-    border-radius: var(--radius-soft);
+    border-radius: var(--oe-global-borderRadius-soft);
     border: 0px solid transparent;
     cursor: pointer;
-    font-weight: var(--bold-weight);
+    font-weight: var(--oe-global-fontWeight-bold);
 }
 
+/* 
+    VARIANTS 
+*/
+/* SOLID */
 .solid.primary {
-    background-color: var(--primary-500);
-    color: var(--white);
+    background-color: var(--oe-global-color-primary);
+    color: var(--oe-global-color-white);
 }
 
     .solid.primary:hover {
-        background-color: var(--primary-400);
+        background-color: var(--oe-global-color-primary-focus);
+        color: var(--oe-global-color-primary-content);
     }
 
 .solid.secondary {
-    background-color: var(--secondary-500);
-    color: var(--white);
+    background-color: var(--oe-global-color-secondary);
+    color: var(--oe-global-color-white);
 }
 
     .solid.secondary:hover {
-        background-color: var(--secondary-400);
+        background-color: var(--oe-global-color-secondary-focus);
+        color: var(--oe-global-color-secondary-content);
     }
 
 .solid.accent {
-    background-color: var(--accent-500);
-    color: var(--white);
+    background-color: var(--oe-global-color-accent);
+    color: var(--oe-global-color-white);
 }
 
     .solid.accent:hover {
-        background-color: var(--accent-400);
+        background-color: var(--oe-global-color-accent-focus);
+        color: var(--oe-global-color-accent-content);
+    }
+
+.solid.info {
+    background-color: var(--oe-global-color-info);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.info:hover {
+        background-color: var(--oe-global-color-info-focus);
+    }
+
+.solid.success {
+    background-color: var(--oe-global-color-success);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.success:hover {
+        background-color: var(--oe-global-color-success-focus);
+    }
+
+.solid.warning {
+    background-color: var(--oe-global-color-warning);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.warning:hover {
+        background-color: var(--oe-global-color-warning-focus);
+    }
+
+.solid.error {
+    background-color: var(--oe-global-color-error);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.error:hover {
+        background-color: var(--oe-global-color-error-focus);
     }
 
 /* OUTLINES */
 
 .outline.primary {
-    border: 1.5px solid var(--primary-500);
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-primary);
     background-color: transparent;
-    color: var(--primary-500);
+    color: var(--oe-global-color-primary);
 }
 
     .outline.primary:hover {
-        background-color: var(--primary-500);
-        color: var(--white);
+        background-color: var(--oe-global-color-primary);
+        color: var(--oe-global-color-white);
     }
 
 .outline.secondary {
-    border: 1.5px solid var(--secondary-500);
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-secondary);
     background-color: transparent;
-    color: var(--secondary-500);
+    color: var(--oe-global-color-secondary);
 }
 
     .outline.secondary:hover {
-        background-color: var(--secondary-500);
-        color: var(--white);
+        background-color: var(--oe-global-color-secondary);
+        color: var(--oe-global-color-white);
     }
 
 .outline.accent {
-    border: 1.5px solid var(--accent-500);
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-accent);
     background-color: transparent;
-    color: var(--accent-500);
+    color: var(--oe-global-color-accent);
 }
 
     .outline.accent:hover {
-        background-color: var(--accent-500);
-        color: var(--white);
+        background-color: var(--oe-global-color-accent);
+        color: var(--oe-global-color-white);
     }
+
+.outline.info {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info);
+    background-color: transparent;
+    color: var(--oe-global-color-info);
+}
+
+    .outline.info:hover {
+        background-color: var(--oe-global-color-info);
+        color: var(--oe-global-color-info-content);
+    }
+
+
+.outline.success {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success);
+    background-color: transparent;
+    color: var(--oe-global-color-success);
+}
+
+    .outline.success:hover {
+        background-color: var(--oe-global-color-success);
+        color: var(--oe-global-color-success-content);
+    }
+
+
+.outline.warning {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning);
+    background-color: transparent;
+    color: var(--oe-global-color-warning);
+}
+
+    .outline.warning:hover {
+        background-color: var(--oe-global-color-warning);
+        color: var(--oe-global-color-warning-content);
+    }
+
+
+.outline.error {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error);
+    background-color: transparent;
+    color: var(--oe-global-color-error);
+}
+
+    .outline.error:hover {
+        background-color: var(--oe-global-color-error);
+        color: var(--oe-global-color-error-content);
+    }
+
