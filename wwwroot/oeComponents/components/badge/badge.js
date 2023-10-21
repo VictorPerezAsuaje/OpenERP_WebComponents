@@ -1,4 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
+import badge from "./badge.html";
+import "./badge.css";
 
 export default class Badge extends OpenERPComponent {
     static observedAttributes = [];
@@ -21,6 +23,12 @@ export default class Badge extends OpenERPComponent {
     constructor() {
         super();
         this.componentName = "oe-badge";
+        this.componentHTML = badge;
+
+        this.loadClassProp("variant", this.getVariant());
+        this.loadClassProp("color", this.getColor());
+        this.loadClassProp("size", this.getSize());
+        this.loadClassProp("type", this.getType());
     }    
 
     /* PROPS */
@@ -38,19 +46,6 @@ export default class Badge extends OpenERPComponent {
 
     getType() {
         return this.getAttribute("type") in this.#type ? this.#type[this.getAttribute("type")] : this.#type["pill"];
-    }
-
-    /* METHODS */
-
-    createWebComponent() {
-        const template = document.createElement("template");
-        template.innerHTML = `
-            <span class="badge ${this.getVariant()} ${this.getColor()} ${this.getSize()} ${this.getType()}">
-                <slot></slot>
-            </span>
-        `;
-
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
 

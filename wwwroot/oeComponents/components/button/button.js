@@ -1,4 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
+import button from "./button.html";
+import "./button.css";
 
 export default class Button extends OpenERPComponent {
     #variants = { "solid": "solid", "outline": "outline" };
@@ -7,6 +9,10 @@ export default class Button extends OpenERPComponent {
     constructor() {
         super();
         this.componentName = "oe-button";
+        this.componentHTML = button;   
+        
+        this.loadClassProp("variant", this.getVariant());
+        this.loadClassProp("color", this.getColor());
     }    
 
     /* PROPS */
@@ -16,22 +22,6 @@ export default class Button extends OpenERPComponent {
 
     getColor() {
         return this.getAttribute("color") in this.#colors ? this.getAttribute("color") : "primary";
-    }
-
-    /* METHODS */
-
-    createWebComponent() {
-        const variant = this.getVariant();
-        const color = this.getColor();
-
-        const template = document.createElement("template");
-        template.innerHTML = `
-            <button class="btn ${variant} ${color}">
-                <slot></slot>
-            </button>
-        `;
-
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
 

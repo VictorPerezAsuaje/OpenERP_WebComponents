@@ -1,4 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
+import title from "./title.html";
+import "./title.css";
 
 export default class Title extends OpenERPComponent {
     static observedAttributes = [];
@@ -6,6 +8,11 @@ export default class Title extends OpenERPComponent {
     constructor() {
         super();
         this.componentName = "oe-title";
+        this.componentHTML = title;
+
+        const variant = this.getVariant();
+        this.loadClassProp("tag", variant.tag);
+        this.loadClassProp("classes", variant.classes);
     }  
 
     /* PROPS */
@@ -18,21 +25,6 @@ export default class Title extends OpenERPComponent {
             case "xs": return { tag: "h5", classes: "text-xs" };
             default: return { tag: "h3", classes: "text-md" };
         }
-    }
-
-    /* METHODS */
-
-    createWebComponent() {
-        const variant = this.getVariant();
-
-        const template = document.createElement("template");
-        template.innerHTML = `
-            <${variant.tag} class="title mb-2 font-bold text-gray-700 ${variant.classes}">
-                <slot></slot>
-            </${variant.tag}>
-        `;
-
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
 

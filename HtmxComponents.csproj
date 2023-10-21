@@ -15,6 +15,7 @@
     <Folder Include="Views\Components\Forms\" />
     <Folder Include="Views\Components\Interactive\" />
     <Folder Include="Views\Components\Layout\" />
+    <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
   <ItemGroup>

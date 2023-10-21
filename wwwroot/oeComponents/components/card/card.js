@@ -1,4 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
+import card from "./card.html";
+import "./card.css";
 
 export default class Card extends OpenERPComponent {
     static observedAttributes = [];
@@ -6,22 +8,8 @@ export default class Card extends OpenERPComponent {
     constructor() {
         super();
         this.componentName = "oe-card";
+        this.componentHTML = card;
     }    
-
-    createWebComponent() {
-        const template = document.createElement("template");
-        template.innerHTML = `
-            <div class="card p-5 bg-white border-1 border-solid border-gray-300 soft-rounded shadow-sm">
-                <slot></slot>
-                <slot name="image"></slot>
-                <slot name="title"></slot>
-                <slot name="excerpt"></slot>
-                <slot name="cta"></slot>
-            </div>
-        `;
-
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
 
     toggleSlotVisibility(slotName) {
         this.shadowRoot.querySelector(`slot[name=${slotName}]`).toggleAttribute("hidden");

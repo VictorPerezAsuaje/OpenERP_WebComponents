@@ -1,8 +1,10 @@
-﻿export default class OpenERPComponent extends HTMLElement {
+﻿export default class OpenERPComponent extends HTMLElement {   
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.componentName = "";     
+        this.componentHTML = "";
+        this.template = document.createElement("template");
     }    
 
     isNullOrWhiteSpace(string) {
@@ -10,12 +12,27 @@
     }
 
     createWebComponent() {
-        return null;
+        console.log(this.componentHTML)
+        let html = new DOMParser().parseFromString(this.componentHTML, "text/html");
+        
+        this.template.innerHTML = html.firstChild.innerHTML;
+        this.shadowRoot.appendChild(this.template.content.cloneNode(true));
     }
 
     connectedCallback() {
         this.loadStylesheet();
         this.createWebComponent();            
+    }
+
+    /**
+     * Loads any value property to the componentHTML that follows the {{ propName }} and replaces it with the propValue. 
+     * 
+     * This should always be defined AFTER assigning the this.componentHTML in the component constructor.
+     * @param {any} propName
+     * @param {any} propValue
+     */
+    loadClassProp(propName, propValue) {
+        this.componentHTML = this.componentHTML.replace(`{{${propName}}}`, propValue);
     }
 
     /* Turns a string split with "-" into camel case notation */
@@ -25,6 +42,7 @@
     }
 
     loadStylesheet() {
+        //this.setAttribute("fouc", "loaded");
         const name = this.componentName.replace("oe-", "");
         const folderName = this.snakeCaseIntoCamelCase(name);
         const href = `/oeComponents/components/${folderName}/${name}.css`;

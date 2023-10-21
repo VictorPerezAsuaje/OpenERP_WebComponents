@@ -1,0 +1,22 @@
+﻿[fouc=ease]:not(:empty) {
+  color: transparent;
+}
+
+[fouc=ease] *:not(oe-skeleton) {
+  transition: opacity 200ms ease-out;
+  opacity: 0;
+}
+
+[fouc=ease] oe-skeleton {
+  transition: opacity 200ms ease-out;
+  opacity: 100;
+}
+
+[fouc=loaded] {
+  transition: opacity 200ms ease-out;
+  opacity: 100;
+}
+
+[fouc=loaded] oe-skeleton {
+  display: none;
+}
