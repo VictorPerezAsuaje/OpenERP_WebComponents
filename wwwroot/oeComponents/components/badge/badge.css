@@ -1,16 +1,16 @@
-﻿@import "../base/shared/shared-variables.css";
-@import '../base/styles/__style-imports.min.css';
+﻿@import "../../base/shared/shared-variables.css";
+@import '../../base/styles/__style-imports.min.css';
 
-.btn {
-    display: flex;
-    justify-content: center;
+.badge {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: var(--oe-global-sizing-1) var(--oe-global-sizing-2);
-    transition: all 200ms ease-in-out;
-    border-radius: var(--oe-global-borderRadius-soft);
-    border: 0px solid transparent;
-    cursor: pointer;
     font-weight: var(--oe-global-fontWeight-bold);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
 }
 
 /* 

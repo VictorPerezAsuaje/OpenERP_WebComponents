@@ -1,4 +1,4 @@
-﻿import OpenERPComponent from "../base/component/openerp-component.js";
+﻿import OpenERPComponent from "../../base/openerp-component.js";
 
 const template = document.createElement("template");
 template.innerHTML = `

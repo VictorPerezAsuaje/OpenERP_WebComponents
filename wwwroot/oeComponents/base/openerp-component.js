@@ -27,7 +27,7 @@
     loadStylesheet() {
         const name = this.componentName.replace("oe-", "");
         const folderName = this.snakeCaseIntoCamelCase(name);
-        const href = `/components/${folderName}/${name}.css`;
+        const href = `/oeComponents/components/${folderName}/${name}.css`;
         const existingLink = document.querySelector(`link[href="${href}"]`);
 
         if (existingLink) return;
