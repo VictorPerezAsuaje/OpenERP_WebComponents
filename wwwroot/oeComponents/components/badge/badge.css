@@ -7,10 +7,10 @@
     justify-content: center;
     padding: var(--oe-global-sizing-1) var(--oe-global-sizing-2);
     font-weight: var(--oe-global-fontWeight-bold);
-    line-height: 1;
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
+    user-select:none;
 }
 
 /* 

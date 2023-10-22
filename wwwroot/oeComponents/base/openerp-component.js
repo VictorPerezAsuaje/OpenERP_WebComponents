@@ -12,7 +12,6 @@
     }
 
     createWebComponent() {
-        console.log(this.componentHTML)
         let html = new DOMParser().parseFromString(this.componentHTML, "text/html");
         
         this.template.innerHTML = html.firstChild.innerHTML;
@@ -32,7 +31,7 @@
      * @param {any} propValue
      */
     loadClassProp(propName, propValue) {
-        this.componentHTML = this.componentHTML.replace(`{{${propName}}}`, propValue);
+        this.componentHTML = this.componentHTML.replaceAll(`{{${propName}}}`, propValue);
     }
 
     /* Turns a string split with "-" into camel case notation */
@@ -42,7 +41,6 @@
     }
 
     loadStylesheet() {
-        //this.setAttribute("fouc", "loaded");
         const name = this.componentName.replace("oe-", "");
         const folderName = this.snakeCaseIntoCamelCase(name);
         const href = `/oeComponents/components/${folderName}/${name}.css`;

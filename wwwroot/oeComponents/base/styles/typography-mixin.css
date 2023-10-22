@@ -167,17 +167,17 @@
     line-height: var(--oe-global-sizing-5);
 }
 
-text-md {
+.text-md {
     font-size: var(--oe-global-sizing-5);
     line-height: var(--oe-global-sizing-7);
 }
 
-text-lg {
+.text-lg {
     font-size: var(--oe-global-sizing-6);
     line-height: var(--oe-global-sizing-8);
 }
 
-text-xl {
+.text-xl {
     font-size: var(--oe-global-sizing-8);
     line-height: var(--oe-global-sizing-10);
 }

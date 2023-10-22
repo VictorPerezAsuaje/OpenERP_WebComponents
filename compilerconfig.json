@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/components/base/styles/_style-imports.css",
     "inputFile": "wwwroot/components/base/styles/_style-imports.scss"
+  },
+  {
+    "outputFile": "wwwroot/oeComponents/base/styles/__style-imports.css",
+    "inputFile": "wwwroot/oeComponents/base/styles/__style-imports.scss"
   }
 ]

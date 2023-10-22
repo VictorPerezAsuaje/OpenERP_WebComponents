@@ -1,5 +1,6 @@
 ﻿[fouc=ease]:not(:empty) {
-  color: transparent;
+  transition: opacity 200ms ease-out;
+  opacity: 0;
 }
 
 [fouc=ease] *:not(oe-skeleton) {

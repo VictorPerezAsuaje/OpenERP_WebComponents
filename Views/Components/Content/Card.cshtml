@@ -14,83 +14,84 @@
 
     <div class="mt-8">
         <div class="flex justify-end w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl">
-            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/components/card/card.js" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
+            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/oeComponents/components/card/card.js" target="_blank" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
                 <i class="fa-brands fa-github text-lg mr-3"></i>
                 Check code on GitHub
             </a>
         </div>
 
-        <div>
-            <div id="default-card-example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x">
-                <div class="w-full flex flex-row">
-                    <oe-card fouc="ease" class="flex-[2] min-h-24 w-1/2 block mx-auto py-12 px-16" id="defaultCardSample">
-                        <oe-skeleton class="min-h-24"></oe-skeleton>
+        <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x">
+            <div class="w-full flex flex-row">
+                <div class="flex-[2] min-h-24 w-1/2 block mx-auto py-12 px-16" id="defaultCardExample">
+<oe-card fouc="ease" id="cardExample">
+    <oe-skeleton class="min-h-24"></oe-skeleton>
 
-                        <img slot="image" src="https://source.unsplash.com/random/?nature" class="w-full h-[250px] object-cover rounded" loading="lazy">
+    <img slot="image" src="https://source.unsplash.com/random/?nature" class="w-full h-[250px] object-cover rounded" loading="lazy">
 
-                        <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-                        <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-                        <oe-button fouc="ease" slot="cta" color="primary">
-                            Read more →
-                        </oe-button>
-                    </oe-card>
+    <oe-button fouc="ease" slot="cta" color="primary">
+        Read more →
+    </oe-button>
+</oe-card>
+                </div>
+                    
 
-                    <div id="cardVariations" class="border-l-4 flex-1 py-4 px-5">
-                        <oe-title fouc="ease" variant="md">Playground</oe-title>
+                <div id="cardVariations" class="border-l-4 flex-1 py-4 px-5">
+                    <oe-title fouc="ease" variant="md">Playground</oe-title>
 
-                        <div class="flex items-center">
-                            <input id="has-image" type="checkbox" value="" name="has-image" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('image')" checked>
-                            <label for="has-image" class="flex items-center">
-                                With image
-                            </label>
-                        </div>
+                    <div class="flex items-center">
+                        <input id="has-image" type="checkbox" value="" name="has-image" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('cardExample').toggleSlotVisibility('image')" checked>
+                        <label for="has-image" class="flex items-center">
+                            With image
+                        </label>
+                    </div>
 
-                        <div class="flex items-center">
-                            <input id="has-title" type="checkbox" value="" name="has-title" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('title')" checked>
-                            <label for="has-title" class="flex items-center">
-                                With title
-                            </label>
-                        </div>
+                    <div class="flex items-center">
+                        <input id="has-title" type="checkbox" value="" name="has-title" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('cardExample').toggleSlotVisibility('title')" checked>
+                        <label for="has-title" class="flex items-center">
+                            With title
+                        </label>
+                    </div>
 
-                        <div class="flex items-center">
-                            <input id="has-excerpt" type="checkbox" value="" name="has-excerpt" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('excerpt')" checked>
-                            <label for="has-excerpt" class="flex items-center">
-                                With excerpt
-                            </label>
-                        </div>
+                    <div class="flex items-center">
+                        <input id="has-excerpt" type="checkbox" value="" name="has-excerpt" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('cardExample').toggleSlotVisibility('excerpt')" checked>
+                        <label for="has-excerpt" class="flex items-center">
+                            With excerpt
+                        </label>
+                    </div>
 
-                        <div class="flex items-center">
-                            <input id="has-cta" type="checkbox" value="" name="has-cta" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('defaultCardSample').toggleSlotVisibility('cta')" checked>
-                            <label for="has-cta" class="flex items-center">
-                                With CTA
-                            </label>
-                        </div>
+                    <div class="flex items-center">
+                        <input id="has-cta" type="checkbox" value="" name="has-cta" class="w-4 h-4 bg-gray-100 border-gray-300 text-primary-600 focus:ring-primary mr-4" onchange="document.getElementById('cardExample').toggleSlotVisibility('cta')" checked>
+                        <label for="has-cta" class="flex items-center">
+                            With CTA
+                        </label>
                     </div>
                 </div>
             </div>
         </div>
-        <div>
-            <div class="relative border-gray-200 border-y border-x">
-                <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
-                    <ul class="flex text-sm font-medium text-center text-gray-500">
-                        <li>
-                            <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
-                        </li>
-                    </ul>
-                    <div class="flex justify-end">
-                        <button type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700">
-                            <i class="fa-solid fa-clipboard text-md mr-2"></i>
-                            <span>Copy</span>
-                        </button>
-                    </div>
+
+        <div class="relative border-gray-200 border-y border-x">
+            <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+                <ul class="flex text-sm font-medium text-center text-gray-500">
+                    <li>
+                        <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                    </li>
+                </ul>
+
+                <div class="flex justify-end">
+                    <button type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700" onclick="copyTextContent('sampleCode')">
+                        <i class="fa-solid fa-clipboard text-md mr-2"></i>
+                        <span>Copy</span>
+                    </button>
                 </div>
-                <div class="relative">
-                    <div id="defaultCardSampleHtml" class="text-center p-6 overflow-x-auto max-h-72" tabindex="-1">
-                        🚧 UNDER CONSTRUCTION 🚧
-                    </div>
-                </div>
+            </div>
+            <div class="relative">
+                <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+                <code class="language-html" data-lang="html" id="sampleCode" data-load-from="defaultCardExample"></code> 
+            </pre>
             </div>
         </div>
     </div>    
@@ -99,88 +100,122 @@
 
 <div id="simpleCards" class="mt-10">
     <oe-title fouc="ease" variant="lg">Simple Cards</oe-title>
-    <div class="grid grid-cols-3 gap-5 my-8">
-        <oe-card fouc="ease">
-            <oe-skeleton></oe-skeleton>
+    <div class="grid grid-cols-3 gap-5 my-8" id="simpleCardSamples">
+<oe-card fouc="ease">
+    <oe-skeleton></oe-skeleton>
 
-            <oe-title fouc="ease" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-            <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-            <oe-button fouc="ease" color="primary">
-                Read more →
-            </oe-button>
-        </oe-card>
+    <oe-button fouc="ease" color="primary">
+        Read more →
+    </oe-button>
+</oe-card>
 
-        <oe-card fouc="ease">
-            <oe-skeleton></oe-skeleton>
+<oe-card fouc="ease">
+    <oe-skeleton></oe-skeleton>
 
-            <oe-title fouc="ease" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-            <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-            <oe-button fouc="ease" color="secondary">
-                Read more →
-            </oe-button>
-        </oe-card>
+    <oe-button fouc="ease" color="secondary">
+        Read more →
+    </oe-button>
+</oe-card>
 
-        <oe-card fouc="ease">
-            <oe-skeleton></oe-skeleton>
+<oe-card fouc="ease">
+    <oe-skeleton></oe-skeleton>
 
-            <oe-title fouc="ease" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-            <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-            <oe-button fouc="ease" color="accent">
-                Read more →
-            </oe-button>
-        </oe-card>
+    <oe-button fouc="ease" color="accent">
+        Read more →
+    </oe-button>
+</oe-card>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="simpleCardSamples"></code>
+            </pre>
+        </div>
     </div>
 </div>
 
 <div id="imageCards" class="mt-10">
     <oe-title fouc="ease" variant="lg">Cards with Images</oe-title>
-    <div class="grid grid-cols-3 gap-5 my-8">
-        <oe-card fouc="ease">
-            <oe-skeleton></oe-skeleton>
+    <div class="grid grid-cols-3 gap-5 my-8" id="imageCardSamples">
+<oe-card fouc="ease">
+    <oe-skeleton></oe-skeleton>
 
-            <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())" class="w-full h-[250px] object-cover rounded">
+    <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())" class="w-full h-[250px] object-cover rounded">
 
-            <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-            <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-            <oe-button fouc="ease" slot="cta" color="primary" variant="outline">
-                Read more →
-            </oe-button>
-        </oe-card>
+    <oe-button fouc="ease" slot="cta" color="primary" variant="outline">
+        Read more →
+    </oe-button>
+</oe-card>
 
-        <oe-card fouc="ease">
-            <oe-skeleton></oe-skeleton>
+<oe-card fouc="ease">
+    <oe-skeleton></oe-skeleton>
 
-            <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())" class="w-full h-[250px] object-cover rounded">
+    <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())" class="w-full h-[250px] object-cover rounded">
 
-            <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-            <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-            <oe-button fouc="ease" slot="cta" color="secondary" variant="outline">
-                Read more →
-            </oe-button>
-        </oe-card>
+    <oe-button fouc="ease" slot="cta" color="secondary" variant="outline">
+        Read more →
+    </oe-button>
+</oe-card>
 
-        <oe-card fouc="ease">
-            <oe-skeleton></oe-skeleton>
+<oe-card fouc="ease">
+    <oe-skeleton></oe-skeleton>
 
-            <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())" class="w-full h-[250px] object-cover rounded">
+    <img slot="image" src="https://source.unsplash.com/random/@(Guid.NewGuid())" class="w-full h-[250px] object-cover rounded">
 
-            <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
+    <oe-title fouc="ease" slot="title" variant="lg">Noteworthy technology acquisitions 2021</oe-title>
 
-            <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+    <p slot="excerpt" class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
 
-            <oe-button fouc="ease" slot="cta" color="accent" variant="outline">
-                Read more →
-            </oe-button>
-        </oe-card>
+    <oe-button fouc="ease" slot="cta" color="accent" variant="outline">
+        Read more →
+    </oe-button>
+</oe-card>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="imageCardSamples"></code>
+            </pre>
+        </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="/js/pages/card.js" asp-append-version="true"></script>
+}

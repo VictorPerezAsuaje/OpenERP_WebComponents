@@ -2,7 +2,7 @@
     string component = ViewContext.RouteData.Values["Action"] as string;
 }
 
-<button class="bg-white rounded-full h-10 aspect-square absolute top-5 left-5 z-20 shadow transition-all ease-in-out"
+<button class="fixed bg-white rounded-full h-10 aspect-square top-5 left-5 z-20 shadow transition-all ease-in-out"
         onclick="toggleMenuState(this)">
     <i class="fa-solid fa-bars"></i>
 </button>
@@ -54,7 +54,7 @@
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Avatar</span>
             </a>
 
-            <a href="#Badge" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Badge")">
+            <a asp-controller="Components" asp-action="Badge" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Badge")">
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Badge</span>
             </a>
 
@@ -98,7 +98,7 @@
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Breadcrumb</span>
             </a>
 
-            <a href="#Skeleton" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Skeleton")">
+            <a asp-controller="Components" asp-action="Skeleton" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Skeleton")">
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Skeleton</span>
             </a>
 
@@ -126,7 +126,7 @@
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Breadcrumb</span>
             </a>
 
-            <a href="#Button" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "")" >
+            <a asp-controller="Components" asp-action="Button" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "")" >
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Button</span>
             </a>
 

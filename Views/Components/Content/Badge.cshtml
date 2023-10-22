@@ -1,0 +1,263 @@
+﻿@{
+    ViewData["Title"] = "Badge Component";
+}
+
+<oe-title fouc="ease" variant="xl">OpenERP Badges</oe-title>
+
+<p class="mb-3 text-gray-500 mb-6">
+    Badges highlight key information and can be used to emphasize the status of items or provide additional context.
+</p>
+
+<div id="defaultBadge">
+    <oe-title fouc="ease" variant="lg">Default Badge</oe-title>
+
+    <div class="mt-8">
+        <div class="flex justify-end w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl">
+            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/oeComponents/components/badge/badge.js" target="_blank" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
+                <i class="fa-brands fa-github text-lg mr-3"></i>
+                Check code on GitHub
+            </a>
+        </div>
+
+        <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x h-[50vh]">
+            <div class="w-full flex flex-row">
+                <div class="flex-[2] min-h-24 block mx-auto my-auto py-12 px-16 text-center" id="badgeDefaultExample"><oe-badge id="badgeExample" fouc="ease">default</oe-badge></div>
+
+                <div id="playground" class="border-l-4 flex-1 py-4 px-5 overflow-auto">
+                    <oe-title fouc="ease" variant="md">Playground</oe-title>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Variants</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="solid" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)" checked>
+                                Solid
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="outline" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Outline
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Colors</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="primary" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)" checked>
+                                Primary
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="secondary" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Secondary
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="accent" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Accent
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="info" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Info
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="success" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Success
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="warning" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Warning
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="error" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Error
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Size</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="size" value="xs" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)" checked>
+                                XS
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="size" value="sm" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                SM
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="size" value="md" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                MD
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="size" value="lg" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                LG
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="size" value="xl" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                XL
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Type</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="square" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)" checked>
+                                Square
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="pill" class="mr-4" onchange="setAttributeToExample('badgeExample',this.name, this.value)">
+                                Pill
+                            </label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+
+            <div class="flex justify-end">
+                <button type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700" onclick="copyTextContent('sampleCode')">
+                    <i class="fa-solid fa-clipboard text-md mr-2"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+                <code class="language-html " data-lang="html" id="sampleCode" data-load-from="badgeDefaultExample"></code> 
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="solidBadges" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Solid Badges</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="solidBadgeSamples">
+<oe-badge fouc="ease" variant="solid" color="primary">primary</oe-badge>
+<oe-badge fouc="ease" variant="solid" color="secondary">secondary</oe-badge>
+<oe-badge fouc="ease" variant="solid" color="accent">accent</oe-badge>
+<oe-badge fouc="ease" variant="solid" color="info">info</oe-badge>
+<oe-badge fouc="ease" variant="solid" color="warning">warning</oe-badge>
+<oe-badge fouc="ease" variant="solid" color="error">error</oe-badge>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>            
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+                <code class="language-html" data-lang="html" data-load-from="solidBadgeSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="outlineBadges" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Outline Badges</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="outlineBadgeSamples">
+<oe-badge fouc="ease" variant="outline" color="primary">primary</oe-badge>
+<oe-badge fouc="ease" variant="outline" color="secondary">secondary</oe-badge>
+<oe-badge fouc="ease" variant="outline" color="accent">accent</oe-badge>
+<oe-badge fouc="ease" variant="outline" color="info">info</oe-badge>
+<oe-badge fouc="ease" variant="outline" color="warning">warning</oe-badge>
+<oe-badge fouc="ease" variant="outline" color="error">error</oe-badge>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="outlineBadgeSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="sizeBadges" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Available sizes</oe-title>
+    <div class="flex flex-row flex-wrap items-center justify-between gap-5 my-8" id="sizeBadgeSamples">
+<oe-badge fouc="ease">default</oe-badge>
+<oe-badge fouc="ease" size="xs">xs</oe-badge>
+<oe-badge fouc="ease" size="sm">sm</oe-badge>
+<oe-badge fouc="ease" size="md">md</oe-badge>
+<oe-badge fouc="ease" size="lg">lg</oe-badge>
+<oe-badge fouc="ease" size="xl">xl</oe-badge>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="sizeBadgeSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="typeBadges" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Available types</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="typeBadgeSamples">
+<oe-badge fouc="ease">default</oe-badge>
+<oe-badge fouc="ease" type="pill">pill</oe-badge>
+<oe-badge fouc="ease" type="square">square</oe-badge>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="typeBadgeSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/pages/badge.js" asp-append-version="true"></script>
+}

@@ -56,6 +56,10 @@
     Also, remember that you won't need to change or define each and every color, you can begin with the theme that fits your liking the most and just change the variables you need specifically.
 </p>
 
+<p class="mb-3 text-gray-500 mb-6">
+    The following is a list of possible modifiable variables you can change live. If you don't refresh the page nor open a new tab, all the changes you make will be reflected in the rest of the pages. So you can change a color, click on the component in the menu and you should be able to see that new color.
+</p>
+
 <oe-title fouc="ease" variant="md">Breakpoints</oe-title>
 
 <div class="relative overflow-x-auto mb-6 mt-3">
@@ -134,11 +138,6 @@
     </table>
 </div>
 
-
-<script type="text/javascript">
-    loadTokenTable("screensTable", "screenTokens");
-    loadTokenTable("colorsTable", "colorTokens");
-    loadTokenTable("typographyTable", "typographyTokens");
-    loadTokenTable("sizingTable", "sizingTokens");
-    loadTokenTable("miscTable", "miscTokens");
-</script>
+@section Scripts{
+    <script src="/js/pages/theming.js" asp-append-version="true"></script>
+}

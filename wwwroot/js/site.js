@@ -7,7 +7,6 @@
     button.classList.toggle("translate-x-64");
 }
 
-
 const root = getComputedStyle(document.documentElement);
 
 function updateStyleValueForToken(tokenName, value) {
@@ -63,5 +62,26 @@ function loadTokenTable(tableId, tokenObjectName) {
 
 
         table.tBodies[0].appendChild(tr);
+    });
+}
+
+const copyTextContent = (itemId) => {
+    const item = document.getElementById(itemId);
+    navigator.clipboard.writeText(item.textContent.trim());
+}
+
+const setAttributeToExample = (sampleId, name, value) => {
+    const sample = document.getElementById(sampleId);
+
+    sample.setAttribute(name, value);
+    document.getElementById('sampleCode').textContent = sample.outerHTML;
+    Prism.highlightAll();
+}
+
+const loadSampleCodes = () => {
+    document.querySelectorAll("[data-load-from]").forEach(x => {
+        const sampleFrom = x.getAttribute("data-load-from");
+        const sample = document.getElementById(sampleFrom);
+        x.textContent = sample.innerHTML.replaceAll(` fouc="loaded"`, "").trim();
     });
 }
