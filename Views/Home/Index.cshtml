@@ -1,5 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="In an era of rapid technological changes and endless JavaScript framework hypes, I believe in the power of Web Standards 📜 that stand the test of time. WebComponents are like that timeless classic in your wardrobe that never goes out of style. They are designed to be compatible with the web's future improvements, making your development life smoother and more future-proof.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url)" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="In an era of rapid technological changes and endless JavaScript framework hypes, I believe in the power of Web Standards 📜 that stand the test of time.">
+    <meta property="og:image" content="/img/home-page-openerp-components-23102023.jpg">
+    <meta property="og:url" content="@(url)">
+    <meta property="og:type" content="website">
 }
 
 <header class="mb-10 lg:mb-6 not-format">

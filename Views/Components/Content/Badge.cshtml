@@ -1,5 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Badge Component";
+    ViewData["Title"] = "Badges - OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="Badges highlight key information and can be used to emphasize the status of items or provide additional context.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Badges">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Components/Badge")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Badges highlight key information and can be used to emphasize the status of items or provide additional context.">
+    <meta property="og:image" content="/img/badge-component.jpg">
+    <meta property="og:url" content="@(url + "Components/Badge")">
+    <meta property="og:type" content="website">
 }
 
 <oe-title fouc="ease" variant="xl">OpenERP Badges</oe-title>

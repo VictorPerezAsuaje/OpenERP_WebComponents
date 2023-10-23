@@ -1,5 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Card Component";
+    ViewData["Title"] = "Cards - OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="When you need to showcase information, the Card component is the ideal choice. It organizes content into visually appealing and self-contained units.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Card">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Components/Card")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="When you need to showcase information, the Card component is the ideal choice. It organizes content into visually appealing and self-contained units.">
+    <meta property="og:image" content="/img/card-component.jpg">
+    <meta property="og:url" content="@(url + "Components/Card")">
+    <meta property="og:type" content="website">
 }
 
 <oe-title fouc="ease" variant="xl">OpenERP Cards</oe-title>

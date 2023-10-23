@@ -1,5 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Changelog";
+    ViewData["Title"] = "OpenERP Components Changelog";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="Changelog for OpenERP WebComponents.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Changelog">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Changelog")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Changelog for OpenERP WebComponents.">
+    <meta property="og:image" content="/img/home-page-openerp-components-23102023.jpg">
+    <meta property="og:url" content="@(url + "Changelog")">
+    <meta property="og:type" content="website">
 }
 
 <header class="mb-10 not-format">

@@ -1,5 +1,20 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Theming OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="Sure, having defaults and standards is great, but you know what is greater? Customization! 🎉 That's why you will have quite a few variables you can customize to change the feel of the components to better match your taste.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, theming">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Theming")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Sure, having defaults and standards is great, but you know what is greater? Customization! 🎉 That's why you will have quite a few variables you can customize to change the feel of the components to better match your taste.">
+    <meta property="og:image" content="/img/theming-page-openerp-components-23102023.jpg">
+    <meta property="og:url" content="@(url + "Theming")">
+    <meta property="og:type" content="website">
 }
 
 <header class="mb-10 lg:mb-6 not-format">
