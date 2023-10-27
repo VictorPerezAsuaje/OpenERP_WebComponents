@@ -1,4 +1,16 @@
-﻿/* ALIGN */
+﻿@import "../shared/shared-variables.css";
+@import "flex-mixin.css";
+@import "grid-mixin.css";
+@import "width-mixin.css";
+@import "height-mixin.css";
+@import "../shared/shared-variables.css";
+@import "../shared/shared-variables.css";
+@import "../shared/shared-variables.css";
+@import "../shared/shared-variables.css";
+@import "../shared/shared-variables.css";
+@import "../shared/shared-variables.css";
+@import "../shared/shared-variables.css";
+/* ALIGN */
 .text-left {
   text-align: left;
 }
@@ -394,6 +406,26 @@
 
 .block {
   display: block;
+}
+
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
 }
 
 /*
@@ -3070,6 +3102,10 @@
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.border {
+  border: 0px solid transparent;
 }
 
 .border-1 {

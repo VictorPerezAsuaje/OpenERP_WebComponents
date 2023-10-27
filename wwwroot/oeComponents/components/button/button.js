@@ -11,16 +11,17 @@ export default class Button extends OpenERPComponent {
         this.componentName = "oe-button";
         this.componentHTML = button;   
         
-        this.loadClassProp("variant", this.getVariant());
-        this.loadClassProp("color", this.getColor());
+        this.loadClassProp("variant", this.variant);
+        this.loadClassProp("color", this.color);
+        super.createWebComponent();
     }    
 
     /* PROPS */
-    getVariant() {
+    get variant() {
         return this.getAttribute("variant") in this.#variants ? this.getAttribute("variant") : "solid";
     }
 
-    getColor() {
+    get color() {
         return this.getAttribute("color") in this.#colors ? this.getAttribute("color") : "primary";
     }
 }

@@ -1,0 +1,62 @@
+﻿<div id="loaderContainer">
+    <oe-skeleton id="loader"></oe-skeleton>
+
+    <div id="messageContainer" class="flex items-center p-4 mb-4 text-white none" role="alert">
+        <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>
+
+        <div id="message" class="ml-3 text-sm font-medium">
+        </div>
+    </div>
+</div>
+
+<div id="tableContainer" class="none">
+    <header class="flex justify-between items-center my-5">
+        <div id="rowNumberContainer">
+            <span>Show</span>
+
+            <select id="rowsToShow" class="select regular-rounded border-1 border-gray-300 w-fit h-fit px-2 py-1 mx-2 outline-none">
+            </select>
+
+            <span>entries</span>
+        </div>
+
+        <div class="relative">
+            <div class="absolute flex items-center pl-3" style="top: 0; bottom: 0; margin: auto 0;">
+                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+            </div>
+            <input type="text" id="table-search-users" class="block p-2 pl-10 text-sm text-gray-900 border border-1 border-gray-300 regular-rounded bg-gray-50 outline-none" placeholder="Search...">
+        </div>
+    </header>
+
+    <table class="table w-full text-sm text-left text-gray-500">
+        <thead class="text-gray-700 uppercase bg-gray-50">
+            <tr>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <nav id="navigation" class="flex items-center justify-between pt-4 my-5" aria-label="Table navigation">
+        <span class="text-sm font-normal text-gray-500">
+            Showing <span id="visibleRows" class="font-semibold text-gray-900"></span>
+            of <span id="totalRows" class="font-semibold text-gray-900"></span>
+        </span>
+        <div class="flex items-center gap-3">
+            <button id="previousPage" class='pagination-button flex items-center justify-center px-3 h-8 ml-0 leading-tight border border-1 border-gray-300 soft-rounded disabled' >
+                Previous
+            </button>
+
+            <ul id="availablePages" class="flex flex-row gap-1 p-0 pagination-buttons">
+            </ul>
+
+            <button id="nextPage" class='pagination-button flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-1 border-gray-300 soft-rounded' >
+                Next
+            </button>
+        </div>
+    </nav>
+</div>

@@ -20,19 +20,19 @@ export default class Badge extends OpenERPComponent {
     #type = { "square": "soft-rounded", "pill": "regular-rounded" };
 
     /* PROPS */
-    getVariant() {
+    get variant() {
         return this.getAttribute("variant") in this.#variants ? this.getAttribute("variant") : "solid";
     }
 
-    getColor() {
+    get color() {
         return this.getAttribute("color") in this.#colors ? this.getAttribute("color") : "primary";
     }
 
-    getSize() {
+    get size() {
         return this.getAttribute("size") in this.#size ? this.#size[this.getAttribute("size")] : this.#size["xs"];
     }
 
-    getType() {
+    get type() {
         return this.getAttribute("type") in this.#type ? this.#type[this.getAttribute("type")] : this.#type["pill"];
     }
 
@@ -48,10 +48,11 @@ export default class Badge extends OpenERPComponent {
         this.componentName = "oe-badge";
         this.componentHTML = badge;
 
-        this.loadClassProp("variant", this.getVariant());
-        this.loadClassProp("color", this.getColor());
-        this.loadClassProp("size", this.getSize());
-        this.loadClassProp("type", this.getType());
+        this.loadClassProp("variant", this.variant);
+        this.loadClassProp("color", this.color);
+        this.loadClassProp("size", this.size);
+        this.loadClassProp("type", this.type);
+        super.createWebComponent();
     }    
 
     attributeChangedCallback(name, oldValue, newValue) {

@@ -5,6 +5,10 @@
     outline-offset: 2px;
 }
 
+.border{
+    border: 0px solid transparent;
+}
+
 .border-1 {
     border-width: var(--oe-global-borderWidth-1);
 }

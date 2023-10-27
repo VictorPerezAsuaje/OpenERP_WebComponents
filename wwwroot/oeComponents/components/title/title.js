@@ -10,13 +10,13 @@ export default class Title extends OpenERPComponent {
         this.componentName = "oe-title";
         this.componentHTML = title;
 
-        const variant = this.getVariant();
-        this.loadClassProp("tag", variant.tag);
-        this.loadClassProp("classes", variant.classes);
+        this.loadClassProp("tag", this.variant.tag);
+        this.loadClassProp("classes", this.variant.classes);
+        super.createWebComponent();
     }  
 
     /* PROPS */
-    getVariant() {
+    get variant() {
         switch (this.getAttribute("variant")) {
             case "xl": return { tag: "h1", classes: "text-xl" };
             case "lg": return { tag: "h2", classes: "text-lg" };

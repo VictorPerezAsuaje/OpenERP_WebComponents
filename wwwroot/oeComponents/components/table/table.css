@@ -1,0 +1,42 @@
+﻿@import "../../base/shared/shared-variables.css";
+@import '../../base/styles/__style-imports.min.css';
+
+.select {
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+}
+
+.table {
+    position: relative;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+.pagination-buttons{
+    list-style:none;
+}
+
+.pagination-button {
+    pointer-events: all;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--oe-global-color-white);
+    color: var(--oe-global-color-gray-500);
+}
+
+    .pagination-button.selected {
+        background-color: var(--oe-global-color-primary);
+        color: var(--oe-global-color-white);
+    }
+
+    .pagination-button.selected:hover {
+        background-color: var(--oe-global-color-primary-focus);
+    }
+
+    .pagination-button[disabled], .pagination-button.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        background-color: var(--oe-global-color-gray-300);
+        color: var(--oe-global-color-gray-400);
+    }

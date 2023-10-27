@@ -1,0 +1,30 @@
+﻿@using HtmxComponents.Controllers;
+@using System.Text.Json;
+
+@{
+    ViewData["Title"] = "Table - OpenERP Components";
+}
+
+<header class="mb-10 not-format">
+    <oe-title fouc="ease" size="xl" >🚧 WORK IN PROGRESS 🚧</oe-title>
+</header>
+
+
+<oe-table fouc="ease" oe-get="/Components/GetAllTableData">
+    <oe-colums>
+        <oe-column>
+            <input type="checkbox" />
+        </oe-column>
+        <oe-column>Id</oe-column>
+        <oe-column>Product Name</oe-column>
+        <oe-column>Description</oe-column>
+        <oe-column>Category</oe-column>
+        <oe-column>Price</oe-column>
+        <oe-column>Actions</oe-column>
+    </oe-colums>
+</oe-table>
+
+
+@section Scripts{
+    <script src="/js/pages/tables.js" asp-append-version="true"></script>
+}
