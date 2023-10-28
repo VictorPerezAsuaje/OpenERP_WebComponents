@@ -1370,6 +1370,10 @@
 /*
     MARGINS
 */
+.m-auto {
+  margin: auto;
+}
+
 .m-0 {
   margin: var(--oe-global-sizing-0);
 }
@@ -1495,6 +1499,10 @@
 }
 
 /* Left */
+.ml-auto {
+  margin-left: auto;
+}
+
 .ml-0 {
   margin-left: var(--oe-global-sizing-0);
 }
@@ -1620,6 +1628,10 @@
 }
 
 /* Right */
+.mr-auto {
+  margin-right: auto;
+}
+
 .mr-0 {
   margin-right: var(--oe-global-sizing-0);
 }
@@ -1745,6 +1757,10 @@
 }
 
 /* TOP */
+.mt-auto {
+  margin-top: auto;
+}
+
 .mt-0 {
   margin-top: var(--oe-global-sizing-0);
 }
@@ -1870,6 +1886,10 @@
 }
 
 /* BOTTOM */
+.mb-auto {
+  margin-bottom: auto;
+}
+
 .mb-0 {
   margin-bottom: var(--oe-global-sizing-0);
 }
@@ -1995,6 +2015,10 @@
 }
 
 /* X Axis */
+.mx-auto {
+  margin: 0 auto;
+}
+
 .mx-0 {
   margin-left: var(--oe-global-sizing-0);
   margin-right: var(--oe-global-sizing-0);
@@ -2151,6 +2175,10 @@
 }
 
 /* Y Axis */
+.my-auto {
+  margin: auto 0;
+}
+
 .my-0 {
   margin-top: var(--oe-global-sizing-0);
   margin-bottom: var(--oe-global-sizing-0);

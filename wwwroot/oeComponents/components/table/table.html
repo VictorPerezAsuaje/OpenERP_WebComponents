@@ -1,7 +1,7 @@
 ﻿<div id="loaderContainer">
     <oe-skeleton id="loader"></oe-skeleton>
 
-    <div id="messageContainer" class="flex items-center p-4 mb-4 text-white none" role="alert">
+    <div id="messageContainer" class="flex items-center p-4 mb-4 text-white" role="alert" style="display:none;">
         <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
         </svg>
@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<div id="tableContainer" class="none">
+<div id="tableContainer" class="w-full none">
     <header class="flex justify-between items-center my-5">
         <label id="rowNumberContainer" for="rowsToShow">
             Show
@@ -22,7 +22,7 @@
             entries
         </label>
 
-        <div class="relative">
+        <div id="searchContainer" class="relative">
             <div class="absolute flex items-center pl-3" style="top: 0; bottom: 0; margin: auto 0;">
                 <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />

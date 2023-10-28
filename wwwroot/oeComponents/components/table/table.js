@@ -3,8 +3,15 @@ import table from "./table.html";
 import "./table.css";
 
 export default class Table extends OpenERPComponent {
-    static observedAttributes = ["rows-to-show", "page", "search"];
+    static observedAttributes = ["rows-to-show", "page", "search", "sort-column", "sort-direction"];
 
+    #defaultSortDirection = "asc";
+    #defaultSortOptions = {
+        asc: "asc",
+        desc: "desc"
+    };
+
+    #defaultNoDataFoundText = "No matching records found";
     #defaultPaginationPageRange = 3;
     #defaultPage = 1;
     #defaultRowsToShow = 5;
@@ -44,6 +51,26 @@ export default class Table extends OpenERPComponent {
         return this.getAttribute("oe-get");
     }
 
+    get noDataFoundText() {
+        return this.getAttribute("oe-no-data-text") ?? this.#defaultNoDataFoundText;
+    }
+
+    get sortColumn() {
+        return this.getAttribute("sort-column")?.toLowerCase();
+    }
+
+    get sortDirection() {
+        const direction = this.getAttribute("sort-direction")?.toLowerCase();
+
+        if (!direction)
+            return this.#defaultSortDirection;
+
+        if (!(direction in this.#defaultSortOptions))
+            return this.#defaultSortDirection;
+
+        return this.#defaultSortOptions[direction];
+    }
+
     async fetchData() {
         const response = await fetch(this.fetchFrom);
         if (!response.ok) {
@@ -68,10 +95,21 @@ export default class Table extends OpenERPComponent {
         this.cssClasses(messageContainer)
             .remove("bg-error")
             .remove("bg-info")
-            .remove("none")
             .add(color);
 
+        messageContainer.style.display = "block";
         messageItem.textContent = message;
+    }
+
+    #sortStringFunc(a, b) {
+        if (this.sortDirection === "asc") {
+            if (a[this.sortColumn] < b[this.sortColumn]) return -1
+            return a[this.sortColumn] > b[this.sortColumn] ? 1 : 0
+        }
+        else {
+            if (a[this.sortColumn] > b[this.sortColumn]) return -1
+            return a[this.sortColumn] < b[this.sortColumn] ? 1 : 0
+        }
     }
 
     constructor() {
@@ -88,7 +126,12 @@ export default class Table extends OpenERPComponent {
 
         this.initHeader();
         this.initTableHead()
+
+        this.initSearch();                    
+        this.initSorting();            
+
         this.initTableBody();
+        
         this.initPagination();
         this.initPrevNextButtons();        
 
@@ -97,23 +140,25 @@ export default class Table extends OpenERPComponent {
     }
 
     loadUserDefinedColumns() {
-        Array.from(this.querySelectorAll("oe-column")).forEach(c => {
-            const headTemplate = c.querySelector("oe-head-template");
-            const rowTemplate = c.querySelector("oe-row-template");
-            const col = {
-                headTemplate: null,
-                rowTemplate: null
-            };
+        const userColumns = this.querySelectorAll("oe-column");
 
-            if (headTemplate)
-                col.headTemplate = headTemplate.innerHTML.trim();
-            else
-                col.headTemplate = c.innerHTML.trim();
+        if (userColumns.length === 0) {
+            if (this.#filteredData?.length === 0) return;
 
-            if (rowTemplate)
-                col.rowTemplate = rowTemplate.innerHTML.trim();
+            Object.keys(this.#filteredData[0]).forEach(headData => {
+                this.#columns[headData] = {
+                    bind: headData,
+                    headTemplate: headData,
+                    rowTemplate: null,
+                    sortable: null
+                };
+            });
 
-            this.#columns[c.bindTo ?? c.columnName] = col;
+            return;
+        }
+
+        Array.from(userColumns).forEach(c => {
+            this.#columns[c.bindTo ?? c.columnName] = c.getColumnDefinition();
         });
     }
 
@@ -144,13 +189,54 @@ export default class Table extends OpenERPComponent {
 
     initTableHead() {
         const headRow = this.shadowRoot.querySelector("thead tr");
-
+        headRow.innerHTML = "";
         Object.values(this.#columns).forEach(column => {
-            const th = document.createElement('th');
+            const th = document.createElement('th');            
             th.className = "p-3";
             th.innerHTML = column.headTemplate;
-            headRow.appendChild(th);
+
+            if (column.sortable) {
+                th.setAttribute("sort", "");
+                th.setAttribute("sort-by", column.bind)
+
+                if (column.bind === this.sortColumn)
+                    th.setAttribute("sort", this.sortDirection);
+
+                th.addEventListener("click", () => this.applySorting(th));
+            }
+            
+            headRow.appendChild(th);            
         });
+    }
+
+    initSearch() {
+        const searchableFields = this.querySelectorAll("[oe-bind][searchable='true']");
+        const searchContainer = this.shadowRoot.getElementById("searchContainer");
+        searchContainer.classList.remove("none");
+
+        if (searchableFields.length === 0) {
+            searchContainer.classList.add("none");
+            return;
+        }
+
+        if (this.isNullOrWhiteSpace(this.search)) return;  
+
+        const tableSearch = this.shadowRoot.getElementById("table-search");
+        tableSearch.value = this.search;
+        
+        const searchableColumns = [...searchableFields].map(x => x.getAttribute("oe-bind").toLowerCase());
+
+        this.#filteredData = this.#data.filter(x =>
+            searchableColumns.some(column =>
+                `${x[column] ?? ""}`.includes(this.search)
+            )
+        );        
+    }
+
+    initSorting() {        
+        if (!this.sortColumn || !(this.sortColumn in this.#columns)) return;
+
+        this.#filteredData = this.#filteredData.sort((a, b) => this.#sortStringFunc(a,b));         
     }
 
     applyBindingDataToRowTemplate(rowData, rowTemplate) {
@@ -175,6 +261,16 @@ export default class Table extends OpenERPComponent {
         const body = this.shadowRoot.querySelector("tbody");
         body.innerHTML = "";
 
+        if (this.rowCount == 0) {
+            body.innerHTML = `
+            <tr>
+                <td colspan='${Object.keys(this.#columns).length}'>
+                    ${this.noDataFoundText}
+                </td>
+            </tr>`;
+            return;
+        }
+
         const startingIndex = (this.page - 1) * this.rowsToShow;
         let endingIndex = Number(startingIndex) + Number(this.rowsToShow);
 
@@ -183,7 +279,6 @@ export default class Table extends OpenERPComponent {
 
         for (let i = startingIndex; i < endingIndex; i++) {
             const rowData = this.#filteredData[i];
-
             const tr = document.createElement('tr');
             tr.id = crypto.randomUUID();
             tr.className = "bg-white border border-solid border-b-1 border-gray-500";          
@@ -262,6 +357,8 @@ export default class Table extends OpenERPComponent {
                 break;
             }
         }                
+
+        this.togglePrevNextButtonDisabled();
     }
 
     initPrevNextButtons() {
@@ -322,27 +419,50 @@ export default class Table extends OpenERPComponent {
 
     applySearchFilter(searchValue) {
         this.setAttribute("search", searchValue);
-        if (this.isNullOrWhiteSpace(searchValue)) {
+
+        if (this.isNullOrWhiteSpace(this.search)) {
             this.#filteredData = this.#data;
+
+            this.initSorting();
             this.initTableBody();
             this.initPagination();
             return;
         }
 
-        const searchableColumns = [...this.querySelectorAll("[oe-bind][searchable]")].map(x => x.getAttribute("oe-bind").toLowerCase());
+        const searchableColumns = [...this.querySelectorAll("[oe-bind][searchable='true']")].map(x => x.getAttribute("oe-bind").toLowerCase());
 
         this.#filteredData = this.#data.filter(x =>
             searchableColumns.some(column =>
-                x[column]?.includes(searchValue)
+                `${x[column] ?? ""}`.includes(this.search)
             )
         );
 
         this.initTableBody();
         this.initPagination();
+    }    
+
+    applySorting(tableHead) {
+        const sortBy = tableHead.getAttribute("sort-by")?.toLowerCase();
+        if (sortBy === this.sortColumn?.toLowerCase()) {
+            // If you click the same column change sort direction
+            this.setAttribute("sort-direction", this.sortDirection === "desc" ? "asc" : "desc");
+        }
+        else {
+            // If you change column sort by default
+            this.setAttribute("sort-column", sortBy);
+            this.setAttribute("sort-direction", this.#defaultSortDirection);
+        }
+
+        if (!(sortBy in this.#columns)) return;
+
+        this.#filteredData = this.#filteredData.sort((a, b) => this.#sortStringFunc(a,b));  
+
+        this.initTableHead();
+        this.initTableBody();
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log("name: ", name, ", oldValue: ", oldValue, ", newValue: ", newValue)
+        //console.log("name: ", name, ", oldValue: ", oldValue, ", newValue: ", newValue)
     }
 }
 
@@ -366,6 +486,28 @@ export class Column extends OpenERPComponent {
         }
 
         super.createWebComponent();       
+    }
+
+    getColumnDefinition() {        
+        const headTemplate = this.querySelector("oe-head-template");
+        const rowTemplate = this.querySelector("oe-row-template");
+
+        const col = {
+            bind: this.bindTo ?? "",
+            headTemplate: null,
+            rowTemplate: null,
+            sortable: this.getAttribute("sortable")
+        };
+
+        if (headTemplate)
+            col.headTemplate = headTemplate.innerHTML.trim();
+        else
+            col.headTemplate = this.innerHTML.trim();
+
+        if (rowTemplate)
+            col.rowTemplate = rowTemplate.innerHTML.trim();
+
+        return col;
     }
 }
 

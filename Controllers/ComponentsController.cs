@@ -37,7 +37,7 @@ public class ComponentsController : Controller
     {
         List<TableItem> table = new List<TableItem>();
 
-        for (int i = 1; i <= 50; i++)
+        for (int i = 1; i <= 1; i++)
         {
             Seed.TableItems.ForEach(x =>
             {

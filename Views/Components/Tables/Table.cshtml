@@ -3,15 +3,56 @@
 
 @{
     ViewData["Title"] = "Table - OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
 }
 
-<header class="mb-10 not-format">
-    <oe-title fouc="ease" size="xl" >🚧 WORK IN PROGRESS 🚧</oe-title>
-</header>
+@section SEO {
+    <meta name="description" content="Create a versatile and interactive table web component that allows you to display tabular data in a user-friendly way. This table component offers the ability to sort columns in ascending or descending order and apply custom filters using properties.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Table">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Components/Table")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Create a versatile and interactive table web component that allows you to display tabular data in a user-friendly way. This table component offers the ability to sort columns in ascending or descending order and apply custom filters using properties.">
+    <meta property="og:image" content="/img/table-component.jpg">
+    <meta property="og:url" content="@(url + "Components/Table")">
+    <meta property="og:type" content="website">
+}
 
 
-<div id="searchableTableSamples">
-    <oe-table fouc="ease" oe-get="/Components/GetAllTableData">
+<oe-title fouc="ease" variant="xl">OpenERP Tables</oe-title>
+
+<p class="mb-3 text-gray-500 mb-6">
+    Create a versatile and interactive table web component that allows you to display tabular data in a user-friendly way. This table component offers the ability to sort columns in ascending or descending order and apply custom filters using properties.
+</p>
+
+<ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+    <li><strong>Sortable Columns:</strong> Each column in the table can be sorted in ascending or descending order by clicking on the column header. Sorting is facilitated through properties, making it easy to toggle the sort direction.</li>
+
+    <li><strong>Flexible Data Binding:</strong> The table component is designed to work with a variety of data sources. You can set the data source through a property, making it easy to dynamically update the displayed data or integrate with other endpoints for JSON data.</li>
+
+    <li><strong>Custom Filtering:</strong> Apply custom filters to the data displayed in the table. You can specify filtering criteria using properties, allowing you to refine the dataset to match specific criteria.</li>
+
+    <li><strong>Interactive User Experience:</strong> Enhance the user experience by providing interactive features such as sortable columns and filtered data. Users can easily interact with and explore the dataset.</li>
+
+    <li><strong>Developer-Friendly:</strong> The table web component is developer-friendly, offering a straightforward way to integrate it into your web application. You can configure sorting and filtering behavior through properties in your HTML code.</li>
+</ul>
+
+<div id="playgrountTable">
+    <oe-title fouc="ease" variant="lg">Example Table</oe-title>
+
+    <div class="mt-8">
+         <div class="flex justify-end w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl">
+            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/oeComponents/components/table/table.js" target="_blank" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
+                <i class="fa-brands fa-github text-lg mr-3"></i>
+                Check code on GitHub
+            </a>
+        </div>
+
+        <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x">
+            <div class="flex-[2] min-h-24 block mx-auto px-8 py-4" id="defaultTableExample">
+<oe-table fouc="ease" oe-get="/Components/GetAllTableData" sort-column="id" sort-direction="desc">
         <oe-column oe-name="selector">
             <oe-head-template>
                 <input type="checkbox" onclick="selectAll(this)" />
@@ -20,11 +61,17 @@
                 <input id="select_{{Id}}" type="checkbox" />
             </oe-row-template>
         </oe-column>
-        <oe-column oe-bind="Id">Id</oe-column>
-        <oe-column oe-bind="Name" searchable>Product Name</oe-column>
-        <oe-column oe-bind="Description" searchable>Description</oe-column>
-        <oe-column oe-bind="Category" searchable>Category</oe-column>
-        <oe-column oe-name="Price">
+        <oe-column oe-bind="Id" sortable="true">Id</oe-column>
+        <oe-column oe-bind="Name" sortable="true" searchable="true">
+            Product Name
+        </oe-column>
+        <oe-column oe-bind="Description" sortable="true" searchable="true">
+            Description
+        </oe-column>
+        <oe-column oe-bind="Category" sortable="true" searchable="true">
+            Category
+        </oe-column>
+        <oe-column oe-bind="Price" sortable="true">
             <oe-head-template>
                 Price
             </oe-head-template>
@@ -37,8 +84,8 @@
                 Actions
             </oe-head-template>
             <oe-row-template>
-                <button class="flex justify-center items-center text-gray-500 bg-gray-300 circle text-sm p-1 border cursor-pointer pointer-events-auto" 
-                onclick="alert(`You clicked actions for row id: {{Id}}`)">
+                <button class="flex justify-center items-center mx-auto text-gray-500 bg-gray-300 circle text-sm p-1 border cursor-pointer pointer-events-auto"
+                        onclick="alert(`You clicked actions for row id: {{Id}}`)">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
                         <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
                     </svg>
@@ -46,11 +93,41 @@
             </oe-row-template>
         </oe-column>
     </oe-table>
+            </div>
+        </div>
 
+        <div id="tableVariations" class="border flex-1 py-4 px-5">
+            <oe-title fouc="ease" variant="md">Playground</oe-title>
+
+        </div>
+    </div>
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="defaultTableExample"></code>
+            </pre>
+        </div>
+    </div>
 </div>
 
-<div id="searchableTable" class="mt-10">
-    <oe-title fouc="ease" variant="lg">Searchable Table</oe-title>
+<div id="defaultTable" class="mt-10">
+    <oe-title fouc="ease" variant="lg">Default Table</oe-title>
+
+    <p class="mt-3 text-gray-500 mb-10">
+        The simplest one you can get! If you just want to show some paginated data, why would you make anything else? Let the table take care of the columns based on the JSON received and you are good to go!
+    </p>
+
+
+    <div id="defaultTableSamples" class="my-5">
+        <oe-table fouc="ease" oe-get="/Components/GetAllTableData"></oe-table>
+    </div>
 
     <div class="relative border-gray-200 border-y border-x">
         <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
@@ -62,8 +139,246 @@
         </div>
         <div class="relative">
             <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
-            <code class="language-html" data-lang="html" data-load-from="searchableTableSamples"></code>
+            <code class="language-html" data-lang="html" data-load-from="defaultTableSamples"></code>
             </pre>
+        </div>
+    </div>
+</div>
+
+<div id="userDefinedColumnsTable" class="mt-10">
+    <oe-title fouc="ease" variant="lg">Column Templating</oe-title>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        It happens to all of us! We just re-use endpoints but we do not want <strong>all data</strong> to be shown to the user, right? Feel free to customize which columns should be shown to the user based on the data!
+    </p>
+
+    <div id="messageContainer" class="flex items-center p-4 my-10 text-amber-600 rounded border border-amber-600" role="alert">
+        <svg class="flex-shrink-0 w-4 h-4 mx-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>
+
+        <div id="message" class="ml-3 text-sm font-medium">
+            <h3 class="mb-1"><strong>WARNING!</strong></h3>
+            <p>The fact that you choose which columns to show does not mean that the data is not being passed "down the wire". Beware of sensitive information that could be shown inside the "Network" tab in the inspector.</p>
+        </div>
+    </div>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        These are the properties you can use to customize which columns to show:
+    </p>
+
+    <ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+        <li><strong>oe-bind="{ JSON_PROPERTY_NAME }"</strong>: Allows you to define which data from the json will be shown in that column for each row.</li>
+        <li><strong>oe-name="[ IDENTIFIER ]"</strong>: In case the column you are creating does not come from the JSON data - therefore, no <i>oe-bind</i> has been added to the column -, you can assign an unique name for that column so that it shows up and you can define whatever you need inside. If you especify no <i>oe-bind</i> nor <i>oe-name</i> or the <i>oe-name</i> is repeated, the first one will be overriden by the second.</li>
+    </ul>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        Whatever you defined inside the &lt;oe-column&gt; will be considered as the header content for that column. You will see examples of the <i>oe-name</i> being applied in the <a href="#columnTemplatingTable" class="underline underline-offset-1">Column Templating section</a>.
+    </p>
+
+    <div id="userDefinedColumnsSample" class="my-5">
+<oe-table fouc="ease" oe-get="/Components/GetAllTableData">
+    <oe-column oe-bind="Name">Product Name</oe-column>
+    <oe-column oe-bind="Description">Description</oe-column>
+    <oe-column oe-bind="Category">Category</oe-column>
+    <oe-column oe-bind="Price">Price</oe-column>
+</oe-table>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="userDefinedColumnsSample"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="columnTemplatingTable" class="mt-10">
+    <oe-title fouc="ease" variant="lg">Column Templating</oe-title>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        What happens when you need to apply formatting to the data, pass down some other more complex component or use the data from each row to extend functionalities? You use column templating to your advantage!
+    </p>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        These are the properties you can use to customize how you will show the content in the columns:
+    </p>
+
+    <ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+        <li><strong>&lt;oe-head-template&gt;</strong>: Allows you to define what should the table head show to the user. You can use HTML elements to extend its functionalities. </li>
+        <li><strong>&lt;oe-row-template&gt;</strong>: Allows you to customize what should be shown in each row, in conjuction with being able to use HTML elements and use the JSON values, it gives you quite the flexibility.</li>
+        <li><strong>{{ JSON_PROPERTY_NAME }}</strong>: As long as you use it inside of the &lt;oe-row-template&gt; Allows you to place the value for that property in that row, so you can use it to better format the column or pass it to a function in another component inside that row.</li>
+    </ul>
+
+    <div id="columnTemplatingTableSample" class="my-5">
+<oe-table fouc="ease" oe-get="/Components/GetAllTableData">
+    <oe-column oe-name="selector">
+        <!-- selectAll is a function outside the component -->
+        <oe-head-template>
+            <input type="checkbox" onclick="selectAll(this)" />
+        </oe-head-template>
+        <oe-row-template>
+            <!-- We can use the value for the Id property in each row -->
+            <input id="select_{{Id}}" type="checkbox" />
+        </oe-row-template>
+    </oe-column>
+    <oe-column oe-bind="Name">Product Name</oe-column>
+    <oe-column oe-bind="Description">Description</oe-column>
+    <oe-column oe-bind="Category">Category</oe-column>
+    <oe-column oe-bind="Price">
+        <oe-head-template>
+            Price
+        </oe-head-template>
+        <oe-row-template>
+            <!-- Or you can apply basic formating to the content, such as adding the euro symbol -->
+            {{Price}}€
+        </oe-row-template>
+    </oe-column>
+</oe-table>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="columnTemplatingTableSample"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="sortableTable" class="mt-10">
+    <oe-title fouc="ease" variant="lg">Sortable Table</oe-title>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        Cool, cool, cool... But what is a table that can not be sorted? Nothing really! But wait... You may not want to have all your columns sortable, right? Let's make it easy then!
+    </p>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        These are the properties you can use to customize how you want your sorting to take place:
+    </p>
+
+    <ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+        <li><strong>&lt;oe-column sortable="true"&gt;</strong>: Allows you to define which columns are sortable. By default, the first time you click on a column, the sort direction will be and by "asc".</li>
+        <li><strong>&lt;oe-table sort-column="{ JSON_PROPERTY_NAME }"&gt;</strong>: Allows you to define a default column to sort once the table loads.</li>
+        <li><strong>&lt;oe-table sort-direction="[asc | desc]"&gt;</strong>: Allows you to define a default sort direction for the column selected in the sort-by once the table loads. It can have two values, "asc" or "desc". </li>
+    </ul>
+
+    <div id="sortableTableSample" class="my-5">
+<oe-table fouc="ease" oe-get="/Components/GetAllTableData" sort-column="Name" sort-direction="desc">
+    <oe-column oe-name="selector">
+        <!-- selectAll is a function outside the component -->
+        <oe-head-template>
+            <input type="checkbox" onclick="selectAll(this)" />
+        </oe-head-template>
+        <oe-row-template>
+            <!-- We can use the value for the Id property in each row -->
+            <input id="select_{{Id}}" type="checkbox" />
+        </oe-row-template>
+    </oe-column>
+    <oe-column oe-bind="Id" sortable="true">Id</oe-column>
+    <oe-column oe-bind="Name" sortable="true">Product Name</oe-column>
+    <oe-column oe-bind="Description" sortable="true">Description</oe-column>
+    <oe-column oe-bind="Category" sortable="true">Category</oe-column>
+    <oe-column oe-bind="Price" sortable="true">
+        <oe-head-template>
+            Price
+        </oe-head-template>
+        <oe-row-template>
+            <!-- Or you can apply basic formating to the content, such as adding the euro symbol -->
+            {{Price}}€
+        </oe-row-template>
+    </oe-column>
+</oe-table>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="sortableTableSample"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="searchableTable" class="mt-10">
+    <oe-title fouc="ease" variant="lg">Searchable Table</oe-title>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        And the last option remaining! Sure you can filter go through and look for each item on each page and sort them but... Isn't that annoying? What if we could filter those results a little so you can more easily find what you need? 
+    </p>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        These are the properties you can use to customize how you want your sorting to take place:
+    </p>
+
+    <ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+        <li><strong>&lt;oe-column searchable="true"&gt;</strong>: Allows the column to be considered when querying. By default, the columns are not queryable. </li>
+        <li><strong>&lt;oe-table search="{ ANY_STRING_VALUE_TO_PREFILTER }"&gt;</strong>: Sets a default value to query once the table loads. </li>
+    </ul>
+
+    <p class="mb-3 text-gray-500 mb-6">
+        If there is no searchable column, the search bar will automatically disappear as you have seen in the previous examples.
+    </p>
+
+    <div id="searchableTableSample" class="my-5">
+<oe-table fouc="ease" oe-get="/Components/GetAllTableData" sort-column="Name" sort-direction="desc" search="Pr">
+    <oe-column oe-name="selector">
+        <oe-head-template>
+            <input type="checkbox" onclick="selectAll(this)" />
+        </oe-head-template>
+        <oe-row-template>
+            <input id="select_{{Id}}" type="checkbox" />
+        </oe-row-template>
+    </oe-column>
+    <oe-column oe-bind="Id" sortable="true">Id</oe-column>
+    <oe-column oe-bind="Name" sortable="true" searchable="true">Product Name</oe-column>
+    <oe-column oe-bind="Description" sortable="true" searchable="true">Description</oe-column>
+    <oe-column oe-bind="Category" sortable="true" searchable="true">Category</oe-column>
+    <oe-column oe-bind="Price" sortable="true" searchable="true">
+        <oe-head-template>
+            Price
+        </oe-head-template>
+        <oe-row-template>
+            {{Price}}€
+        </oe-row-template>
+    </oe-column>
+</oe-table>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+                <code class="language-html" data-lang="html" data-load-from="searchableTableSample"></code>
+                </pre>
         </div>
     </div>
 </div>
