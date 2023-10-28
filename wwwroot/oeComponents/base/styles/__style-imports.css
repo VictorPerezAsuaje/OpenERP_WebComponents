@@ -3924,3 +3924,8 @@ transition-transform {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* CURSOR */
+.cursor-pointer {
+  cursor: pointer;
+}

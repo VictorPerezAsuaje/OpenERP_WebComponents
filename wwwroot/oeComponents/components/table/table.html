@@ -13,14 +13,14 @@
 
 <div id="tableContainer" class="none">
     <header class="flex justify-between items-center my-5">
-        <div id="rowNumberContainer">
-            <span>Show</span>
+        <label id="rowNumberContainer" for="rowsToShow">
+            Show
 
             <select id="rowsToShow" class="select regular-rounded border-1 border-gray-300 w-fit h-fit px-2 py-1 mx-2 outline-none">
             </select>
 
-            <span>entries</span>
-        </div>
+            entries
+        </label>
 
         <div class="relative">
             <div class="absolute flex items-center pl-3" style="top: 0; bottom: 0; margin: auto 0;">
@@ -28,7 +28,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="text" id="table-search-users" class="block p-2 pl-10 text-sm text-gray-900 border border-1 border-gray-300 regular-rounded bg-gray-50 outline-none" placeholder="Search...">
+            <input type="text" id="table-search" class="block p-2 pl-10 text-sm text-gray-900 border border-1 border-gray-300 regular-rounded bg-gray-50 outline-none" placeholder="Search...">
         </div>
     </header>
 

@@ -37,7 +37,7 @@ public class ComponentsController : Controller
     {
         List<TableItem> table = new List<TableItem>();
 
-        for (int i = 1; i <= 1; i++)
+        for (int i = 1; i <= 50; i++)
         {
             Seed.TableItems.ForEach(x =>
             {
@@ -76,7 +76,6 @@ public class Seed
             {
                 Id = 2,
                 Name = "Smart LED TV",
-                Description = "55-inch 4K Ultra HD Smart LED TV with built-in streaming apps.",
                 Category = "Electronics",
                 Price = 699.99
             },

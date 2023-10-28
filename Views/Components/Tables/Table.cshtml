@@ -10,19 +10,63 @@
 </header>
 
 
-<oe-table fouc="ease" oe-get="/Components/GetAllTableData">
-    <oe-colums>
-        <oe-column>
-            <input type="checkbox" />
+<div id="searchableTableSamples">
+    <oe-table fouc="ease" oe-get="/Components/GetAllTableData">
+        <oe-column oe-name="selector">
+            <oe-head-template>
+                <input type="checkbox" onclick="selectAll(this)" />
+            </oe-head-template>
+            <oe-row-template>
+                <input id="select_{{Id}}" type="checkbox" />
+            </oe-row-template>
         </oe-column>
-        <oe-column>Id</oe-column>
-        <oe-column>Product Name</oe-column>
-        <oe-column>Description</oe-column>
-        <oe-column>Category</oe-column>
-        <oe-column>Price</oe-column>
-        <oe-column>Actions</oe-column>
-    </oe-colums>
-</oe-table>
+        <oe-column oe-bind="Id">Id</oe-column>
+        <oe-column oe-bind="Name" searchable>Product Name</oe-column>
+        <oe-column oe-bind="Description" searchable>Description</oe-column>
+        <oe-column oe-bind="Category" searchable>Category</oe-column>
+        <oe-column oe-name="Price">
+            <oe-head-template>
+                Price
+            </oe-head-template>
+            <oe-row-template>
+                {{Price}}€
+            </oe-row-template>
+        </oe-column>
+        <oe-column oe-name="Actions">
+            <oe-head-template>
+                Actions
+            </oe-head-template>
+            <oe-row-template>
+                <button class="flex justify-center items-center text-gray-500 bg-gray-300 circle text-sm p-1 border cursor-pointer pointer-events-auto" 
+                onclick="alert(`You clicked actions for row id: {{Id}}`)">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
+                        <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+                    </svg>
+                </button>
+            </oe-row-template>
+        </oe-column>
+    </oe-table>
+
+</div>
+
+<div id="searchableTable" class="mt-10">
+    <oe-title fouc="ease" variant="lg">Searchable Table</oe-title>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="searchableTableSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
 
 
 @section Scripts{
