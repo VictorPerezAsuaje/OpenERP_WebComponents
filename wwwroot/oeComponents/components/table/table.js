@@ -1,6 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
 import table from "./table.html";
-import "./table.css";
+import css from "./table.css";
 
 export default class Table extends OpenERPComponent {
     static observedAttributes = ["rows-to-show", "page", "search", "sort-column", "sort-direction"];
@@ -116,6 +116,7 @@ export default class Table extends OpenERPComponent {
         super();
         this.componentName = "oe-table";
         this.componentHTML = table;
+        this.componentCSS = css[0][1];
         super.createWebComponent();
 
         this.fetchData();      

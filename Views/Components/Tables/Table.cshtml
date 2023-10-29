@@ -84,12 +84,11 @@
                 Actions
             </oe-head-template>
             <oe-row-template>
-                <button class="flex justify-center items-center mx-auto text-gray-500 bg-gray-300 circle text-sm p-1 border cursor-pointer pointer-events-auto"
-                        onclick="alert(`You clicked actions for row id: {{Id}}`)">
+                <oe-button variant="flat" type="circle" color="secondary" onclick="alert(`You clicked actions for row id: {{Id}}`)">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
                         <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
                     </svg>
-                </button>
+                </oe-button>
             </oe-row-template>
         </oe-column>
     </oe-table>

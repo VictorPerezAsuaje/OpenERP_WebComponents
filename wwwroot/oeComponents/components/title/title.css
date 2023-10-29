@@ -1,6 +1,4 @@
-﻿@import '../../base/styles/__style-imports.min.css';
-
-.title{
+﻿.title{
     display: flex;
     align-items:center;
 }

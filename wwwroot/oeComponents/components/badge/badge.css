@@ -1,7 +1,4 @@
-﻿@import "../../base/shared/shared-variables.css";
-@import '../../base/styles/__style-imports.min.css';
-
-.badge {
+﻿.badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;

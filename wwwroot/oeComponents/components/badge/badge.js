@@ -1,6 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
 import badge from "./badge.html";
-import "./badge.css";
+import css from "./badge.css";
 
 export default class Badge extends OpenERPComponent {
     #variants = { "solid": "solid", "outline": "outline" };
@@ -47,6 +47,7 @@ export default class Badge extends OpenERPComponent {
 
         this.componentName = "oe-badge";
         this.componentHTML = badge;
+        this.componentCSS = css[0][1];
 
         this.loadClassProp("variant", this.variant);
         this.loadClassProp("color", this.color);

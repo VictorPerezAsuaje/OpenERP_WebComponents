@@ -2,7 +2,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './wwwroot/oeComponents/oe-components.js', 
     output: {
         filename: 'oe-components.js', 

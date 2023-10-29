@@ -1,10 +1,19 @@
-﻿export default class OpenERPComponent extends HTMLElement {   
+﻿//import sharedVariablesCss from "./shared/shared-variables.css";
+import importsCss from "./styles/__style-imports.min.css";
+export default class OpenERPComponent extends HTMLElement {   
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
         this.componentName = "";     
         this.componentHTML = "";
-        this.template = document.createElement("template");        
+        this.componentCSS = "";
+        this.template = document.createElement("template");           
+
+        let importcss = document.createElement("style");
+        importsCss.forEach(x => importcss.textContent += x[1])
+        //importcss.textContent = importsCss[0][1];
+
+        this.shadowRoot.appendChild(importcss);
     }    
 
     isNullOrWhiteSpace(string) {
@@ -36,9 +45,14 @@
     }
 
     createWebComponent() {
-        this.loadStylesheet();
         this.template.innerHTML = this.componentHTML;
+
+        const styleElement = document.createElement("style");
+        styleElement.textContent = this.componentCSS;
+
+        this.shadowRoot.appendChild(styleElement);
         this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+        this.setAttribute("fouc", "loaded");
     }
 
     /**
@@ -56,23 +70,5 @@
     snakeCaseIntoCamelCase(name) {
         let parts = name.split("-")
         return [parts.shift(), ...parts.map(n => n[0].toUpperCase() + n.slice(1))].join("")
-    }
-
-    loadStylesheet() {
-        const name = this.componentName.replace("oe-", "");
-        const folderName = this.snakeCaseIntoCamelCase(name);
-        const href = `/oeComponents/components/${folderName}/${name}.css`;
-        const existingLink = document.querySelector(`link[href="${href}"]`);
-
-        if (existingLink) return;
-
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        this.shadowRoot.appendChild(link);     
-
-        link.addEventListener("load", () => {
-            this.setAttribute("fouc", "loaded");
-        })
     }
 }

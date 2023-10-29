@@ -8,6 +8,8 @@ export default class Skeleton extends OpenERPComponent {
         super();
         this.componentName = "oe-skeleton";
         this.componentHTML = skeleton;
+        this.componentCSS = "";
+
         super.createWebComponent();
     }    
 }

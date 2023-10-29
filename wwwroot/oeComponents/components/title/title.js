@@ -1,6 +1,6 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
 import title from "./title.html";
-import "./title.css";
+import css from "./title.css";
 
 export default class Title extends OpenERPComponent {
     static observedAttributes = [];
@@ -8,10 +8,13 @@ export default class Title extends OpenERPComponent {
     constructor() {
         super();
         this.componentName = "oe-title";
-        this.componentHTML = title;
+        this.componentCSS = css[0][1];
 
-        this.loadClassProp("tag", this.variant.tag);
-        this.loadClassProp("classes", this.variant.classes);
+        const heading = document.createElement(this.variant.tag);
+        heading.className = `title mb-2 font-bold text-gray-700 ${this.variant.classes}`;
+        heading.appendChild(document.createElement("slot"));
+        this.componentHTML = heading.outerHTML;
+
         super.createWebComponent();
     }  
 

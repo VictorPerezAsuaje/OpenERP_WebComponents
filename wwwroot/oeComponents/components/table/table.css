@@ -1,7 +1,4 @@
-﻿@import "../../base/shared/shared-variables.css";
-@import '../../base/styles/__style-imports.min.css';
-
-.select {
+﻿.select {
     display: inline-flex;
     cursor: pointer;
     user-select: none;

@@ -1,22 +1,87 @@
-﻿@import "../../base/shared/shared-variables.css";
-@import '../../base/styles/__style-imports.min.css';
-
-.btn {
+﻿.btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--oe-global-sizing-2) var(--oe-global-sizing-3);
+    padding: var(--oe-global-sizing-2);
     transition: all 200ms ease-in-out;
-    border-radius: var(--oe-global-borderRadius-soft);
     border: 0px solid transparent;
     cursor: pointer;
     font-weight: var(--oe-global-fontWeight-bold);
+    background-color: transparent;
 }
 
 /* 
     VARIANTS 
 */
+/* FLAT */
+
+.flat.primary {
+    color: var(--oe-global-color-primary);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+.flat.primary:hover {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-primary);
+}
+
+.flat.secondary {
+    color: var(--oe-global-color-secondary);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+    .flat.secondary:hover {
+        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-secondary);
+    }
+
+
+.flat.accent {
+    color: var(--oe-global-color-accent);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+    .flat.accent:hover {
+        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-accent);
+    }
+
+.flat.info {
+    color: var(--oe-global-color-info);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+    .flat.info:hover {
+        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info);
+    }
+
+.flat.warning {
+    color: var(--oe-global-color-warning);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+    .flat.warning:hover {
+        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning);
+    }
+
+.flat.error {
+    color: var(--oe-global-color-error);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+    .flat.error:hover {
+        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error);
+    }
+
+.flat.success {
+    color: var(--oe-global-color-success);
+    border: var(--oe-global-borderWidth-2) solid transparent;
+}
+
+    .flat.success:hover {
+        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success);
+    }
+
+
 /* SOLID */
+
 .solid.primary {
     border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-primary);
     background-color: var(--oe-global-color-primary);
