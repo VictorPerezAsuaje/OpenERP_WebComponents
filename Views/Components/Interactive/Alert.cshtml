@@ -1,0 +1,193 @@
+﻿@{
+    ViewData["Title"] = "Alerts - OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="Alerts are a versatile and customizable tool for displaying alert messages in web applications. It provides flexibility in styling and content, allowing you to create different types of alerts to suit your application's needs.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Alerts">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Components/Alert")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Alerts are a versatile and customizable tool for displaying alert messages in web applications. It provides flexibility in styling and content, allowing you to create different types of alerts to suit your application's needs.">
+    <meta property="og:image" content="/img/alert-component.jpg">
+    <meta property="og:url" content="@(url + "Components/Alert")">
+    <meta property="og:type" content="website">
+}
+
+<oe-title fouc="ease" variant="xl">OpenERP Alert</oe-title>
+
+<p class="mb-3 text-gray-500 mb-6">
+    Alerts are a versatile and customizable tool for displaying alert messages in web applications. It provides flexibility in styling and content, allowing you to create different types of alerts to suit your application's needs.
+</p>
+
+<p class="mb-3 text-gray-500 mb-6">
+    These are a list of properties you can use to customize your alert:
+</p>
+
+<ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+    <li><strong>title="{ TEXT }"</strong>: Optional property. Allows you to add a title to your alert. It only accepts text strings.</li>
+
+    <li><strong>message="{ TEXT | HTML }"</strong>: Optional property. If you prefer, you can just set the content as children inside the &lt;oe-alert&gt;. It allows you to set a message for the alert.</li>
+
+    <li><strong>variant="{ solid | outline }"</strong>: Optional property. It defines if your alert will have or not background color.</li>
+
+    <li><strong>color="{ info | success | warning | error }"</strong>: Optional property. It defines the colors for the background, borders and texts.</li>
+</ul>
+
+<div id="defaultAlert">
+    <oe-title fouc="ease" variant="lg">Default Alert</oe-title>
+
+    <div class="mt-8">
+        <div class="flex justify-end w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl">
+            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/oeComponents/components/alert/alert.js" target="_blank" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
+                <i class="fa-brands fa-github text-lg mr-3"></i>
+                Check code on GitHub
+            </a>
+        </div>
+
+        <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x h-[50vh]">
+            <div class="w-full flex flex-row">
+                <div class="flex-[2] min-h-24 block mx-auto my-auto py-12 px-16" id="alertDefaultExample">
+<oe-alert id="alertExample" fouc="ease" title="Did you know...">
+    That your message can have <span class="underline">HTML</span> or other <oe-badge color="secondary">Web Components</oe-badge> in it? 🤔
+</oe-alert>
+                </div>
+
+                <div id="playground" class="border-l-4 flex-1 py-4 px-5 overflow-auto">
+                    <oe-title fouc="ease" variant="md">Playground</oe-title>
+
+                    <div class="mt-5">
+                        <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title content</label>
+                        <input type="text" id="title" name="title" value="Did you know..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Alert title content..." oninput="updateProperty('alertExample',this.name, this.value)">
+                    </div>
+
+                    <div class="mt-5">
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Message content</label>
+                        <textarea type="text" id="message" name="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 max-h-40 h-24" placeholder="Alert message content..." onkeyup="updateProperty('alertExample',this.name, this.value)">That your message can have <span class="underline text-white">HTML</span> or other <oe-badge color="secondary">Web Components</oe-badge> in it? 🤔</textarea>
+                    </div>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Variants</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="solid" class="mr-4" onchange="setAttributeValueToExample('alertExample',this.name, this.value)" checked>
+                                Solid
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="outline" class="mr-4" onchange="setAttributeValueToExample('alertExample',this.name, this.value)">
+                                Outline
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Colors</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="info" class="mr-4" onchange="setAttributeValueToExample('alertExample',this.name, this.value)" checked>
+                                Info
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="success" class="mr-4" onchange="setAttributeValueToExample('alertExample',this.name, this.value)">
+                                Success
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="warning" class="mr-4" onchange="setAttributeValueToExample('alertExample',this.name, this.value)">
+                                Warning
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="error" class="mr-4" onchange="setAttributeValueToExample('alertExample',this.name, this.value)">
+                                Error
+                            </label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+
+            <div class="flex justify-end">
+                <button type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700" onclick="copyTextContent('sampleCode')">
+                    <i class="fa-solid fa-clipboard text-md mr-2"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+                <code class="language-html " data-lang="html" id="sampleCode" data-load-from="alertDefaultExample"></code> 
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="variantAlerts" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Variants</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="variantAlertSamples">
+<oe-alert fouc="ease" variant="solid" color="success">I'm solid!</oe-alert>
+<oe-alert fouc="ease" variant="outline" color="success">I'm outlined!</oe-alert>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>            
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+                <code class="language-html" data-lang="html" data-load-from="variantAlertSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="colorAlerts" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Colors</oe-title>
+    <div class="grid grid-cols-4 gap-4 my-8" id="colorAlertSamples">
+<oe-alert fouc="ease" variant="solid" color="info">info</oe-alert>
+<oe-alert fouc="ease" variant="solid" color="success">success</oe-alert>
+<oe-alert fouc="ease" variant="solid" color="warning">warning</oe-alert>
+<oe-alert fouc="ease" variant="solid" color="error">error</oe-alert>
+<oe-alert fouc="ease" variant="outline" color="info">info</oe-alert>
+<oe-alert fouc="ease" variant="outline" color="success">success</oe-alert>
+<oe-alert fouc="ease" variant="outline" color="warning">warning</oe-alert>
+<oe-alert fouc="ease" variant="outline" color="error">error</oe-alert>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="colorAlertSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/pages/alert.js" asp-append-version="true"></script>
+}

@@ -151,16 +151,9 @@
         It happens to all of us! We just re-use endpoints but we do not want <strong>all data</strong> to be shown to the user, right? Feel free to customize which columns should be shown to the user based on the data!
     </p>
 
-    <div id="messageContainer" class="flex items-center p-4 my-10 text-amber-600 rounded border border-amber-600" role="alert">
-        <svg class="flex-shrink-0 w-4 h-4 mx-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-        </svg>
-
-        <div id="message" class="ml-3 text-sm font-medium">
-            <h3 class="mb-1"><strong>WARNING!</strong></h3>
-            <p>The fact that you choose which columns to show does not mean that the data is not being passed "down the wire". Beware of sensitive information that could be shown inside the "Network" tab in the inspector.</p>
-        </div>
-    </div>
+    <oe-alert color="warning" title="WARNING!">
+        The fact that you choose which columns to show does not mean that the data is not being passed "down the wire". Beware of sensitive information that could be shown inside the "Network" tab in the inspector.
+    </oe-alert>
 
     <p class="mb-3 text-gray-500 mb-6">
         These are the properties you can use to customize which columns to show:

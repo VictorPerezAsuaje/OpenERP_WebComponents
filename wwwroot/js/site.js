@@ -78,6 +78,14 @@ const setAttributeToExample = (sampleId, name, value) => {
     Prism.highlightAll();
 }
 
+const setAttributeValueToExample = (sampleId, name, value) => {
+    const sample = document.getElementById(sampleId);
+
+    sample[name] = value;
+    document.getElementById('sampleCode').textContent = sample.outerHTML;
+    Prism.highlightAll();
+}
+
 const loadSampleCodes = () => {
     document.querySelectorAll("[data-load-from]").forEach(x => {
         const sampleFrom = x.getAttribute("data-load-from");

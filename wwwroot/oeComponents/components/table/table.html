@@ -1,14 +1,6 @@
 ﻿<div id="loaderContainer">
     <oe-skeleton id="loader"></oe-skeleton>
-
-    <div id="messageContainer" class="flex items-center p-4 mb-4 text-white" role="alert" style="display:none;">
-        <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-        </svg>
-
-        <div id="message" class="ml-3 text-sm font-medium">
-        </div>
-    </div>
+    <oe-alert id="messageContainer" type="error" class="none"></oe-alert>
 </div>
 
 <div id="tableContainer" class="w-full none">
@@ -28,7 +20,7 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="text" id="table-search" class="block p-2 pl-10 text-sm text-gray-900 border border-1 border-gray-300 regular-rounded bg-gray-50 outline-none" placeholder="Search...">
+            <input type="text" id="table-search" class="block p-2 pl-10 text-sm text-gray-500 border border-1 border-gray-300 regular-rounded bg-gray-50 outline-none" placeholder="Search...">
         </div>
     </header>
 

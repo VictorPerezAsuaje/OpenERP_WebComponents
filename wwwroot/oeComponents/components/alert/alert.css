@@ -1,0 +1,104 @@
+﻿.alert {
+    display: flex;
+    align-items: center;
+    padding: var(--oe-global-sizing-3);
+    margin: var(--oe-global-sizing-5) 0;
+    border-radius: var( --oe-global-borderRadius-rounded);
+}
+
+/*flex items-center p-4 my-10 text-amber-600 rounded border border-amber-600*/
+.alert-message-container {
+    margin: 0 0 0 var(--oe-global-sizing-3);
+    font-size: var(--oe-global-sizing-4);
+    font-weight: var(--oe-global-fontWeight-medium);
+}
+
+.alert-title {
+    font-size: var(--oe-global-sizing-4);
+    font-weight: var(--oe-global-fontWeight-bold);
+}
+
+/* SOLID */
+.solid.info {
+    background-color: var(--oe-global-color-info);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.info:hover {
+        background-color: var(--oe-global-color-info-focus);
+    }
+
+.solid.success {
+    background-color: var(--oe-global-color-success);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.success:hover {
+        background-color: var(--oe-global-color-success-focus);
+    }
+
+.solid.warning {
+    background-color: var(--oe-global-color-warning);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.warning:hover {
+        background-color: var(--oe-global-color-warning-focus);
+    }
+
+.solid.error {
+    background-color: var(--oe-global-color-error);
+    color: var(--oe-global-color-white);
+}
+
+    .solid.error:hover {
+        background-color: var(--oe-global-color-error-focus);
+    }
+
+/* OUTLINES */
+.outline.info {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info);
+    background-color: transparent;
+    color: var(--oe-global-color-info);
+}
+
+    .outline.info:hover {
+        background-color: var(--oe-global-color-info);
+        color: var(--oe-global-color-info-content);
+    }
+
+
+.outline.success {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success);
+    background-color: transparent;
+    color: var(--oe-global-color-success);
+}
+
+    .outline.success:hover {
+        background-color: var(--oe-global-color-success);
+        color: var(--oe-global-color-success-content);
+    }
+
+
+.outline.warning {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning);
+    background-color: transparent;
+    color: var(--oe-global-color-warning);
+}
+
+    .outline.warning:hover {
+        background-color: var(--oe-global-color-warning);
+        color: var(--oe-global-color-warning-content);
+    }
+
+
+.outline.error {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error);
+    background-color: transparent;
+    color: var(--oe-global-color-error);
+}
+
+    .outline.error:hover {
+        background-color: var(--oe-global-color-error);
+        color: var(--oe-global-color-error-content);
+    }

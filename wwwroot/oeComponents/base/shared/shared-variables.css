@@ -29,17 +29,17 @@
     --oe-global-color-gray-300: #e2e8f0;
     --oe-global-color-white: #fefefe;
     /* ACTION COLORS */
-    --oe-global-color-info: #3abff8;
-    --oe-global-color-info-focus: #002b3d;
+    --oe-global-color-info: #0c95cf;
+    --oe-global-color-info-focus: #00638d;
     --oe-global-color-info-content: #fefefe;
-    --oe-global-color-success: #36d399;
-    --oe-global-color-success-focus: #003320;
+    --oe-global-color-success: #13b97c;
+    --oe-global-color-success-focus: #008d58;
     --oe-global-color-success-content: #fefefe;
-    --oe-global-color-warning: #fbbd23;
-    --oe-global-color-warning-focus: #382800;
+    --oe-global-color-warning: #db9c00;
+    --oe-global-color-warning-focus: #976c00;
     --oe-global-color-warning-content: #fefefe;
-    --oe-global-color-error: #f87272;
-    --oe-global-color-error-focus: #470000;
+    --oe-global-color-error: #cb2f2f;
+    --oe-global-color-error-focus: #950303;
     --oe-global-color-error-content: #fefefe;
     /* SHADOWS */
     --oe-global-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
@@ -108,4 +108,3 @@
     --oe-global-sizing-screenWidth: 100vw;
     --oe-global-sizing-screenHeight: 100vh;
 }
-

@@ -17,7 +17,7 @@ public class ComponentsController : Controller
     public IActionResult Badge() => View("Content/Badge");
     public IActionResult Card() => View("Content/Card");
     public IActionResult Title() => View("Content/Title");
-    
+
     #endregion Content
 
     #region Layout
@@ -26,6 +26,8 @@ public class ComponentsController : Controller
     #endregion Layout
 
     #region Interactive
+    public IActionResult Alert() => View("Interactive/Alert");
+
     public IActionResult Button() => View("Interactive/Button");
 
     #endregion Interactive

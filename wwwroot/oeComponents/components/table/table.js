@@ -3,8 +3,6 @@ import table from "./table.html";
 import css from "./table.css";
 
 export default class Table extends OpenERPComponent {
-    static observedAttributes = ["rows-to-show", "page", "search", "sort-column", "sort-direction"];
-
     #defaultSortDirection = "asc";
     #defaultSortOptions = {
         asc: "asc",
@@ -75,7 +73,7 @@ export default class Table extends OpenERPComponent {
         const response = await fetch(this.fetchFrom);
         if (!response.ok) {
             console.error('Failed to fetch data:', response.status, response.statusText);
-            this.showMessage('Failed to fetch data.', "error");
+            this.showMessage('Failed to fetch data.');
             return;
         }
 
@@ -84,21 +82,10 @@ export default class Table extends OpenERPComponent {
         this.initTable();
     }
 
-    showMessage(message, type) {   
+    showMessage(message) {   
         const messageContainer = this.shadowRoot.getElementById("messageContainer");
-        const messageItem = this.shadowRoot.getElementById("message");
-        let color = "bg-error";
-
-        if (type === "info")
-            color = "bg-info";
-
-        this.cssClasses(messageContainer)
-            .remove("bg-error")
-            .remove("bg-info")
-            .add(color);
-
-        messageContainer.style.display = "block";
-        messageItem.textContent = message;
+        messageContainer.classList.remove("none");
+        messageContainer.textContent = message;
     }
 
     #sortStringFunc(a, b) {
@@ -460,10 +447,6 @@ export default class Table extends OpenERPComponent {
 
         this.initTableHead();
         this.initTableBody();
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        //console.log("name: ", name, ", oldValue: ", oldValue, ", newValue: ", newValue)
     }
 }
 
