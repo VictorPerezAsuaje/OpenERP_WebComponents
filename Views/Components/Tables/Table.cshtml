@@ -51,7 +51,7 @@
         </div>
 
         <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x">
-            <div class="flex-[2] min-h-24 block mx-auto px-8 py-4" id="defaultTableExample">
+            <div class="flex-[2] min-h-24 block mx-auto px-8 py-4 overflow-x-auto" id="defaultTableExample">
 <oe-table fouc="ease" oe-get="/Components/GetAllTableData" sort-column="id" sort-direction="desc">
         <oe-column oe-name="selector">
             <oe-head-template>
@@ -124,7 +124,7 @@
     </p>
 
 
-    <div id="defaultTableSamples" class="my-5">
+    <div id="defaultTableSamples" class="my-5 overflow-x-auto">
         <oe-table fouc="ease" oe-get="/Components/GetAllTableData"></oe-table>
     </div>
 
@@ -175,7 +175,7 @@
         Whatever you defined inside the &lt;oe-column&gt; will be considered as the header content for that column. You will see examples of the <i>oe-name</i> being applied in the <a href="#columnTemplatingTable" class="underline underline-offset-1">Column Templating section</a>.
     </p>
 
-    <div id="userDefinedColumnsSample" class="my-5">
+    <div id="userDefinedColumnsSample" class="my-5 overflow-x-auto">
 <oe-table fouc="ease" oe-get="/Components/GetAllTableData">
     <oe-column oe-bind="Name">Product Name</oe-column>
     <oe-column oe-bind="Description">Description</oe-column>
@@ -217,7 +217,7 @@
         <li><strong>{{ JSON_PROPERTY_NAME }}</strong>: As long as you use it inside of the &lt;oe-row-template&gt; Allows you to place the value for that property in that row, so you can use it to better format the column or pass it to a function in another component inside that row.</li>
     </ul>
 
-    <div id="columnTemplatingTableSample" class="my-5">
+    <div id="columnTemplatingTableSample" class="my-5 overflow-x-auto">
 <oe-table fouc="ease" oe-get="/Components/GetAllTableData">
     <oe-column oe-name="selector">
         <!-- selectAll is a function outside the component -->
@@ -277,7 +277,7 @@
         <li><strong>&lt;oe-table sort-direction="[asc | desc]"&gt;</strong>: Allows you to define a default sort direction for the column selected in the sort-by once the table loads. It can have two values, "asc" or "desc". </li>
     </ul>
 
-    <div id="sortableTableSample" class="my-5">
+    <div id="sortableTableSample" class="my-5 overflow-x-auto">
 <oe-table fouc="ease" oe-get="/Components/GetAllTableData" sort-column="Name" sort-direction="desc">
     <oe-column oe-name="selector">
         <!-- selectAll is a function outside the component -->
@@ -341,7 +341,7 @@
         If there is no searchable column, the search bar will automatically disappear as you have seen in the previous examples.
     </p>
 
-    <div id="searchableTableSample" class="my-5">
+    <div id="searchableTableSample" class="my-5 overflow-x-auto">
 <oe-table fouc="ease" oe-get="/Components/GetAllTableData" sort-column="Name" sort-direction="desc" search="Pr">
     <oe-column oe-name="selector">
         <oe-head-template>

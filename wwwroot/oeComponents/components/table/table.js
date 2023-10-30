@@ -184,7 +184,7 @@ export default class Table extends OpenERPComponent {
             clearTimeout(timeout);
             timeout = setTimeout(() => {
                 this.applySearchFilter(search.value)
-            }, 500);
+            }, 200);
         })
     }    
 
