@@ -1,4 +1,4 @@
-﻿:root, :host, [data-theme=default] {
+﻿:root, [data-theme=default] {
     /* SCREEN SIZES */
     --oe-global-breakpoint-sm: 480px;
     --oe-global-breakpoint-md: 768px;
@@ -108,3 +108,4 @@
     --oe-global-sizing-screenWidth: 100vw;
     --oe-global-sizing-screenHeight: 100vh;
 }
+
