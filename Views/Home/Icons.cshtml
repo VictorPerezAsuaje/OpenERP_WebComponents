@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "OpenERP Icons";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="Let's be real, what's a website without icons? Nothing! It helps navigation and allows for simpler UX for clients. Sadly, web components with shadow dom makes it somewhat tricky... That's where Font Awesome makes its entrance!">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Icons">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "/Icons")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Let's be real, what's a website without icons? Nothing! It helps navigation and allows for simpler UX for clients. Sadly, web components with shadow dom makes it somewhat tricky... That's where Font Awesome makes its entrance!">
+    <meta property="og:image" content="/img/home-page-openerp-components-23102023.jpg">
+    <meta property="og:url" content="@(url + "/Icons")">
+    <meta property="og:type" content="website">
+}
+
+<header class="mb-10 lg:mb-6 not-format">
+    <oe-title fouc="ease" variant="xl">🚀 Welcome to the OpenERP WebComponent Library! 🚀</oe-title>
+</header>
+
+<oe-title fouc="ease" variant="lg">OpenERP 💕 FontAwesome</oe-title>
+
+<p class="mb-3 text-gray-500 mb-6">Let's be real, what's a website without icons? Nothing! It helps navigation and allows for simpler UX for clients. Sadly, web components with shadow dom makes it somewhat tricky... That's where Font Awesome makes its entrance! </p>
+
+<p class="mb-3 text-gray-500 mb-6">If you don't know them, Font Awesome is one of the biggest icon libraries out there. That's why OpenERP Components is including their icons by default with our &lt;oe-icon&gt; component, where you can use the "name" attribute to specify one of the 2000+ free icon classes Font Awesome offers right off the bat!</p>
+
+<p class="mb-3 text-gray-500 mb-6">You can search for icons here: <a href="https://origin.fontawesome.com/search?m=free&o=r" target="_blank" class="underline text-indigo-500 hover:text-indigo-700 font-medium">FontAwesome Free Icons</a> </p>
+
+<p class="mb-3 text-gray-500 mb-6">So now you can do something like: </p>
+
+<div class="flex flex-wrap justify-between gap-5 my-8 py-2 px-5" id="iconSamples">
+<oe-icon name="fa-solid fa-bars"></oe-icon>
+<oe-icon name="fa-solid fa-circle-info text-info"></oe-icon>
+<oe-icon name="fa-solid fa-download text-primary"></oe-icon>
+<oe-icon name="fa-solid fa-question text-secondary"></oe-icon>
+<oe-icon name="fa-solid fa-magnifying-glass text-accent"></oe-icon>
+<oe-icon name="fa-solid fa-check text-success"></oe-icon>
+</div>
+
+<div class="relative border-gray-200 border-y border-x">
+    <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+        <ul class="flex text-sm font-medium text-center text-gray-500">
+            <li>
+                <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+            </li>
+        </ul>
+    </div>
+    <div class="relative">
+        <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+        <code class="language-html" data-lang="html" data-load-from="iconSamples"></code>
+            </pre>
+    </div>
+</div>
+
+<p class="text-gray-500 my-6">Every icon you see in our website (aside from the emojis), comes from their amazing CDN!</p>
+
+
+@section Scripts{
+    <script src="/js/pages/icons.js" asp-append-version="true"></script>
+}

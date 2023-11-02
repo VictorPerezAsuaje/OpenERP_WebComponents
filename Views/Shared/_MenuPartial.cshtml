@@ -42,7 +42,7 @@
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Theming</span>
             </a>
 
-            <a href="#Icons" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Icons")">
+            <a asp-controller="Home" asp-action="Icons" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Icons")">
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Icons</span>
             </a>
         </div>
@@ -118,7 +118,7 @@
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Accordion</span>
             </a>
 
-            <a asp-controller="Interactive" asp-action="Alert" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Alert")">
+            <a asp-controller="Components" asp-action="Alert" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "Alert")">
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Alert</span>
             </a>            
 
@@ -126,7 +126,7 @@
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Breadcrumb</span>
             </a>
 
-            <a asp-controller="Components" asp-action="Button" class="cursor-not-allowed w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "")" >
+            <a asp-controller="Components" asp-action="Button" class="cursor-pointer w-full flex items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6" data-menu-item-selected="@(component == "")" >
                 <span class="ml-6 text-sm truncate flex justify-between w-full">Button</span>
             </a>
 

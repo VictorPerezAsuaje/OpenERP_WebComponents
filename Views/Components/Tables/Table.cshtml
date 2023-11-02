@@ -84,10 +84,8 @@
                 Actions
             </oe-head-template>
             <oe-row-template>
-                <oe-button variant="flat" type="circle" color="secondary" onclick="alert(`You clicked actions for row id: {{Id}}`)">
-                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                        <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                    </svg>
+                <oe-button variant="flat" color="secondary" onclick="alert(`You clicked actions for row id: {{Id}}`)" class="flex justify-center align-middle">
+                    <oe-icon name="fa-solid fa-trash-can"></oe-icon>
                 </oe-button>
             </oe-row-template>
         </oe-column>

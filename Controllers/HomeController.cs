@@ -19,6 +19,9 @@ public class HomeController : Controller
     [HttpGet("Theming")]
     public IActionResult Theming() => View("Theming");
 
+    [HttpGet("Icons")]
+    public IActionResult Icons() => View("Icons");
+
     [HttpGet("NotFound")]
     public IActionResult Error404() => View("NotFound");
 

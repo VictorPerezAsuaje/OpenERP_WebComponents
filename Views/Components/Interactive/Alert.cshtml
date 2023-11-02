@@ -61,12 +61,12 @@
 
                     <div class="mt-5">
                         <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Title content</label>
-                        <input type="text" id="title" name="title" value="Did you know..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Alert title content..." oninput="updateProperty('alertExample',this.name, this.value)">
+                        <input type="text" id="title" name="title" value="Did you know..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="Alert title content..." oninput="setAttributeValueToExample('alertExample',this.name, this.value)">
                     </div>
 
                     <div class="mt-5">
                         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">Message content</label>
-                        <textarea type="text" id="message" name="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 max-h-40 h-24" placeholder="Alert message content..." onkeyup="updateProperty('alertExample',this.name, this.value)">That your message can have <span class="underline text-white">HTML</span> or other <oe-badge color="secondary">Web Components</oe-badge> in it? 🤔</textarea>
+                        <textarea type="text" id="message" name="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 max-h-40 h-24" placeholder="Alert message content..." onkeyup="setAttributeValueToExample('alertExample',this.name, this.value)">That your message can have <span class="underline">HTML</span> or other <oe-badge color="secondary">Web Components</oe-badge> in it? 🤔</textarea>
                     </div>
 
                     <details>

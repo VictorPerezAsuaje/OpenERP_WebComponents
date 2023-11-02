@@ -1,7 +1,234 @@
 ﻿@{
     ViewData["Title"] = "Buttons - OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
 }
 
-<header class="mb-10 not-format">
-    <oe-title fouc="ease" size="xl">🚧 WORK IN PROGRESS 🚧</oe-title>
-</header>
+@section SEO {
+    <meta name="description" content="Buttons highlight key information and can be used to emphasize the status of items or provide additional context.">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Buttons">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Components/Button")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="Buttons are your go-to solution for enhancing user interactions.">
+    <meta property="og:image" content="/img/button-component.jpg">
+    <meta property="og:url" content="@(url + "Components/Button")">
+    <meta property="og:type" content="website">
+}
+
+<oe-title fouc="ease" variant="xl">OpenERP Buttons</oe-title>
+
+<p class="mb-3 text-gray-500 mb-6">
+    Buttons are your go-to solution for enhancing user interactions. And I know you will need flexibility when it comes to "what" is a button, so you will be able to convert anything into a button.
+</p>
+
+<p class="mb-3 text-gray-500 mb-6">
+    These are a list of properties you can use to customize your button:
+</p>
+
+<ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+    <li><strong>variant="{ solid | outline | flat }"</strong>: Optional property. It defines if your button will have or not background color. By default is set to "solid".</li>
+
+    <li><strong>color="{ primary | secondary | accent | info | success | warning | error }"</strong>: Optional property. It defines the colors for the background, borders and texts. By default it's set to "primary".</li>
+
+    <li><strong>type="{ square | pill | circle }"</strong>: Optional property. It defines the border radius. By default is set to "pill".</li>
+</ul>
+
+
+<div id="defaultButton">
+    <oe-title fouc="ease" variant="lg">Default Button</oe-title>
+
+    <div class="mt-8">
+        <div class="flex justify-end w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl">
+            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/oeComponents/components/button/button.js" target="_blank" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
+                <i class="fa-brands fa-github text-lg mr-3"></i>
+                Check code on GitHub
+            </a>
+        </div>
+
+        <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x h-[50vh]">
+            <div class="w-full flex flex-row">
+                <div class="flex-[2] min-h-24 block mx-auto my-auto py-12 px-16 flex justify-center" id="buttonDefaultExample"><oe-button id="buttonExample" fouc="ease" onclick="alert('You clicked me! 🤯')">Click me!</oe-button></div>
+
+                <div id="playground" class="border-l-4 flex-1 py-4 px-5 overflow-auto">
+                    <oe-title fouc="ease" variant="md">Playground</oe-title>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Variants</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="solid" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)" checked>
+                                Solid
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="outline" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Outline
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Colors</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="primary" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)" checked>
+                                Primary
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="secondary" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Secondary
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="accent" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Accent
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="info" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Info
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="success" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Success
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="warning" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Warning
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="color" value="error" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Error
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Type</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="square" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)" checked>
+                                Square
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="pill" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Pill
+                            </label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+
+            <div class="flex justify-end">
+                <button type="button" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700" onclick="copyTextContent('sampleCode')">
+                    <i class="fa-solid fa-clipboard text-md mr-2"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html " data-lang="html" id="sampleCode" data-load-from="buttonDefaultExample"></code> 
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="solidButtons" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Solid Buttons</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="solidButtonSamples">
+<oe-button fouc="ease" variant="solid" color="primary">primary</oe-button>
+<oe-button fouc="ease" variant="solid" color="secondary">secondary</oe-button>
+<oe-button fouc="ease" variant="solid" color="accent">accent</oe-button>
+<oe-button fouc="ease" variant="solid" color="info">info</oe-button>
+<oe-button fouc="ease" variant="solid" color="warning">warning</oe-button>
+<oe-button fouc="ease" variant="solid" color="error">error</oe-button>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="solidButtonSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="outlineButtons" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Outline Buttons</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="outlineButtonSamples">
+<oe-button fouc="ease" variant="outline" color="primary">primary</oe-button>
+<oe-button fouc="ease" variant="outline" color="secondary">secondary</oe-button>
+<oe-button fouc="ease" variant="outline" color="accent">accent</oe-button>
+<oe-button fouc="ease" variant="outline" color="info">info</oe-button>
+<oe-button fouc="ease" variant="outline" color="warning">warning</oe-button>
+<oe-button fouc="ease" variant="outline" color="error">error</oe-button>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="outlineButtonSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="typeButtons" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Available types</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="typeButtonSamples">
+<oe-button fouc="ease" type="circle"><oe-icon name="fa-solid fa-info p-1"></oe-icon></oe-button>
+<oe-button fouc="ease" type="pill">pill</oe-button>
+<oe-button fouc="ease" type="square">square</oe-button>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="typeButtonSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/pages/buttons.js" asp-append-version="true"></script>
+}

@@ -1,4 +1,4 @@
-﻿.btn {
+﻿.button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,11 @@
     background-color: transparent;
 }
 
+    .button.circle {
+        padding: revert;
+        aspect-ratio: 1/1; 
+        height: fit-content;
+    }
 /* 
     VARIANTS 
 */
@@ -20,9 +25,9 @@
     border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-.flat.primary:hover {
-    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-primary);
-}
+    .flat.primary:hover {
+        color: var(--oe-global-color-primary-focus);
+    }
 
 .flat.secondary {
     color: var(--oe-global-color-secondary);
@@ -30,7 +35,7 @@
 }
 
     .flat.secondary:hover {
-        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-secondary);
+        color: var(--oe-global-color-secondary-focus);
     }
 
 
@@ -40,7 +45,7 @@
 }
 
     .flat.accent:hover {
-        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-accent);
+        color: var(--oe-global-color-accent-focus);
     }
 
 .flat.info {
@@ -49,7 +54,7 @@
 }
 
     .flat.info:hover {
-        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info);
+        color: var(--oe-global-color-info-focus);
     }
 
 .flat.warning {
@@ -58,7 +63,7 @@
 }
 
     .flat.warning:hover {
-        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning);
+        color: var(--oe-global-color-warning-focus);
     }
 
 .flat.error {
@@ -67,7 +72,7 @@
 }
 
     .flat.error:hover {
-        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error);
+        color: var(--oe-global-color-error-focus);
     }
 
 .flat.success {
@@ -76,7 +81,7 @@
 }
 
     .flat.success:hover {
-        border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success);
+        color: var(--oe-global-color-success-focus);
     }
 
 

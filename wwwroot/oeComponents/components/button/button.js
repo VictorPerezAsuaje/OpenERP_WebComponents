@@ -3,8 +3,11 @@ import button from "./button.html";
 import css from "./button.css";
 
 export default class Button extends OpenERPComponent {
-    #variants = { "solid": "solid", "outline": "outline", "flat": "flat" };
-    #colors = {
+    #defaultVariant = "solid";
+    #availableVariants = { "solid": "solid", "outline": "outline", "flat": "flat" };
+
+    #defaultColor = "primary";
+    #availableColors = {
         "primary": "primary",
         "secondary": "secondary",
         "accent": "accent",
@@ -14,7 +17,40 @@ export default class Button extends OpenERPComponent {
         "error": "error"
     };
 
-    #type = { "square": "soft-rounded", "pill": "regular-rounded", "circle": "circle" };
+    #defaultType = "soft-rounded";
+    #availableTypes = { "square": "soft-rounded", "pill": "regular-rounded", "circle": "circle" };
+
+    /* PROPS */
+    get variant() {
+        return this.getAttribute("variant") in this.#availableVariants ? this.getAttribute("variant") : this.#defaultVariant;
+    }
+
+    set variant(value) {
+        this.setAttribute("variant", value in this.#availableVariants ? value : this.#defaultVariant);
+        this.#updateCssClasses();
+    }
+
+    get color() {
+        return this.getAttribute("color") in this.#availableColors ? this.getAttribute("color") : this.#defaultColor;
+    }
+
+    set color(value) {
+        this.setAttribute("color", value in this.#availableColors ? value : this.#defaultColor);
+        this.#updateCssClasses();
+    }
+
+    get type() {
+        return this.getAttribute("type") in this.#availableTypes ? this.#availableTypes[this.getAttribute("type")] : this.#defaultType;
+    }
+
+    set type(value) {
+        this.setAttribute("type", value in this.#availableTypes ? value : this.#defaultType);
+        this.#updateCssClasses();
+    }
+
+    #updateCssClasses() {
+        this.shadowRoot.getElementById("button").className = `button ${this.variant} ${this.color} ${this.type}`;
+    }
 
     constructor() {
         super();
@@ -22,23 +58,11 @@ export default class Button extends OpenERPComponent {
         this.componentHTML = button;   
         this.componentCSS = css[0][1];
 
-        this.loadClassProp("variant", this.variant);
-        this.loadClassProp("color", this.color);
-        this.loadClassProp("type", this.type);
         super.createWebComponent();
+        this.#updateCssClasses();
     }    
 
-    /* PROPS */
-    get variant() {
-        return this.getAttribute("variant") in this.#variants ? this.getAttribute("variant") : "solid";
-    }
-
-    get color() {
-        return this.getAttribute("color") in this.#colors ? this.getAttribute("color") : "primary";
-    }
-    get type() {
-        return this.getAttribute("type") in this.#type ? this.getAttribute("type") : "soft-rounded";
-    }
+    
 }
 
 customElements.define('oe-button', Button);

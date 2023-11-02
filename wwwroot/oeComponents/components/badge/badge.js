@@ -3,9 +3,11 @@ import badge from "./badge.html";
 import css from "./badge.css";
 
 export default class Badge extends OpenERPComponent {
-    #variants = { "solid": "solid", "outline": "outline" };
+    #defaultVariant = "solid";
+    #availableVariants = { "solid": "solid", "outline": "outline" };
 
-    #colors = {
+    #defaultColor = "primary";
+    #availableColors = {
         "primary": "primary",
         "secondary": "secondary",
         "accent": "accent",
@@ -15,31 +17,57 @@ export default class Badge extends OpenERPComponent {
         "error": "error",
     };
 
-    #size = { "xl": "text-xl", "lg": "text-lg", "md": "text-md", "sm": "text-sm", "xs": "text-xs" };
+    #defaultSize = "text-xs";
+    #availableSizes = {
+        "xl": "text-xl",
+        "lg": "text-lg",
+        "md": "text-md",
+        "sm": "text-sm",
+        "xs": "text-xs"
+    };
 
-    #type = { "square": "soft-rounded", "pill": "regular-rounded" };
+    #defaultType = "regular-rounded";
+    #availableTypes = { "square": "soft-rounded", "pill": "regular-rounded" };
 
     /* PROPS */
     get variant() {
-        return this.getAttribute("variant") in this.#variants ? this.getAttribute("variant") : "solid";
+        return this.getAttribute("variant") in this.#availableVariants ? this.getAttribute("variant") : this.#defaultVariant;
+    }
+
+    set variant(value) {
+        this.setAttribute("variant", value in this.#availableVariants ? value : this.#defaultVariant);
+        this.#updateCssClasses();
     }
 
     get color() {
-        return this.getAttribute("color") in this.#colors ? this.getAttribute("color") : "primary";
+        return this.getAttribute("color") in this.#availableColors ? this.getAttribute("color") : this.#defaultColor;
+    }
+
+    set color(value) {
+        this.setAttribute("color", value in this.#availableColors ? value : this.#defaultColor);
+        this.#updateCssClasses();
     }
 
     get size() {
-        return this.getAttribute("size") in this.#size ? this.#size[this.getAttribute("size")] : this.#size["xs"];
+        return this.getAttribute("size") in this.#availableSizes ? this.#availableSizes[this.getAttribute("size")] : this.#defaultSize;
+    }
+
+    set size(value) {
+        this.setAttribute("size", value in this.#availableSizes ? value : this.#defaultSize);
+        this.#updateCssClasses();
     }
 
     get type() {
-        return this.getAttribute("type") in this.#type ? this.#type[this.getAttribute("type")] : this.#type["pill"];
+        return this.getAttribute("type") in this.#availableTypes ? this.#availableTypes[this.getAttribute("type")] : this.#defaultType;
     }
 
-    #classAttributes = ["variant", "color", "size", "type"];
+    set type(value) {
+        this.setAttribute("type", value in this.#availableTypes ? value : this.#defaultType);
+        this.#updateCssClasses();
+    }
 
-    static get observedAttributes() {
-        return ["variant", "color", "size", "type"];
+    #updateCssClasses() {
+        this.shadowRoot.getElementById("badge").className = `badge ${this.variant} ${this.color} ${this.size} ${this.type}`;
     }
 
     constructor() {
@@ -49,40 +77,9 @@ export default class Badge extends OpenERPComponent {
         this.componentHTML = badge;
         this.componentCSS = css[0][1];
 
-        this.loadClassProp("variant", this.variant);
-        this.loadClassProp("color", this.color);
-        this.loadClassProp("size", this.size);
-        this.loadClassProp("type", this.type);
         super.createWebComponent();
+        this.#updateCssClasses();
     }    
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        const span = this.shadowRoot.querySelector("span.badge");
-        if (!span) return;
-
-        if (this.#classAttributes.indexOf(name) === -1) return;
-
-        let attrObj = {};
-        switch (name) {
-            case "variant":
-                attrObj = this.#variants;
-                break;
-            case "color":
-                attrObj = this.#colors;
-                break;
-            case "size":
-                attrObj = this.#size;
-                break;
-            case "type":
-                attrObj = this.#type;
-                break;
-            default:
-                break;
-        }
-
-        span.classList.remove(attrObj[oldValue]);
-        span.classList.add(attrObj[newValue]);
-    }
 }
 
 customElements.define('oe-badge', Badge);

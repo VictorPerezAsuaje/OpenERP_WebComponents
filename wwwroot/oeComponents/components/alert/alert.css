@@ -6,7 +6,10 @@
     border-radius: var( --oe-global-borderRadius-rounded);
 }
 
-/*flex items-center p-4 my-10 text-amber-600 rounded border border-amber-600*/
+oe-icon {
+    margin: var(--oe-global-sizing-2) var(--oe-global-sizing-3);
+}
+
 .alert-message-container {
     margin: 0 0 0 var(--oe-global-sizing-3);
     font-size: var(--oe-global-sizing-4);
@@ -56,8 +59,13 @@
     }
 
 /* OUTLINES */
+.outline {
+    border-width: var(--oe-global-borderWidth-2);
+    border-style: solid;
+}
+
 .outline.info {
-    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info);
+    border-color: var(--oe-global-color-info);
     background-color: transparent;
     color: var(--oe-global-color-info);
 }
@@ -69,7 +77,7 @@
 
 
 .outline.success {
-    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success);
+    border-color: var(--oe-global-color-success);
     background-color: transparent;
     color: var(--oe-global-color-success);
 }
@@ -81,7 +89,7 @@
 
 
 .outline.warning {
-    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning);
+    border-color: var(--oe-global-color-warning);
     background-color: transparent;
     color: var(--oe-global-color-warning);
 }
@@ -93,7 +101,7 @@
 
 
 .outline.error {
-    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error);
+    border-color: var(--oe-global-color-error);
     background-color: transparent;
     color: var(--oe-global-color-error);
 }

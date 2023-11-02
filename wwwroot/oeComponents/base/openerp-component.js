@@ -1,5 +1,4 @@
-﻿//import sharedVariablesCss from "./shared/shared-variables.css";
-import importsCss from "./styles/__style-imports.min.css";
+﻿import importsCss from "./styles/__style-imports.min.css";
 export default class OpenERPComponent extends HTMLElement {   
     constructor() {
         super();
@@ -11,7 +10,6 @@ export default class OpenERPComponent extends HTMLElement {
 
         let importcss = document.createElement("style");
         importsCss.forEach(x => importcss.textContent += x[1])
-        //importcss.textContent = importsCss[0][1];
 
         this.shadowRoot.appendChild(importcss);
     }    
@@ -53,22 +51,5 @@ export default class OpenERPComponent extends HTMLElement {
         this.shadowRoot.appendChild(styleElement);
         this.shadowRoot.appendChild(this.template.content.cloneNode(true));
         this.setAttribute("fouc", "loaded");
-    }
-
-    /**
-     * Loads any value property to the componentHTML that follows the {{ propName }} and replaces it with the propValue. 
-     * 
-     * This should always be defined AFTER assigning the this.componentHTML in the component constructor.
-     * @param {any} propName
-     * @param {any} propValue
-     */
-    loadClassProp(propName, propValue) {
-        this.componentHTML = this.componentHTML.replaceAll(`{{${propName}}}`, propValue);
-    }
-
-    /* Turns a string split with "-" into camel case notation */
-    snakeCaseIntoCamelCase(name) {
-        let parts = name.split("-")
-        return [parts.shift(), ...parts.map(n => n[0].toUpperCase() + n.slice(1))].join("")
     }
 }

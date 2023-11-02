@@ -14,6 +14,7 @@ export default class Alert extends OpenERPComponent {
         "error": "error"
     };
 
+
     /* PROPS */
     get variant() {
         return this.getAttribute("variant") in this.#availableVariants ?
@@ -33,6 +34,7 @@ export default class Alert extends OpenERPComponent {
     set color(value) {
         this.setAttribute("color", value in this.#availableColors ? value : this.#defaultColor);
         this.#updateCssClasses();
+        this.initIcon();
     }
 
     #updateCssClasses() {
@@ -66,6 +68,7 @@ export default class Alert extends OpenERPComponent {
         this.#updateCssClasses();
         this.initTitle();
         this.initMessage();
+        this.initIcon();
     }    
 
     initTitle() {
@@ -83,6 +86,26 @@ export default class Alert extends OpenERPComponent {
     initMessage() {
         const message = this.shadowRoot.querySelector(".alert-message");
         message.innerHTML = this.message;
+    }
+
+    initIcon() {
+        const icon = this.shadowRoot.querySelector("oe-icon");
+
+        switch (this.color) {
+            case this.#availableColors.info:
+            default:
+                icon.name = "fa-solid fa-circle-info";
+                break;
+            case this.#availableColors.success:
+                icon.name = "fa-solid fa-circle-check";
+                break;
+            case this.#availableColors.warning:
+                icon.name = "fa-solid fa-triangle-exclamation";
+                break;
+            case this.#availableColors.error:
+                icon.name = "fa-solid fa-circle-exclamation";
+                break;
+        }
     }
 }
 
