@@ -30,6 +30,8 @@ public class ComponentsController : Controller
 
     public IActionResult Button() => View("Interactive/Button");
 
+    public IActionResult Tabs() => View("Interactive/Tabs");
+
     #endregion Interactive
 
     #region Tables

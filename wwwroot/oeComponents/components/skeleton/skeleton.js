@@ -2,7 +2,6 @@
 import skeleton from "./skeleton.html";
 
 export default class Skeleton extends OpenERPComponent {
-    static observedAttributes = [];
 
     constructor() {
         super();

@@ -1,0 +1,223 @@
+﻿@{
+    ViewData["Title"] = "Tabs - OpenERP Components";
+    string url = $"https://{ViewContext.HttpContext.Request.Host}/";
+}
+
+@section SEO {
+    <meta name="description" content="">
+    <meta name="keywords" content="WebComponent Library, WebComponents, OpenERP, Tabs">
+    <meta name="author" content="Victor Pérez Asuaje">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="@(url + "Components/Tabs")" />
+
+    <meta property="og:title" content="@ViewData["Title"]">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/img/tab-component.jpg">
+    <meta property="og:url" content="@(url + "Components/Tabs")">
+    <meta property="og:type" content="website">
+}
+
+<oe-title fouc="ease" variant="xl">OpenERP Tabs</oe-title>
+
+<p class="text-gray-500 mb-6">
+    Tabs are a versatile component that allows you to create tabbed interfaces in your web applications. It offers a user-friendly way to switch between different sections or views by utilizing tabs. This component is designed to be highly customizable, allowing you to define the tab type, button appearance, and more to match your application's styling and functionality requirements.
+</p>
+
+<p class="text-gray-500 mb-6">
+    These are a list of properties you can use to customize your tabs:
+</p>
+
+<ul class="space-y-2 text-gray-500 list-inside pl-6 mb-10">
+    <li>
+        <strong>&lt;oe-tabs&gt;</strong>:
+        <ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+            <li><strong>type="{ vertical | horizontal }"</strong>: Optional property. It sets the orientation of the tabs. The default value is horizontal.</li>
+            <li><strong>button-type="{ BUTTON_TYPES }"</strong>: Specifies the button type. You can check the options in the <a asp-controller="Components" asp-action="Button" class="underline underline-offset-1" target="_blank">Button Component Page</a>.</li>
+            <li><strong>button-color="{ BUTTON_COLORS }"</strong>: Determines the button's color, allowing you to adapt it to your application's color scheme. You can check the options in the <a asp-controller="Components" asp-action="Button" class="underline underline-offset-1" target="_blank">Button Component Page</a>.</li>
+            <li><strong>button-variant="{ BUTTON_VARIANTS }"</strong>: Defines the button's variant, providing options for different button styles. You can check the options in the <a asp-controller="Components" asp-action="Button" class="underline underline-offset-1" target="_blank">Button Component Page</a>.</li>
+        </ul>
+    </li>
+    
+    <li><strong>&lt;oe-tab&gt;</strong>:
+        <ul class="space-y-2 text-gray-500 list-disc list-inside pl-6 mb-10">
+            <li><strong>title="{ TEXT }"</strong>: It allows you to set the content of the button associated with the tab.</li>
+            <li><strong>active</strong>: It allows you to set the predefined active tab once the component loads.</li>
+        </ul>
+    </li>
+    
+</ul>
+
+<oe-title fouc="ease" variant="md">Dynamic Tab Creation</oe-title>
+
+<p class="text-gray-500 mb-6">
+    The Tabs WebComponent is dynamic and works seamlessly with the oe-tab component. You can create as many tabs as needed, and the component will automatically adjust to display them. Each tab consists of a title and content, making it easy to organize and display information within your application.
+</p>
+
+<p class="text-gray-500 mb-6">
+    Tab switching is a breeze with this component. As each button is binded to a tab, once users click on a tab, the content of the selected tab will be displayed while hiding the others. This interactive behavior enhances user experience and navigation within your application.
+</p>
+
+<div id="defaultTab">
+    <oe-title fouc="ease" variant="lg">Default Tab</oe-title>
+
+    <div class="mt-8">
+        <div class="flex justify-end w-full p-4 border border-gray-200 bg-gray-50 rounded-t-xl">
+            <a href="https://github.com/VictorPerezAsuaje/OpenERP_WebComponents/blob/master/wwwroot/oeComponents/components/tab/tab.js" target="_blank" rel="noopener nofollow noreferrer" class="inline-flex items-center justify-center h-9 mr-3 px-3 text-xs font-medium text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-indigo-700">
+                <i class="fa-brands fa-github text-lg mr-3"></i>
+                Check code on GitHub
+            </a>
+        </div>
+
+        <div id="example" class="flex p-0 bg-white border-gray-200 bg-gradient-to-r border-x h-[50vh]">
+            <div class="w-full flex flex-row">
+                <div class="flex-[2] min-h-24 block mx-auto my-auto py-12 px-16 flex justify-center" id="tabDefaultExample">
+<oe-tabs id="tabExample" fouc="ease">
+    <oe-tab title="Tab 1 title" active>
+        <h3>Tab 1 content</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel felis gravida, finibus tortor eu, tristique nulla. Phasellus sed augue ipsum. Curabitur interdum odio fringilla mattis vestibulum. Pellentesque mollis nunc justo, nec dignissim quam posuere eu. Quisque laoreet odio urna, nec ullamcorper dolor condimentum non. Vestibulum et urna eu purus rutrum euismod vitae vulputate urna. Etiam est enim, placerat non iaculis et, auctor quis sapien. In hac habitasse platea dictumst. In porta rhoncus sem ut ultricies. Pellentesque vel egestas quam. Curabitur sagittis tortor ac sem commodo mollis. Sed dignissim auctor lacus in dapibus. Nunc ac arcu aliquet, accumsan sem sit amet, imperdiet arcu. Mauris porta justo in enim laoreet efficitur. Cras tincidunt erat ante, dapibus faucibus lacus viverra egestas.
+        </p>
+    </oe-tab>
+    <oe-tab title="Tab 2 title">
+        <h3>Tab 2 content</h3>
+        <p>
+            Integer vehicula urna et mauris tincidunt, eu luctus massa luctus. Quisque tempor malesuada blandit. Aliquam nec facilisis turpis. Duis efficitur nulla laoreet nibh semper, a tempus elit rutrum. Aenean mollis porttitor bibendum. Maecenas ut ante ultricies, scelerisque massa sit amet, ultrices velit. Nam ultricies enim sit amet eleifend lacinia. Mauris et consectetur ligula. Fusce eu ullamcorper est. Quisque tristique magna in nisi dictum, ut lacinia quam facilisis. Curabitur porttitor risus non lorem placerat feugiat. Aliquam eu arcu laoreet, gravida augue eu, commodo nunc. Maecenas euismod maximus justo ut hendrerit.
+        </p>
+    </oe-tab>
+    <oe-tab title="Tab 3 title">
+        <h3>Tab 3 content</h3>
+        <p>
+            Cras interdum efficitur mi et tempor. Morbi id nunc libero. Sed commodo elit eget mattis congue. Sed eleifend ornare ligula. Etiam a egestas turpis. Maecenas iaculis, libero ut accumsan sagittis, eros ipsum dapibus est, sed imperdiet est purus ut urna. Morbi quam dolor, pulvinar ac tellus id, sagittis maximus nisl. Curabitur aliquam facilisis erat, eget maximus ante malesuada eu. Ut scelerisque cursus est sit amet luctus. Vestibulum sapien massa, consectetur quis pellentesque ac, porttitor at tellus. Aenean ut augue faucibus justo elementum semper.
+        </p>
+    </oe-tab>
+</oe-tabs>
+                </div>
+
+                <div id="playground" class="border-l-4 flex-1 py-4 px-5 overflow-auto">
+                    <oe-title fouc="ease" variant="md">Playground</oe-title>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Type</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="horizontal" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)" checked>
+                                Horizontal
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="vertical" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Vertical
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Button Variants</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnVariant" value="solid" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)" checked>
+                                Solid
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnVariant" value="outline" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Outline
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnVariant" value="flat" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Flat
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Button Colors</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="primary" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)" checked>
+                                Primary
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="secondary" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Secondary
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="accent" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Accent
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="info" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Info
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="success" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Success
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="warning" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Warning
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnColor" value="error" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Error
+                            </label>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary class="mt-5 mb-3">Button Type</summary>
+                        <div class="pl-3 flex flex-col gap-1">
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnType" value="square" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)" checked>
+                                Square
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnType" value="pill" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Pill
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="btnType" value="circle" class="mr-4" onchange="setAttributeValueToExample('tabExample',this.name, this.value)">
+                                Circle
+                            </label>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+
+            <div class="flex justify-end">
+                <tab type="tab" class="flex items-center px-3 py-2 text-xs font-medium text-gray-600 bg-gray-100 border-l border-gray-200 hover:text-blue-700" onclick="copyTextContent('sampleCode')">
+                    <i class="fa-solid fa-clipboard text-md mr-2"></i>
+                    <span>Copy</span>
+                </tab>
+            </div>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html " data-lang="html" id="sampleCode" data-load-from="tabDefaultExample"></code> 
+            </pre>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/js/pages/tabs.js" asp-append-version="true"></script>
+}

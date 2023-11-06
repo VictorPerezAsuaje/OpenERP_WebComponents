@@ -37,10 +37,6 @@ export default class Alert extends OpenERPComponent {
         this.initIcon();
     }
 
-    #updateCssClasses() {
-        this.shadowRoot.getElementById("messageContainer").className = `alert ${this.variant} ${this.color}`;
-    }
-
     get title() {
         return this.getAttribute("title");
     }
@@ -57,6 +53,10 @@ export default class Alert extends OpenERPComponent {
     set message(value) {
         this.innerHTML = value;
         this.initMessage();
+    }
+
+    #updateCssClasses() {
+        this.shadowRoot.getElementById("messageContainer").className = `alert ${this.variant} ${this.color}`;
     }
 
     constructor() {

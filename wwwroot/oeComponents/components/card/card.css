@@ -1,7 +1,4 @@
-﻿@import "../../base/shared/shared-variables.css";
-@import '../../base/styles/__style-imports.min.css';
-
-.card {
+﻿.card {
     position: relative;
     display: flex;
     flex-direction: column;

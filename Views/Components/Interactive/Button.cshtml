@@ -66,6 +66,11 @@
                                 <input type="radio" name="variant" value="outline" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
                                 Outline
                             </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="variant" value="flat" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Flat
+                            </label>
                         </div>
                     </details>
 
@@ -120,6 +125,11 @@
                             <label class="flex items-center text-sm font-medium text-gray-700">
                                 <input type="radio" name="type" value="pill" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
                                 Pill
+                            </label>
+
+                            <label class="flex items-center text-sm font-medium text-gray-700">
+                                <input type="radio" name="type" value="circle" class="mr-4" onchange="setAttributeValueToExample('buttonExample',this.name, this.value)">
+                                Circle
                             </label>
                         </div>
                     </details>
@@ -200,6 +210,33 @@
         <div class="relative">
             <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
             <code class="language-html" data-lang="html" data-load-from="outlineButtonSamples"></code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+<div id="flatButtons" class="mt-14">
+    <oe-title fouc="ease" variant="lg">Flat Buttons</oe-title>
+    <div class="grid grid-cols-3 gap-5 my-8" id="flatButtonSamples">
+<oe-button fouc="ease" variant="flat" color="primary">primary</oe-button>
+<oe-button fouc="ease" variant="flat" color="secondary">secondary</oe-button>
+<oe-button fouc="ease" variant="flat" color="accent">accent</oe-button>
+<oe-button fouc="ease" variant="flat" color="info">info</oe-button>
+<oe-button fouc="ease" variant="flat" color="warning">warning</oe-button>
+<oe-button fouc="ease" variant="flat" color="error">error</oe-button>
+    </div>
+
+    <div class="relative border-gray-200 border-y border-x">
+        <div class="grid w-full grid-cols-2 border-b border-gray-200 bg-gray-50 rounded-t-md">
+            <ul class="flex text-sm font-medium text-center text-gray-500">
+                <li>
+                    <span class="inline-block w-full p-2 px-3 text-gray-800 bg-gray-100 border-r border-gray-200">HTML</span>
+                </li>
+            </ul>
+        </div>
+        <div class="relative">
+            <pre class="language-html flex" style="background-color:var(--oe-global-color-white);">
+            <code class="language-html" data-lang="html" data-load-from="flatButtonSamples"></code>
             </pre>
         </div>
     </div>

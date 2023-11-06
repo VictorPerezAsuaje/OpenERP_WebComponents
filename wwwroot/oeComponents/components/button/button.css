@@ -21,67 +21,74 @@
 /* FLAT */
 
 .flat.primary {
-    color: var(--oe-global-color-primary);
-    border: var(--oe-global-borderWidth-2) solid transparent;
+    color: var(--oe-global-color-primary);    
 }
 
-    .flat.primary:hover {
+    .flat.primary:hover, .flat.primary:focus, .flat.primary.active {
         color: var(--oe-global-color-primary-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-primary-focus);
+        border-radius: 0;
     }
 
 .flat.secondary {
     color: var(--oe-global-color-secondary);
-    border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-    .flat.secondary:hover {
+    .flat.secondary:hover, .flat.secondary:focus, .flat.secondary.active {
         color: var(--oe-global-color-secondary-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-secondary-focus);
+        border-radius: 0;
     }
 
 
 .flat.accent {
     color: var(--oe-global-color-accent);
-    border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-    .flat.accent:hover {
+    .flat.accent:hover, .flat.accent:focus, .flat.accent.active {
         color: var(--oe-global-color-accent-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-accent-focus);
+        border-radius: 0;
     }
 
 .flat.info {
     color: var(--oe-global-color-info);
-    border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-    .flat.info:hover {
+    .flat.info:hover, .flat.info:focus, .flat.info.active {
         color: var(--oe-global-color-info-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info-focus);
+        border-radius: 0;
     }
 
 .flat.warning {
     color: var(--oe-global-color-warning);
-    border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-    .flat.warning:hover {
+    .flat.warning:hover, .flat.warning:focus, .flat.warning.active {
         color: var(--oe-global-color-warning-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning-focus);
+        border-radius: 0;
     }
 
 .flat.error {
     color: var(--oe-global-color-error);
-    border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-    .flat.error:hover {
+    .flat.error:hover, .flat.error:focus, .flat.error.active {
         color: var(--oe-global-color-error-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error-focus);
+        border-radius: 0;
     }
 
 .flat.success {
     color: var(--oe-global-color-success);
-    border: var(--oe-global-borderWidth-2) solid transparent;
 }
 
-    .flat.success:hover {
+    .flat.success:hover, .flat.success:focus, .flat.success.active {
         color: var(--oe-global-color-success-focus);
+        border-bottom: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success-focus);
+        border-radius: 0;
     }
 
 
@@ -93,7 +100,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.primary:hover {
+    .solid.primary:hover, .solid.primary:focus, .solid.primary.active {
         background-color: var(--oe-global-color-primary-focus);
         color: var(--oe-global-color-primary-content);
     }
@@ -104,7 +111,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.secondary:hover {
+    .solid.secondary:hover, .solid.secondary:focus, .solid.secondary.active {
         background-color: var(--oe-global-color-secondary-focus);
         color: var(--oe-global-color-secondary-content);
     }
@@ -115,7 +122,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.accent:hover {
+    .solid.accent:hover, .solid.accent:focus, .solid.accent.active {
         background-color: var(--oe-global-color-accent-focus);
         color: var(--oe-global-color-accent-content);
     }
@@ -126,7 +133,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.info:hover {
+    .solid.info:hover, .solid.info:focus, .solid.info.active {
         background-color: var(--oe-global-color-info-focus);
     }
 
@@ -136,7 +143,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.success:hover {
+    .solid.success:hover, .solid.success:focus, .solid.success.active {
         background-color: var(--oe-global-color-success-focus);
     }
 
@@ -146,7 +153,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.warning:hover {
+    .solid.warning:hover, .solid.warning:focus, .solid.warning.active {
         background-color: var(--oe-global-color-warning-focus);
     }
 
@@ -156,7 +163,7 @@
     color: var(--oe-global-color-white);
 }
 
-    .solid.error:hover {
+    .solid.error:hover, .solid.error:focus, .solid.error.active {
         background-color: var(--oe-global-color-error-focus);
     }
 
@@ -168,7 +175,7 @@
     color: var(--oe-global-color-primary);
 }
 
-    .outline.primary:hover {
+    .outline.primary:hover, .outline.primary:focus, .outline.primary.active {
         background-color: var(--oe-global-color-primary);
         color: var(--oe-global-color-white);
     }
@@ -179,7 +186,7 @@
     color: var(--oe-global-color-secondary);
 }
 
-    .outline.secondary:hover {
+    .outline.secondary:hover, .outline.secondary:focus, .outline.secondary.active {
         background-color: var(--oe-global-color-secondary);
         color: var(--oe-global-color-white);
     }
@@ -190,7 +197,7 @@
     color: var(--oe-global-color-accent);
 }
 
-    .outline.accent:hover {
+    .outline.accent:hover, .outline.accent:focus, .outline.accent.active {
         background-color: var(--oe-global-color-accent);
         color: var(--oe-global-color-white);
     }
@@ -201,7 +208,7 @@
     color: var(--oe-global-color-info);
 }
 
-    .outline.info:hover {
+    .outline.info:hover, .outline.info:focus, .outline.info.active {
         background-color: var(--oe-global-color-info);
         color: var(--oe-global-color-info-content);
     }
@@ -213,7 +220,7 @@
     color: var(--oe-global-color-success);
 }
 
-    .outline.success:hover {
+    .outline.success:hover, .outline.success:focus, .outline.success.active {
         background-color: var(--oe-global-color-success);
         color: var(--oe-global-color-success-content);
     }
@@ -225,7 +232,7 @@
     color: var(--oe-global-color-warning);
 }
 
-    .outline.warning:hover {
+    .outline.warning:hover, .outline.warning:focus, .outline.warning.active {
         background-color: var(--oe-global-color-warning);
         color: var(--oe-global-color-warning-content);
     }
@@ -237,7 +244,7 @@
     color: var(--oe-global-color-error);
 }
 
-    .outline.error:hover {
+    .outline.error:hover, .outline.error:focus, .outline.error.active {
         background-color: var(--oe-global-color-error);
         color: var(--oe-global-color-error-content);
     }

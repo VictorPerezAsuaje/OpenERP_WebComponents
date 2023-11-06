@@ -6,5 +6,8 @@ import Badge from "./components/badge/badge.js";
 import Icon from "./components/icon/icon.js";
 import Alert from "./components/alert/alert.js";
 
+import Tabs from "./components/tabs/tabs.js"
+import Tab from "./components/tabs/tabs.js"
+
 import Table from "./components/table/table.js";
 import Column from "./components/table/table.js";

@@ -48,8 +48,21 @@ export default class Button extends OpenERPComponent {
         this.#updateCssClasses();
     }
 
+    get isActive() {
+        return this.hasAttribute("active");
+    }
+
+    set isActive(value) {
+        if (value)
+            this.setAttribute("active", "");
+        else
+            this.removeAttribute("active");
+
+        this.#updateCssClasses();
+    }
+
     #updateCssClasses() {
-        this.shadowRoot.getElementById("button").className = `button ${this.variant} ${this.color} ${this.type}`;
+        this.shadowRoot.getElementById("button").className = `button ${this.variant} ${this.color} ${this.type} ${this.isActive ? "active" : ""}`;
     }
 
     constructor() {
@@ -61,8 +74,6 @@ export default class Button extends OpenERPComponent {
         super.createWebComponent();
         this.#updateCssClasses();
     }    
-
-    
 }
 
 customElements.define('oe-button', Button);

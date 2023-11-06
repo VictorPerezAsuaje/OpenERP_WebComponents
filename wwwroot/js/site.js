@@ -70,18 +70,10 @@ const copyTextContent = (itemId) => {
     navigator.clipboard.writeText(item.textContent.trim());
 }
 
-const setAttributeToExample = (sampleId, name, value) => {
-    const sample = document.getElementById(sampleId);
-
-    sample.setAttribute(name, value);
-    document.getElementById('sampleCode').textContent = sample.outerHTML;
-    Prism.highlightAll();
-}
 
 const setAttributeValueToExample = (sampleId, name, value) => {
     const sample = document.getElementById(sampleId);
-
-    sample[name] = value;
+    sample[name] = value;    
     document.getElementById('sampleCode').textContent = sample.outerHTML;
     Prism.highlightAll();
 }

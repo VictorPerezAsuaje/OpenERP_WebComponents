@@ -1,14 +1,13 @@
 ﻿import OpenERPComponent from "../../base/openerp-component.js";
 import card from "./card.html";
-import "./card.css";
+import css from "./card.css";
 
 export default class Card extends OpenERPComponent {
-    static observedAttributes = [];
-
     constructor() {
         super();
         this.componentName = "oe-card";
         this.componentHTML = card;
+        this.componentCSS = css;
         super.createWebComponent();
     }
 }
