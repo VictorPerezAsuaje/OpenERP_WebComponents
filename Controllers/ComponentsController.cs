@@ -14,6 +14,7 @@ public class TableItem
 public class ComponentsController : Controller
 {
     #region Content
+    public IActionResult Alert() => View("Content/Alert");
     public IActionResult Badge() => View("Content/Badge");
     public IActionResult Card() => View("Content/Card");
     public IActionResult Title() => View("Content/Title");
@@ -26,7 +27,7 @@ public class ComponentsController : Controller
     #endregion Layout
 
     #region Interactive
-    public IActionResult Alert() => View("Interactive/Alert");
+    public IActionResult Accordion() => View("Interactive/Accordion");
 
     public IActionResult Button() => View("Interactive/Button");
 

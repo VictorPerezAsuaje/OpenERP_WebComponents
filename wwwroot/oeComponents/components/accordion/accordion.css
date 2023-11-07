@@ -1,0 +1,294 @@
+﻿.accordion {
+    margin: var(--oe-global-sizing-8) 0;
+}
+
+details {
+    position: relative;
+}
+
+    details > *:not(summary) {
+        padding: 0 var(--oe-global-sizing-5);
+        overflow-y: hidden;
+        transition: all 0.5s ease-in-out;
+    }
+
+    details[open] > *:not(summary) {
+        padding: var(--oe-global-sizing-5);
+        transition: all 0.5s ease-in-out;
+    }
+
+    details summary::after {
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        content: '\f107';
+        position: absolute;
+        right: var(--oe-global-sizing-5);
+        margin: auto 0;
+        transform: rotateZ(0deg);
+        transition: all 200ms ease-in-out;
+    }
+
+    details[open] summary::after {
+        transform: rotateZ(180deg);
+    }
+
+
+details:first-child summary {
+    border-start-start-radius: var(--oe-global-borderRadius-soft);
+    border-start-end-radius: var(--oe-global-borderRadius-soft);
+}
+
+details:last-child summary {
+    border-end-start-radius: var(--oe-global-borderRadius-soft);
+    border-end-end-radius: var(--oe-global-borderRadius-soft);
+}
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+summary {
+    padding: var(--oe-global-sizing-5) var(--oe-global-sizing-2);
+    list-style: none;
+    border-radius: 0;
+    user-select: none;
+}
+
+/* OUTLINE */
+.outline details:not([open]) + details summary {
+    border-top: 0;
+}
+
+.outline summary {
+    font-weight: var(--oe-global-fontWeight-medium);
+    transition: all 200ms ease-in-out;
+}
+
+.outline details[open] summary {
+    transition: all 200ms ease-in-out;
+}
+
+.outline.primary summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-primary);
+    color: var(--oe-global-color-primary);
+}
+
+.outline.primary details[open] summary {
+    background-color: var(--oe-global-color-primary);
+    color: var(--oe-global-color-white);
+}
+
+.outline.secondary summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-secondary);
+    color: var(--oe-global-color-secondary);
+}
+
+.outline.secondary details[open] summary {
+    background-color: var(--oe-global-color-secondary);
+    color: var(--oe-global-color-white);
+}
+
+.outline.accent summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-accent);
+    color: var(--oe-global-color-accent);
+}
+
+.outline.accent details[open] summary {
+    background-color: var(--oe-global-color-accent);
+    color: var(--oe-global-color-white);
+}
+
+.outline.info summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-info);
+    color: var(--oe-global-color-info);
+}
+
+.outline.info details[open] summary {
+    background-color: var(--oe-global-color-info);
+    color: var(--oe-global-color-white);
+}
+
+.outline.success summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-success);
+    color: var(--oe-global-color-success);
+}
+
+.outline.success details[open] summary {
+    background-color: var(--oe-global-color-success);
+    color: var(--oe-global-color-white);
+}
+
+.outline.warning summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-warning);
+    color: var(--oe-global-color-warning);
+}
+
+.outline.warning details[open] summary {
+    background-color: var(--oe-global-color-warning);
+    color: var(--oe-global-color-white);
+}
+
+.outline.error summary {
+    border: var(--oe-global-borderWidth-2) solid var(--oe-global-color-error);
+    color: var(--oe-global-color-error);
+}
+
+.outline.error details[open] summary {
+    background-color: var(--oe-global-color-error);
+    color: var(--oe-global-color-white);
+}
+
+/* SOLID */
+
+.solid summary {
+    font-weight: var(--oe-global-fontWeight-medium);
+    transition: all 200ms ease-in-out;
+}
+
+.solid.primary summary {
+    background-color: var(--oe-global-color-primary);
+    color: var(--oe-global-color-white);
+}
+
+.solid.primary details[open] summary {
+    background-color: var(--oe-global-color-primary-focus);
+    color: var(--oe-global-color-white);
+}
+
+.solid.secondary summary {
+    background-color: var(--oe-global-color-secondary);
+    color: var(--oe-global-color-white);
+}
+
+.solid.secondary details[open] summary {
+    background-color: var(--oe-global-color-secondary-focus);
+    color: var(--oe-global-color-white);
+}
+
+.solid.accent summary {
+    background-color: var(--oe-global-color-accent);
+    color: var(--oe-global-color-white);
+}
+
+.solid.accent details[open] summary {
+    background-color: var(--oe-global-color-accent-focus);
+    color: var(--oe-global-color-white);
+}
+
+.solid.info summary {
+    background-color: var(--oe-global-color-info);
+    color: var(--oe-global-color-white);
+}
+
+.solid.info details[open] summary {
+    background-color: var(--oe-global-color-info-focus);
+    color: var(--oe-global-color-white);
+}
+
+.solid.success summary {
+    background-color: var(--oe-global-color-success);
+    color: var(--oe-global-color-white);
+}
+
+.solid.success details[open] summary {
+    background-color: var(--oe-global-color-success-focus);
+    color: var(--oe-global-color-white);
+}
+
+.solid.warning summary {
+    background-color: var(--oe-global-color-warning);
+    color: var(--oe-global-color-white);
+}
+
+.solid.warning details[open] summary {
+    background-color: var(--oe-global-color-warning-focus);
+    color: var(--oe-global-color-white);
+}
+
+.solid.error summary {
+    background-color: var(--oe-global-color-error);
+    color: var(--oe-global-color-white);
+}
+
+.solid.error details[open] summary {
+    background-color: var(--oe-global-color-error-focus);
+    color: var(--oe-global-color-white);
+}
+
+/* FLAT */
+.flat summary {
+    font-weight: var(--oe-global-fontWeight-medium);
+    transition: all 200ms ease-in-out;
+    border-bottom-width: var(--oe-global-borderWidth-1);
+    border-bottom-style: solid;
+}
+
+.flat.primary summary {
+    border-bottom-color: var(--oe-global-color-primary);
+    color: var(--oe-global-color-primary);
+}
+
+.flat.primary details[open] summary {
+    background-color: var(--oe-global-color-primary-focus);
+    color: var(--oe-global-color-white);
+}
+
+.flat.secondary summary {
+    border-bottom-color: var(--oe-global-color-secondary);
+    color: var(--oe-global-color-secondary);
+}
+
+.flat.secondary details[open] summary {
+    background-color: var(--oe-global-color-secondary-focus);
+    color: var(--oe-global-color-white);
+}
+
+.flat.accent summary {
+    border-bottom-color: var(--oe-global-color-accent);
+    color: var(--oe-global-color-accent);
+}
+
+.flat.accent details[open] summary {
+    background-color: var(--oe-global-color-accent-focus);
+    color: var(--oe-global-color-white);
+}
+
+.flat.info summary {
+    border-bottom-color: var(--oe-global-color-info);
+    color: var(--oe-global-color-info);
+}
+
+.flat.info details[open] summary {
+    background-color: var(--oe-global-color-info-focus);
+    color: var(--oe-global-color-white);
+}
+
+.flat.success summary {
+    border-bottom-color: var(--oe-global-color-success);
+    color: var(--oe-global-color-success);
+}
+
+.flat.success details[open] summary {
+    background-color: var(--oe-global-color-success-focus);
+    color: var(--oe-global-color-white);
+}
+
+.flat.warning summary {
+    border-bottom-color: var(--oe-global-color-warning);
+    color: var(--oe-global-color-warning);
+}
+
+.flat.warning details[open] summary {
+    background-color: var(--oe-global-color-warning-focus);
+    color: var(--oe-global-color-white);
+}
+
+.flat.error summary {
+    border-bottom-color: var(--oe-global-color-error);
+    color: var(--oe-global-color-error);
+}
+
+.flat.error details[open] summary {
+    background-color: var(--oe-global-color-error-focus);
+    color: var(--oe-global-color-white);
+}
