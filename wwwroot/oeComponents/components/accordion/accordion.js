@@ -96,7 +96,7 @@ export default class Accordion extends OpenERPComponent {
 
             const summary = document.createElement("summary");
 
-            const summaryContent = document.createDocumentFragment();
+            const summaryContent = document.createElement("span");
             summaryContent.textContent = tab.getAttribute("title");
 
             if (tab.hasAttribute("icon")) {
