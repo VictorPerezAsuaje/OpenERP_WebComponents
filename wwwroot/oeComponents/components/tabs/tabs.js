@@ -77,13 +77,18 @@ export default class Tabs extends OpenERPComponent {
         header.innerHTML = "";
         tabsContainer.innerHTML = "";
 
+        let hasActiveTab = false;
         for (let tab of clientTabs) {
             const button = new Button();
             button.type = this.btnType;
             button.color = this.btnColor;
             button.variant = this.btnVariant;           
-            button.textContent = tab.getAttribute("title");            
-            button.isActive = tab.hasAttribute("active");
+            button.textContent = tab.getAttribute("title");
+
+            if (!hasActiveTab) {
+                button.isActive = tab.hasAttribute("active");
+                hasActiveTab = tab.hasAttribute("active");
+            }
 
             const container = document.createElement("section");
             container.innerHTML = tab.innerHTML.trim();

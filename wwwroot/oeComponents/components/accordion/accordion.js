@@ -4,6 +4,9 @@ import css from "./accordion.css";
 import Icon from "../icon/icon.js";
 
 export default class Accordion extends OpenERPComponent {
+    #defaultSpaceBetween = 0;
+    #availableSpaceBetween = { 0: "0", 1: "1", 2: "2", 3: "3", 4: "4"}
+
     #defaultVariant = "solid";
     #availableVariants = { "solid": "solid", "outline": "outline", "flat": "flat" };
 
@@ -19,6 +22,15 @@ export default class Accordion extends OpenERPComponent {
     };
 
     /* PROPS */
+    get spaceBetween() {
+        return this.getAttribute("space-between") in this.#availableSpaceBetween ? this.getAttribute("space-between") : this.#defaultSpaceBetween;
+    }
+
+    set spaceBetween(value) {
+        this.setAttribute("space-between", value in this.#availableSpaceBetween ? value : this.#defaultSpaceBetween);
+        this.#updateCssClasses();
+    }
+
     get variant() {
         return this.getAttribute("variant") in this.#availableVariants ? this.getAttribute("variant") : this.#defaultVariant;
     }
@@ -47,7 +59,7 @@ export default class Accordion extends OpenERPComponent {
     }
 
     #updateCssClasses() {
-        this.shadowRoot.getElementById("accordion").className = `accordion ${this.variant} ${this.color}`;
+        this.shadowRoot.getElementById("accordion").className = `accordion ${this.variant} ${this.color} gap-${this.spaceBetween}`;
     }
 
     constructor() {
